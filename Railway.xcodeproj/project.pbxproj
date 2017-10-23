@@ -21,6 +21,7 @@
 		D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD8E1F9E33920061949C /* URLRequest.swift */; };
 		D19CAD921F9E33C20061949C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD911F9E33C20061949C /* Constants.swift */; };
 		D1DFD3701F9E3BAC0003867B /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD36F1F9E3BAC0003867B /* StationList.swift */; };
+		D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD3711F9E4BA10003867B /* MainWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		D19CAD8E1F9E33920061949C /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		D19CAD911F9E33C20061949C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D1DFD36F1F9E3BAC0003867B /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
+		D1DFD3711F9E4BA10003867B /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				D13029CB1F9A053D0081826A /* AppDelegate.swift */,
+				D1DFD3711F9E4BA10003867B /* MainWindowController.swift */,
 				D19CAD901F9E33B20061949C /* Common */,
 				D19CAD8D1F9E33740061949C /* Extensions */,
 				D19CAD851F9E2FFE0061949C /* Networking */,
@@ -214,6 +217,7 @@
 			files = (
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
 				D19CAD921F9E33C20061949C /* Constants.swift in Sources */,
+				D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */,
 				D19CAD821F9DFE730061949C /* Station.swift in Sources */,
 				D13029CC1F9A053D0081826A /* AppDelegate.swift in Sources */,
 				D19CAD891F9E307C0061949C /* RequestManager.swift in Sources */,

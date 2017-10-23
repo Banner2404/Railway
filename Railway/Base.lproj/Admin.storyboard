@@ -683,7 +683,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="Railway" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -693,8 +693,14 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="2UI-5U-Ymu"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="8Ql-p2-NQG"/>
+                                <toolbarItem implicitItemIdentifier="2FA370EA-2704-435E-B41D-3557D418C998" label="Add" paletteLabel="Add" tag="-1" image="NSAdvanced" autovalidates="NO" id="nzy-zu-7T5">
+                                    <connections>
+                                        <action selector="addButtonClick:" target="B8D-0N-5wS" id="DEC-Yg-24j"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="nzy-zu-7T5"/>
                                 <toolbarItem reference="8Ql-p2-NQG"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -995,5 +1001,6 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSAdvanced" width="32" height="32"/>
     </resources>
 </document>

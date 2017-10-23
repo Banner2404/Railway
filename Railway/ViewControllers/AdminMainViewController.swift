@@ -8,15 +8,24 @@
 
 import Cocoa
 
+protocol AdminChildViewController {
+    func addButtonClick()
+}
+
 class AdminMainViewController: NSViewController {
 
     @IBOutlet var sideBarArrayController: NSArrayController!
     @IBOutlet weak var containerView: NSView!
+    var contentController: AdminChildViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSidebar()
         showStationsViewController()
+    }
+    
+    func addButtonClick() {
+        contentController?.addButtonClick()
     }
 }
 
@@ -34,7 +43,7 @@ private extension AdminMainViewController {
             containerView.leftAnchor.constraint(equalTo: viewController.view.leftAnchor),
             containerView.rightAnchor.constraint(equalTo: viewController.view.rightAnchor),
         ])
-
+        contentController = viewController
     }
     
     func setupSidebar() {

@@ -35,10 +35,12 @@ class StationsViewController: NSViewController, BaseViewController {
 private extension StationsViewController {
     
     func loadStations() {
-        requestManager.loadStations { (success, stations, error) in
-            print(success)
-            print(stations?.stations)
-            print(error)
+        requestManager.loadStations { [weak self] (success, stations, error) in
+            if success {
+                self?.stationsArrayController.content = stations?.stations
+            } else {
+                print(error ?? "Unable to load stations")
+            }
         }
     }
     
@@ -52,4 +54,12 @@ private extension StationsViewController {
             ]
         stationsArrayController.content = items
     }
+}
+
+//MARK: - AdminChildViewController
+extension StationsViewController: AdminChildViewController {
+    func addButtonClick() {
+        print("Click handled")
+    }
+    
 }
