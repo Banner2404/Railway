@@ -12,6 +12,9 @@
 		D13029D31F9A053D0081826A /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13029D11F9A053D0081826A /* Admin.storyboard */; };
 		D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */; };
 		D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD751F9DED070061949C /* SidebarItem.swift */; };
+		D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */; };
+		D19CAD821F9DFE730061949C /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD811F9DFE730061949C /* Station.swift */; };
+		D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD831F9DFFFA0061949C /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		D13029D51F9A053D0081826A /* Railway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Railway.entitlements; sourceTree = "<group>"; };
 		D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainViewController.swift; sourceTree = "<group>"; };
 		D19CAD751F9DED070061949C /* SidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItem.swift; sourceTree = "<group>"; };
+		D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
+		D19CAD811F9DFE730061949C /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		D19CAD831F9DFFFA0061949C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,14 +62,33 @@
 			isa = PBXGroup;
 			children = (
 				D13029CB1F9A053D0081826A /* AppDelegate.swift */,
-				D19CAD751F9DED070061949C /* SidebarItem.swift */,
-				D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */,
+				D19CAD771F9DF2170061949C /* Models */,
+				D19CAD781F9DF2220061949C /* ViewControllers */,
 				D13029CF1F9A053D0081826A /* Assets.xcassets */,
 				D13029D11F9A053D0081826A /* Admin.storyboard */,
 				D13029D41F9A053D0081826A /* Info.plist */,
 				D13029D51F9A053D0081826A /* Railway.entitlements */,
 			);
 			path = Railway;
+			sourceTree = "<group>";
+		};
+		D19CAD771F9DF2170061949C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D19CAD751F9DED070061949C /* SidebarItem.swift */,
+				D19CAD811F9DFE730061949C /* Station.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D19CAD781F9DF2220061949C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D19CAD831F9DFFFA0061949C /* BaseViewController.swift */,
+				D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */,
+				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +163,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
+				D19CAD821F9DFE730061949C /* Station.swift in Sources */,
 				D13029CC1F9A053D0081826A /* AppDelegate.swift in Sources */,
 				D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */,
+				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
+				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
