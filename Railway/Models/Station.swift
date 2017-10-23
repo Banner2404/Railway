@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Station: NSObject {
+class Station: NSObject, Codable {
     
     @objc
     var id: Int

@@ -19,6 +19,14 @@ class StationsViewController: NSViewController, BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStations()
+        loadStations()
+    }
+    
+    @objc
+    func sortDescriptors() -> [NSSortDescriptor] {
+        return [
+            NSSortDescriptor(key: "id", ascending: true),
+        ]
     }
     
 }
@@ -26,13 +34,21 @@ class StationsViewController: NSViewController, BaseViewController {
 //MARK: - Private
 private extension StationsViewController {
     
+    func loadStations() {
+        requestManager.loadStations { (success, stations, error) in
+            print(success)
+            print(stations?.stations)
+            print(error)
+        }
+    }
+    
     func setupStations() {
         let items = [
-            Station(name: "Жабинка", id: 502),
-            Station(name: "Жабинка", id: 502),
-            Station(name: "Жабинка", id: 502),
-            Station(name: "Жабинка", id: 502),
-            Station(name: "Жабинка", id: 502),
+            Station(name: "Жабинкаa", id: 501),
+            Station(name: "Жабинкаb", id: 502),
+            Station(name: "Жабинкаz", id: 503),
+            Station(name: "Жабинкаc", id: 504),
+            Station(name: "Жабинкаg", id: 505),
             ]
         stationsArrayController.content = items
     }

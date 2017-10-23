@@ -10,11 +10,17 @@ import Cocoa
 
 protocol BaseViewController {
     
+    var requestManager: RequestManager { get }
+    
     static func loadFromAdminStoryboard<T>() -> T
 }
 
 extension BaseViewController {
     
+    var requestManager: RequestManager {
+        return RequestManager.shared
+    }
+
     static func loadFromAdminStoryboard<T>() -> T {
         return loadFromStoryboard(name: "Admin")
     }

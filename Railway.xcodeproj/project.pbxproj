@@ -15,6 +15,12 @@
 		D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */; };
 		D19CAD821F9DFE730061949C /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD811F9DFE730061949C /* Station.swift */; };
 		D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD831F9DFFFA0061949C /* BaseViewController.swift */; };
+		D19CAD871F9E301B0061949C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD861F9E301B0061949C /* NetworkManager.swift */; };
+		D19CAD891F9E307C0061949C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD881F9E307C0061949C /* RequestManager.swift */; };
+		D19CAD8C1F9E33390061949C /* StationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD8B1F9E33390061949C /* StationRequests.swift */; };
+		D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD8E1F9E33920061949C /* URLRequest.swift */; };
+		D19CAD921F9E33C20061949C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD911F9E33C20061949C /* Constants.swift */; };
+		D1DFD3701F9E3BAC0003867B /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD36F1F9E3BAC0003867B /* StationList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 		D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
 		D19CAD811F9DFE730061949C /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		D19CAD831F9DFFFA0061949C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D19CAD861F9E301B0061949C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D19CAD881F9E307C0061949C /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		D19CAD8B1F9E33390061949C /* StationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRequests.swift; sourceTree = "<group>"; };
+		D19CAD8E1F9E33920061949C /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		D19CAD911F9E33C20061949C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1DFD36F1F9E3BAC0003867B /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				D13029CB1F9A053D0081826A /* AppDelegate.swift */,
+				D19CAD901F9E33B20061949C /* Common */,
+				D19CAD8D1F9E33740061949C /* Extensions */,
+				D19CAD851F9E2FFE0061949C /* Networking */,
 				D19CAD771F9DF2170061949C /* Models */,
 				D19CAD781F9DF2220061949C /* ViewControllers */,
 				D13029CF1F9A053D0081826A /* Assets.xcassets */,
@@ -77,6 +92,7 @@
 			children = (
 				D19CAD751F9DED070061949C /* SidebarItem.swift */,
 				D19CAD811F9DFE730061949C /* Station.swift */,
+				D1DFD36F1F9E3BAC0003867B /* StationList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -89,6 +105,40 @@
 				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D19CAD851F9E2FFE0061949C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D19CAD861F9E301B0061949C /* NetworkManager.swift */,
+				D19CAD881F9E307C0061949C /* RequestManager.swift */,
+				D19CAD8A1F9E33260061949C /* Requests */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D19CAD8A1F9E33260061949C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				D19CAD8B1F9E33390061949C /* StationRequests.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		D19CAD8D1F9E33740061949C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D19CAD8E1F9E33920061949C /* URLRequest.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D19CAD901F9E33B20061949C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D19CAD911F9E33C20061949C /* Constants.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,11 +213,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
+				D19CAD921F9E33C20061949C /* Constants.swift in Sources */,
 				D19CAD821F9DFE730061949C /* Station.swift in Sources */,
 				D13029CC1F9A053D0081826A /* AppDelegate.swift in Sources */,
+				D19CAD891F9E307C0061949C /* RequestManager.swift in Sources */,
+				D19CAD871F9E301B0061949C /* NetworkManager.swift in Sources */,
+				D1DFD3701F9E3BAC0003867B /* StationList.swift in Sources */,
 				D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */,
+				D19CAD8C1F9E33390061949C /* StationRequests.swift in Sources */,
 				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
+				D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +351,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Railway/Railway.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
@@ -311,7 +366,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Railway/Railway.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
