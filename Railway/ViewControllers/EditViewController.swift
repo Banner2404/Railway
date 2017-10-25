@@ -19,6 +19,7 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     @objc
     dynamic var canGoBack = false
     weak var delegate: EditViewControllerDelegate?
+    var selectedType = SidebarItem.Section.stations
     
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
@@ -75,6 +76,13 @@ extension EditViewController {
 //MARK: - Private
 private extension EditViewController {
     
+    func controllerClass(for selectedType: SidebarItem.Section) -> BaseViewController.Type {
+        switch selectedType {
+        case .stations:
+            return EditStationViewController.self
+        }
+    }
+    
     func showTypesViewController() {
         let viewController = AddItemTypeViewController.loadFromStoryboard()
         show(viewController, inContainerView: containerView)
@@ -82,7 +90,8 @@ private extension EditViewController {
     }
     
     func showStationViewController() {
-        let viewController = EditStationViewController.loadFromStoryboard()
+        let viewControllerType = controllerClass(for: selectedType)
+        let viewController = viewControllerType.loadFromAdminStoryboard() as NSViewController
         move(from: childViewControllers.first!, to: viewController, inContainerView: containerView)
         push(viewController)
     }
