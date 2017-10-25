@@ -14,6 +14,11 @@ protocol EditViewControllerDelegate: class {
 
 protocol EditChildViewController: class {
     var helperMessage: String { get }
+    var delegate: EditChildViewControllerDelegate? { get set }
+}
+
+protocol EditChildViewControllerDelegate: class {
+    func setNextButton(enabled: Bool)
 }
 
 class EditViewController: NSViewController, BaseViewController, ContainerViewController {
@@ -22,6 +27,8 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     var navigationStack: [(NSViewController & EditChildViewController)] = []
     @objc
     dynamic var canGoBack = false
+    @objc
+    dynamic var canContinue = true
     @objc
     dynamic var helperMessage = ""
     weak var delegate: EditViewControllerDelegate?
@@ -79,6 +86,7 @@ extension EditViewController {
     }
     
     func goTo(_ viewController: (NSViewController & EditChildViewController)) {
+        viewController.delegate = self
         if let currentViewController = currentViewController {
             move(from: currentViewController, to: viewController, inContainerView: containerView)
         } else {
@@ -108,5 +116,13 @@ private extension EditViewController {
         let viewControllerType = controllerClass(for: selectedType)
         let viewController = viewControllerType.loadFromAdminStoryboard() as (NSViewController & EditChildViewController)
         goTo(viewController)
+    }
+}
+
+//MARK: - EditChildViewControllerDelegate
+extension EditViewController: EditChildViewControllerDelegate {
+    
+    func setNextButton(enabled: Bool) {
+        canContinue = enabled
     }
 }

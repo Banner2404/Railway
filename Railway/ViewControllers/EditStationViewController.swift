@@ -11,6 +11,8 @@ import Cocoa
 class EditStationViewController: NSViewController, BaseViewController, EditChildViewController {
     
     var helperMessage = "Setup new station:"
+    weak var delegate: EditChildViewControllerDelegate?
+    @IBOutlet weak var nameTextField: NSTextField!
     
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
@@ -18,7 +20,24 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        nameTextField.window?.makeFirstResponder(nameTextField)
+        validateTextField()
+    }
+    
+    private func validateTextField() {
+        delegate?.setNextButton(enabled: nameTextField.stringValue != "")
+    }
+}
+
+//MARK: - NSTextFieldDelegate
+extension EditStationViewController: NSTextFieldDelegate {
+    
+    override func controlTextDidChange(_ obj: Notification) {
+        validateTextField()
     }
     
 }

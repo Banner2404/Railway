@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -1037,6 +1036,7 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="nextButtonClick:" target="POL-Mt-ZxH" id="qCo-S4-EmP"/>
+                                    <binding destination="POL-Mt-ZxH" name="enabled" keyPath="self.canContinue" id="YNC-Gd-3cA"/>
                                 </connections>
                             </button>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="alP-Hg-MwB">
@@ -1156,7 +1156,7 @@ DQ
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WwP-Nz-CJK">
-                                <rect key="frame" x="18" y="226" width="44" height="17"/>
+                                <rect key="frame" x="18" y="263" width="44" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="75K-Vg-fYi">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1164,32 +1164,28 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zuc-Z5-Xk2">
-                                <rect key="frame" x="70" y="221" width="360" height="22"/>
+                                <rect key="frame" x="70" y="258" width="360" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VKe-e0-ExR">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UEo-Zi-XR3">
-                                <rect key="frame" x="188" y="263" width="75" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Add station" id="MjJ-pt-d3x">
-                                    <font key="font" metaFont="systemMedium" size="13"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="BdG-ME-zG9" id="0Oq-nq-hLJ"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="WwP-Nz-CJK" firstAttribute="leading" secondItem="ecb-g3-Cvy" secondAttribute="leading" constant="20" id="4HD-mp-xOa"/>
-                            <constraint firstItem="UEo-Zi-XR3" firstAttribute="centerX" secondItem="ecb-g3-Cvy" secondAttribute="centerX" id="9sk-NB-Sa1"/>
                             <constraint firstAttribute="trailing" secondItem="zuc-Z5-Xk2" secondAttribute="trailing" constant="20" id="Ejg-fp-hgs"/>
-                            <constraint firstItem="WwP-Nz-CJK" firstAttribute="top" secondItem="UEo-Zi-XR3" secondAttribute="bottom" constant="20" id="erp-0h-LDw"/>
-                            <constraint firstItem="UEo-Zi-XR3" firstAttribute="top" secondItem="ecb-g3-Cvy" secondAttribute="top" constant="20" id="gkI-OS-0mR"/>
+                            <constraint firstItem="WwP-Nz-CJK" firstAttribute="top" secondItem="ecb-g3-Cvy" secondAttribute="top" constant="20" id="HhV-49-b7y"/>
                             <constraint firstItem="zuc-Z5-Xk2" firstAttribute="top" secondItem="WwP-Nz-CJK" secondAttribute="top" id="uwO-ln-TFM"/>
                             <constraint firstItem="zuc-Z5-Xk2" firstAttribute="leading" secondItem="WwP-Nz-CJK" secondAttribute="trailing" constant="10" id="wMo-0B-LLa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="zuc-Z5-Xk2" id="xH0-z2-3K9"/>
+                    </connections>
                 </viewController>
                 <customObject id="ega-2g-Pv0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

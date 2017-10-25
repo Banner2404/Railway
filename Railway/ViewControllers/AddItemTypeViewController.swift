@@ -11,6 +11,7 @@ import Cocoa
 class AddItemTypeViewController: NSViewController, BaseViewController, EditChildViewController {
 
     var helperMessage = "Select what would you like to add:"
+    weak var delegate: EditChildViewControllerDelegate?
     
     let TypeCollectionViewItemIdentifier = NSUserInterfaceItemIdentifier(rawValue: "TypeCollectionViewItem")
     @IBOutlet weak var collectionView: NSCollectionView!
@@ -24,6 +25,11 @@ class AddItemTypeViewController: NSViewController, BaseViewController, EditChild
         collectionView.register(TypeCollectionViewItem.self, forItemWithIdentifier: TypeCollectionViewItemIdentifier)
         setupArrayController()
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        delegate?.setNextButton(enabled: true)
     }
     
 }
