@@ -1084,6 +1084,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="containerView" destination="alP-Hg-MwB" id="ZCC-GM-fIy"/>
+                        <outlet property="nextButton" destination="fQd-ho-Kgk" id="jDl-JR-kDS"/>
                     </connections>
                 </viewController>
                 <customObject id="2Qy-Ym-5yf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

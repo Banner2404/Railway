@@ -32,8 +32,9 @@ class AddItemTypeViewController: NSViewController, BaseViewController, EditChild
         delegate?.setNextButton(enabled: true, sender: self)
     }
     
-    func continueButtonClick(completion: @escaping () -> Void) {
-        completion()
+    func continueButtonClick(completion: @escaping (Any?) -> Void) {
+        let sections = arrayController.content as! [SidebarItem]
+        completion(sections[collectionView.selectionIndexes.first!].section)
     }
 }
 

@@ -15,7 +15,7 @@ protocol EditViewControllerDelegate: class {
 protocol EditChildViewController: class {
     var helperMessage: String { get }
     var delegate: EditChildViewControllerDelegate? { get set }
-    func continueButtonClick(completion: @escaping () -> Void)
+    func continueButtonClick(completion: @escaping (Any?) -> Void)
 }
 
 protocol EditChildViewControllerDelegate: class {
@@ -24,7 +24,35 @@ protocol EditChildViewControllerDelegate: class {
 
 class EditViewController: NSViewController, BaseViewController, ContainerViewController {
 
+    enum State {
+        case typeSelecting
+        case typeSelected(SidebarItem.Section)
+        
+        var rawValue: Int {
+            switch self {
+            case .typeSelecting:
+                return 0
+            case .typeSelected(_):
+                return 1
+            }
+        }
+        
+        static func == (lhs: State, rhs: State) -> Bool {
+            return lhs.rawValue == rhs.rawValue
+        }
+        
+        var selectedType: SidebarItem.Section? {
+            switch self {
+            case .typeSelected(let type):
+                return type
+            default:
+                return nil
+            }
+        }
+    }
+    
     @IBOutlet weak var containerView: NSView!
+    @IBOutlet weak var nextButton: NSButton!
     var navigationStack: [(NSViewController & EditChildViewController)] = []
     @objc
     dynamic var canGoBack = false
@@ -33,7 +61,12 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     @objc
     dynamic var helperMessage = ""
     weak var delegate: EditViewControllerDelegate?
-    var selectedType = SidebarItem.Section.stations
+    var state = State.typeSelecting {
+        didSet {
+            if oldValue == state { return }
+            setup(state)
+        }
+    }
     
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
@@ -43,6 +76,7 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
         super.viewDidLoad()
         showTypesViewController()
         setupContainerView()
+        setup(state)
     }
     
     @IBAction func cancenButtonClick(_ sender: Any) {
@@ -50,8 +84,9 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     }
     
     @IBAction func nextButtonClick(_ sender: Any) {
-        currentViewController?.continueButtonClick(completion: { [weak self] in
+        currentViewController?.continueButtonClick(completion: { [weak self] object in
             if self?.currentViewController is AddItemTypeViewController {
+                self?.state = .typeSelected(object as! SidebarItem.Section)
                 self?.showStationViewController()
             } else {
                 self?.delegate?.editViewControllerDidCancel(self!)
@@ -61,11 +96,23 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     
     @IBAction func previousButtonClick(_ sender: Any) {
         goBack()
+        if currentViewController is AddItemTypeViewController {
+            state = .typeSelecting
+        }
     }
 }
 
 //MARK: - Navigation
 extension EditViewController {
+    
+    func setup(_ state: State) {
+        switch state {
+        case .typeSelecting:
+            nextButton.title = "Next"
+        case .typeSelected(_):
+            nextButton.title = "Create"
+        }
+    }
     
     var currentViewController: (NSViewController & EditChildViewController)? {
         return navigationStack.last
@@ -128,6 +175,7 @@ private extension EditViewController {
     }
     
     func showStationViewController() {
+        guard let selectedType = state.selectedType else { return }
         let viewControllerType = controllerClass(for: selectedType)
         let viewController = viewControllerType.loadFromAdminStoryboard() as (NSViewController & EditChildViewController)
         goTo(viewController)

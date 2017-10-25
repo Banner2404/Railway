@@ -32,8 +32,8 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
         delegate?.setNextButton(enabled: nameTextField.stringValue != "", sender: self)
     }
     
-    func continueButtonClick(completion: @escaping () -> Void) {
-        completion()
+    func continueButtonClick(completion: @escaping (Any?) -> Void) {
+        completion(nil)
     }
 }
 
