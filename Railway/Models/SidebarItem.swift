@@ -19,4 +19,16 @@ class SidebarItem: NSObject {
         self.title = title
         self.image = image
     }
+    
+    static var defaultItems: [SidebarItem] {
+        return [
+            SidebarItem(title: "Tickets", image: #imageLiteral(resourceName: "testIcon")),
+            SidebarItem(title: "Stations", image: #imageLiteral(resourceName: "testIcon")),
+            SidebarItem(title: "Trains", image: #imageLiteral(resourceName: "testIcon")),
+            SidebarItem(title: "Passengers", image: #imageLiteral(resourceName: "testIcon")),
+            SidebarItem(title: "Users", image: #imageLiteral(resourceName: "testIcon")),
+            SidebarItem(title: "Logs", image: #imageLiteral(resourceName: "testIcon")),
+            SidebarItem(title: "Routes", image: #imageLiteral(resourceName: "testIcon")),
+        ]
+    }
 }

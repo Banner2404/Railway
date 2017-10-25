@@ -22,13 +22,6 @@ class StationsViewController: NSViewController, BaseViewController {
         loadStations()
     }
     
-    @objc
-    func sortDescriptors() -> [NSSortDescriptor] {
-        return [
-            NSSortDescriptor(key: "id", ascending: true),
-        ]
-    }
-    
 }
 
 //MARK: - Private
@@ -54,12 +47,17 @@ private extension StationsViewController {
             ]
         stationsArrayController.content = items
     }
+    
+    func showAddStationViewController() {
+        let viewController = EditStationViewController.loadFromStoryboard()
+        presentViewControllerAsSheet(viewController)
+    }
 }
 
 //MARK: - AdminChildViewController
 extension StationsViewController: AdminChildViewController {
     func addButtonClick() {
-        print("Click handled")
+        showAddStationViewController()
     }
     
 }
