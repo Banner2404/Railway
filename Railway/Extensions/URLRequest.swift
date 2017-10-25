@@ -10,11 +10,11 @@ import Foundation
 
 extension URLRequest {
     
-    init(withUrl url: URL, httpMethod: String = "GET", body: [String: Any]? = nil) {
+    init(withUrl url: URL, httpMethod: String = "GET", body: Data? = nil) {
         self.init(url: url)
         self.httpMethod = httpMethod
         if let body = body {
-            self.httpBody = try? JSONSerialization.data(withJSONObject: body)
+            self.httpBody = body
             self.addValue("application/json", forHTTPHeaderField: "Content-Type")
         }
     }
@@ -23,11 +23,11 @@ extension URLRequest {
         return URLRequest(withUrl: url, httpMethod: "GET")
     }
     
-    static func postRequest(withUrl url: URL, body: [String: Any]?) -> URLRequest {
+    static func postRequest(withUrl url: URL, body: Data?) -> URLRequest {
         return URLRequest(withUrl: url, httpMethod: "POST", body: body)
     }
     
-    static func putRequest(withUrl url: URL, body: [String: Any]?) -> URLRequest {
+    static func putRequest(withUrl url: URL, body: Data?) -> URLRequest {
         return URLRequest(withUrl: url, httpMethod: "PUT", body: body)
     }
     

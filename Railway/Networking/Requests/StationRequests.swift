@@ -15,4 +15,11 @@ class StationRequests {
         url.appendPathComponent(ApiPath.Stations)
         return URLRequest.getRequest(withUrl: url)
     }
+    
+    static func create(_ station: Station) -> URLRequest {
+        var url = URL(string: ApiURL.Host)!
+        url.appendPathComponent(ApiPath.Stations)
+        let body = try? JSONEncoder().encode(station)
+        return URLRequest.postRequest(withUrl: url, body: body)
+    }
 }

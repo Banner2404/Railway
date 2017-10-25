@@ -17,6 +17,11 @@ class RequestManager {
         let request = StationRequests.getStations()
         perform(request: request, withResponseType: StationList.self, completion: completion)
     }
+    
+    func create(_ station: Station, completion: @escaping (_ success: Bool, _ stations: Station?, _ error: Error?) -> ()) {
+        let request = StationRequests.create(station)
+        perform(request: request, withResponseType: Station.self, completion: completion)
+    }
 }
 
 //MARK: - Private

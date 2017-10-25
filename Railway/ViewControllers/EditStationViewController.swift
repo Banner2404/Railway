@@ -28,12 +28,26 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
         validateTextField()
     }
     
-    private func validateTextField() {
+    func continueButtonClick(completion: @escaping (Any?) -> Void) {
+        createStation(completion: completion)
+    }
+}
+
+//MARK: - Private
+private extension EditStationViewController {
+    
+    func validateTextField() {
         delegate?.setNextButton(enabled: nameTextField.stringValue != "", sender: self)
     }
     
-    func continueButtonClick(completion: @escaping (Any?) -> Void) {
-        completion(nil)
+    func createStation(completion: @escaping (Any?) -> Void) {
+        let name = nameTextField.stringValue
+        let station = Station(name: name, id: 0)
+        requestManager.create(station) { (success, station, error) in
+            defer {
+                completion(nil)
+            }
+        }
     }
 }
 
