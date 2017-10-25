@@ -8,9 +8,18 @@
 
 import Cocoa
 
+protocol EditViewControllerDelegate: class {
+    func editViewControllerDidCancel(_ editViewController: EditViewController)
+}
+
 class EditViewController: NSViewController, BaseViewController, ContainerViewController {
 
     @IBOutlet weak var containerView: NSView!
+    @objc
+    var canGoBack: Bool {
+        return !(childViewControllers.first is EditViewController)
+    }
+    weak var delegate: EditViewControllerDelegate?
     
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
@@ -21,6 +30,9 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
         showTypesViewController()
     }
     
+    @IBAction func cancenButtonClick(_ sender: Any) {
+        delegate?.editViewControllerDidCancel(self)
+    }
 }
 
 //MARK: - Private

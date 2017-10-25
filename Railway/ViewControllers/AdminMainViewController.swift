@@ -8,15 +8,10 @@
 
 import Cocoa
 
-protocol AdminChildViewController {
-    func addButtonClick()
-}
-
 class AdminMainViewController: NSViewController, ContainerViewController {
 
     @IBOutlet var sideBarArrayController: NSArrayController!
     @IBOutlet weak var containerView: NSView!
-    var contentController: AdminChildViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +20,7 @@ class AdminMainViewController: NSViewController, ContainerViewController {
     }
     
     func addButtonClick() {
-        contentController?.addButtonClick()
+        showEditViewController()
     }
 }
 
@@ -35,10 +30,24 @@ private extension AdminMainViewController {
     func showStationsViewController() {
         let viewController = StationsViewController.loadFromStoryboard()
         show(viewController, inContainerView: containerView)
-        contentController = viewController
     }
     
     func setupSidebar() {
         sideBarArrayController.content = SidebarItem.defaultItems
     }
+    
+    func showEditViewController() {
+        let viewController = EditViewController.loadFromStoryboard()
+        viewController.delegate = self
+        presentViewControllerAsSheet(viewController)
+    }
+}
+
+//MARK: - EditViewControllerDelegate
+extension AdminMainViewController: EditViewControllerDelegate {
+    
+    func editViewControllerDidCancel(_ editViewController: EditViewController) {
+        dismissViewController(editViewController)
+    }
+    
 }

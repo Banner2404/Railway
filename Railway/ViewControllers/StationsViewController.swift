@@ -47,17 +47,4 @@ private extension StationsViewController {
             ]
         stationsArrayController.content = items
     }
-    
-    func showAddStationViewController() {
-        let viewController = EditViewController.loadFromStoryboard()
-        presentViewControllerAsSheet(viewController)
-    }
-}
-
-//MARK: - AdminChildViewController
-extension StationsViewController: AdminChildViewController {
-    func addButtonClick() {
-        showAddStationViewController()
-    }
-    
 }

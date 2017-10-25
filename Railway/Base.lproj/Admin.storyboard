@@ -1018,13 +1018,16 @@
 Gw
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="cancenButtonClick:" target="POL-Mt-ZxH" id="R4h-vV-5Z2"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQd-ho-Kgk">
                                 <rect key="frame" x="504" y="13" width="82" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="vca-r8-95U"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7bV-RA-8wt">
+                                <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7bV-RA-8wt">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -1035,16 +1038,32 @@ DQ
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="alP-Hg-MwB">
                                 <rect key="frame" x="20" y="61" width="560" height="319"/>
                             </containerView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7JH-xr-qB0">
+                                <rect key="frame" x="413" y="13" width="93" height="32"/>
+                                <buttonCell key="cell" type="push" title="Previous" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w4o-TO-9EM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="POL-Mt-ZxH" name="enabled" keyPath="self.canGoBack" id="SdG-Yz-XPW">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="alP-Hg-MwB" secondAttribute="trailing" constant="20" id="K5k-EE-uJh"/>
-                            <constraint firstItem="fQd-ho-Kgk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JRw-nh-MEd" secondAttribute="trailing" constant="20" id="Nlk-fE-dQ8"/>
                             <constraint firstAttribute="trailing" secondItem="fQd-ho-Kgk" secondAttribute="trailing" constant="20" id="dH9-2m-r1I"/>
+                            <constraint firstItem="7JH-xr-qB0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JRw-nh-MEd" secondAttribute="trailing" constant="20" id="fk9-3f-oKx"/>
                             <constraint firstAttribute="bottom" secondItem="JRw-nh-MEd" secondAttribute="bottom" constant="20" id="iBa-WM-Mza"/>
                             <constraint firstItem="JRw-nh-MEd" firstAttribute="leading" secondItem="yFw-73-Vhk" secondAttribute="leading" constant="20" id="lvy-UV-eqB"/>
                             <constraint firstAttribute="bottom" secondItem="fQd-ho-Kgk" secondAttribute="bottom" constant="20" id="mfd-62-euw"/>
                             <constraint firstItem="alP-Hg-MwB" firstAttribute="leading" secondItem="yFw-73-Vhk" secondAttribute="leading" constant="20" id="oEz-rB-pKa"/>
+                            <constraint firstItem="fQd-ho-Kgk" firstAttribute="leading" secondItem="7JH-xr-qB0" secondAttribute="trailing" constant="10" id="pxF-bi-Pfc"/>
                             <constraint firstItem="JRw-nh-MEd" firstAttribute="top" secondItem="alP-Hg-MwB" secondAttribute="bottom" constant="20" id="qUg-fg-uXU"/>
+                            <constraint firstAttribute="bottom" secondItem="7JH-xr-qB0" secondAttribute="bottom" constant="20" id="st9-yG-qU3"/>
                             <constraint firstItem="alP-Hg-MwB" firstAttribute="top" secondItem="yFw-73-Vhk" secondAttribute="top" constant="20" id="ufB-k6-onZ"/>
                         </constraints>
                     </view>
