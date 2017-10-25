@@ -10,6 +10,7 @@
 		D13029CC1F9A053D0081826A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13029CB1F9A053D0081826A /* AppDelegate.swift */; };
 		D13029D01F9A053D0081826A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13029CF1F9A053D0081826A /* Assets.xcassets */; };
 		D13029D31F9A053D0081826A /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13029D11F9A053D0081826A /* Admin.storyboard */; };
+		D14823731FA0A9AE002AE484 /* EditStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14823721FA0A9AE002AE484 /* EditStationViewController.swift */; };
 		D17B62F81FA075C500450052 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62F71FA075C500450052 /* EditViewController.swift */; };
 		D17B62FA1FA07D3700450052 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62F91FA07D3700450052 /* ContainerViewController.swift */; };
 		D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */; };
@@ -36,6 +37,7 @@
 		D13029D21F9A053D0081826A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Admin.storyboard; sourceTree = "<group>"; };
 		D13029D41F9A053D0081826A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13029D51F9A053D0081826A /* Railway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Railway.entitlements; sourceTree = "<group>"; };
+		D14823721FA0A9AE002AE484 /* EditStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStationViewController.swift; sourceTree = "<group>"; };
 		D17B62F71FA075C500450052 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		D17B62F91FA07D3700450052 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTypeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
 				D17B62F71FA075C500450052 /* EditViewController.swift */,
 				D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */,
+				D14823721FA0A9AE002AE484 /* EditStationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				D1DFD3701F9E3BAC0003867B /* StationList.swift in Sources */,
 				D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */,
 				D19CAD8C1F9E33390061949C /* StationRequests.swift in Sources */,
+				D14823731FA0A9AE002AE484 /* EditStationViewController.swift in Sources */,
 				D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */,
 				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,

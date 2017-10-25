@@ -15,10 +15,9 @@ protocol EditViewControllerDelegate: class {
 class EditViewController: NSViewController, BaseViewController, ContainerViewController {
 
     @IBOutlet weak var containerView: NSView!
+    var navigationStack: [NSViewController] = []
     @objc
-    var canGoBack: Bool {
-        return !(childViewControllers.first is EditViewController)
-    }
+    dynamic var canGoBack = false
     weak var delegate: EditViewControllerDelegate?
     
     class func loadFromStoryboard() -> Self {
@@ -33,6 +32,44 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     @IBAction func cancenButtonClick(_ sender: Any) {
         delegate?.editViewControllerDidCancel(self)
     }
+    
+    @IBAction func nextButtonClick(_ sender: Any) {
+        showStationViewController()
+    }
+    
+    @IBAction func previousButtonClick(_ sender: Any) {
+        goBack()
+    }
+}
+
+//MARK: - Navigation
+extension EditViewController {
+    
+    var currentViewController: NSViewController? {
+        return navigationStack.last
+    }
+    
+    func setCanGoBack() {
+        canGoBack = navigationStack.count > 1
+    }
+    
+    func push(_ viewController: NSViewController) {
+        navigationStack.append(viewController)
+        setCanGoBack()
+    }
+    
+    func pop() -> NSViewController? {
+        let vc = navigationStack.popLast()
+        setCanGoBack()
+        return vc
+    }
+    
+    func goBack() {
+        if !canGoBack { return }
+        let oldViewController = pop()!
+        let newViewController = currentViewController!
+        move(from: oldViewController, to: newViewController, inContainerView: containerView)
+    }
 }
 
 //MARK: - Private
@@ -41,5 +78,12 @@ private extension EditViewController {
     func showTypesViewController() {
         let viewController = AddItemTypeViewController.loadFromStoryboard()
         show(viewController, inContainerView: containerView)
+        push(viewController)
+    }
+    
+    func showStationViewController() {
+        let viewController = EditStationViewController.loadFromStoryboard()
+        move(from: childViewControllers.first!, to: viewController, inContainerView: containerView)
+        push(viewController)
     }
 }

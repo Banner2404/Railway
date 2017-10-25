@@ -1034,6 +1034,9 @@ Gw
 DQ
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="nextButtonClick:" target="POL-Mt-ZxH" id="qCo-S4-EmP"/>
+                                </connections>
                             </button>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="alP-Hg-MwB">
                                 <rect key="frame" x="20" y="61" width="560" height="319"/>
@@ -1045,11 +1048,8 @@ DQ
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="POL-Mt-ZxH" name="enabled" keyPath="self.canGoBack" id="SdG-Yz-XPW">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
+                                    <action selector="previousButtonClick:" target="POL-Mt-ZxH" id="8AU-wI-GsH"/>
+                                    <binding destination="POL-Mt-ZxH" name="enabled" keyPath="self.canGoBack" id="kzs-Xb-kRj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1130,6 +1130,33 @@ DQ
                 <arrayController selectsInsertedObjects="NO" clearsFilterPredicateOnInsertion="NO" id="IbI-mC-DEd"/>
             </objects>
             <point key="canvasLocation" x="734" y="2123"/>
+        </scene>
+        <!--Edit Station View Controller-->
+        <scene sceneID="weB-lq-Iwt">
+            <objects>
+                <viewController storyboardIdentifier="EditStationViewController" id="BdG-ME-zG9" customClass="EditStationViewController" customModule="Railway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ecb-g3-Cvy">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-XH-Nkg">
+                                <rect key="frame" x="189" y="141" width="73" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edit station" id="mpz-jY-PuX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="S7e-XH-Nkg" firstAttribute="centerX" secondItem="ecb-g3-Cvy" secondAttribute="centerX" id="ycz-27-fc8"/>
+                            <constraint firstItem="S7e-XH-Nkg" firstAttribute="centerY" secondItem="ecb-g3-Cvy" secondAttribute="centerY" id="z51-UE-AcE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="ega-2g-Pv0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="2496"/>
         </scene>
     </scenes>
     <resources>
