@@ -16,8 +16,10 @@ class TypeCollectionViewItem: NSCollectionViewItem {
         view.layer?.backgroundColor = NSColor.green.cgColor
     }
     
-    func setHighlight(selected: Bool) {
-        view.layer?.backgroundColor = selected ? NSColor.red.cgColor : NSColor.green.cgColor
+    override var isSelected: Bool {
+        didSet {
+            view.layer?.backgroundColor = isSelected ? NSColor.red.cgColor : NSColor.green.cgColor
+        }
     }
     
 }

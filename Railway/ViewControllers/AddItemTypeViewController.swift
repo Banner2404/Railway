@@ -20,8 +20,8 @@ class AddItemTypeViewController: NSViewController, BaseViewController {
     
     override func viewDidLoad() {
         collectionView.register(TypeCollectionViewItem.self, forItemWithIdentifier: TypeCollectionViewItemIdentifier)
-        super.viewDidLoad()
         setupArrayController()
+        super.viewDidLoad()
     }
     
 }
