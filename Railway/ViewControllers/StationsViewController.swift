@@ -49,7 +49,7 @@ private extension StationsViewController {
     }
     
     func showAddStationViewController() {
-        let viewController = EditStationViewController.loadFromStoryboard()
+        let viewController = EditViewController.loadFromStoryboard()
         presentViewControllerAsSheet(viewController)
     }
 }

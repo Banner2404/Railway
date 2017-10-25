@@ -11,6 +11,10 @@
 		D13029D01F9A053D0081826A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13029CF1F9A053D0081826A /* Assets.xcassets */; };
 		D13029D31F9A053D0081826A /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13029D11F9A053D0081826A /* Admin.storyboard */; };
 		D17B62F81FA075C500450052 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62F71FA075C500450052 /* EditViewController.swift */; };
+		D17B62FA1FA07D3700450052 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62F91FA07D3700450052 /* ContainerViewController.swift */; };
+		D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */; };
+		D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B63051FA085BD00450052 /* TypeCollectionViewItem.swift */; };
+		D17B63081FA085BD00450052 /* TypeCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */; };
 		D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */; };
 		D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD751F9DED070061949C /* SidebarItem.swift */; };
 		D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */; };
@@ -33,6 +37,10 @@
 		D13029D41F9A053D0081826A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13029D51F9A053D0081826A /* Railway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Railway.entitlements; sourceTree = "<group>"; };
 		D17B62F71FA075C500450052 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		D17B62F91FA07D3700450052 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTypeViewController.swift; sourceTree = "<group>"; };
+		D17B63051FA085BD00450052 /* TypeCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewItem.swift; sourceTree = "<group>"; };
+		D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCollectionViewItem.xib; sourceTree = "<group>"; };
 		D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainViewController.swift; sourceTree = "<group>"; };
 		D19CAD751F9DED070061949C /* SidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItem.swift; sourceTree = "<group>"; };
 		D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
@@ -84,12 +92,22 @@
 				D19CAD851F9E2FFE0061949C /* Networking */,
 				D19CAD771F9DF2170061949C /* Models */,
 				D19CAD781F9DF2220061949C /* ViewControllers */,
+				D17B62FE1FA07F9100450052 /* Cells */,
 				D13029CF1F9A053D0081826A /* Assets.xcassets */,
 				D13029D11F9A053D0081826A /* Admin.storyboard */,
 				D13029D41F9A053D0081826A /* Info.plist */,
 				D13029D51F9A053D0081826A /* Railway.entitlements */,
 			);
 			path = Railway;
+			sourceTree = "<group>";
+		};
+		D17B62FE1FA07F9100450052 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D17B63051FA085BD00450052 /* TypeCollectionViewItem.swift */,
+				D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D19CAD771F9DF2170061949C /* Models */ = {
@@ -106,9 +124,11 @@
 			isa = PBXGroup;
 			children = (
 				D19CAD831F9DFFFA0061949C /* BaseViewController.swift */,
+				D17B62F91FA07D3700450052 /* ContainerViewController.swift */,
 				D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */,
 				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
 				D17B62F71FA075C500450052 /* EditViewController.swift */,
+				D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -206,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17B63081FA085BD00450052 /* TypeCollectionViewItem.xib in Resources */,
 				D13029D01F9A053D0081826A /* Assets.xcassets in Resources */,
 				D13029D31F9A053D0081826A /* Admin.storyboard in Resources */,
 			);
@@ -221,14 +242,17 @@
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
 				D19CAD921F9E33C20061949C /* Constants.swift in Sources */,
 				D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */,
+				D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */,
 				D19CAD821F9DFE730061949C /* Station.swift in Sources */,
 				D13029CC1F9A053D0081826A /* AppDelegate.swift in Sources */,
 				D17B62F81FA075C500450052 /* EditViewController.swift in Sources */,
 				D19CAD891F9E307C0061949C /* RequestManager.swift in Sources */,
+				D17B62FA1FA07D3700450052 /* ContainerViewController.swift in Sources */,
 				D19CAD871F9E301B0061949C /* NetworkManager.swift in Sources */,
 				D1DFD3701F9E3BAC0003867B /* StationList.swift in Sources */,
 				D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */,
 				D19CAD8C1F9E33390061949C /* StationRequests.swift in Sources */,
+				D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */,
 				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
 				D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */,
