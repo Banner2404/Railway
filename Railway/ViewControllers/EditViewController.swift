@@ -12,12 +12,18 @@ protocol EditViewControllerDelegate: class {
     func editViewControllerDidCancel(_ editViewController: EditViewController)
 }
 
+protocol EditChildViewController: class {
+    var helperMessage: String { get }
+}
+
 class EditViewController: NSViewController, BaseViewController, ContainerViewController {
 
     @IBOutlet weak var containerView: NSView!
-    var navigationStack: [NSViewController] = []
+    var navigationStack: [(NSViewController & EditChildViewController)] = []
     @objc
     dynamic var canGoBack = false
+    @objc
+    dynamic var helperMessage = ""
     weak var delegate: EditViewControllerDelegate?
     var selectedType = SidebarItem.Section.stations
     
@@ -46,7 +52,7 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
 //MARK: - Navigation
 extension EditViewController {
     
-    var currentViewController: NSViewController? {
+    var currentViewController: (NSViewController & EditChildViewController)? {
         return navigationStack.last
     }
     
@@ -54,12 +60,12 @@ extension EditViewController {
         canGoBack = navigationStack.count > 1
     }
     
-    func push(_ viewController: NSViewController) {
+    func push(_ viewController: (NSViewController & EditChildViewController)) {
         navigationStack.append(viewController)
         setCanGoBack()
     }
     
-    func pop() -> NSViewController? {
+    func pop() -> (NSViewController & EditChildViewController)? {
         let vc = navigationStack.popLast()
         setCanGoBack()
         return vc
@@ -70,6 +76,16 @@ extension EditViewController {
         let oldViewController = pop()!
         let newViewController = currentViewController!
         move(from: oldViewController, to: newViewController, inContainerView: containerView)
+    }
+    
+    func goTo(_ viewController: (NSViewController & EditChildViewController)) {
+        if let currentViewController = currentViewController {
+            move(from: currentViewController, to: viewController, inContainerView: containerView)
+        } else {
+            show(viewController, inContainerView: containerView)
+        }
+        push(viewController)
+        helperMessage = viewController.helperMessage
     }
 }
 
@@ -85,14 +101,12 @@ private extension EditViewController {
     
     func showTypesViewController() {
         let viewController = AddItemTypeViewController.loadFromStoryboard()
-        show(viewController, inContainerView: containerView)
-        push(viewController)
+        goTo(viewController)
     }
     
     func showStationViewController() {
         let viewControllerType = controllerClass(for: selectedType)
-        let viewController = viewControllerType.loadFromAdminStoryboard() as NSViewController
-        move(from: childViewControllers.first!, to: viewController, inContainerView: containerView)
-        push(viewController)
+        let viewController = viewControllerType.loadFromAdminStoryboard() as (NSViewController & EditChildViewController)
+        goTo(viewController)
     }
 }

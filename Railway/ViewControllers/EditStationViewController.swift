@@ -8,8 +8,10 @@
 
 import Cocoa
 
-class EditStationViewController: NSViewController, BaseViewController {
-
+class EditStationViewController: NSViewController, BaseViewController, EditChildViewController {
+    
+    var helperMessage = "Setup new station:"
+    
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
     }

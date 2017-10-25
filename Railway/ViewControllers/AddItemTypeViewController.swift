@@ -8,8 +8,10 @@
 
 import Cocoa
 
-class AddItemTypeViewController: NSViewController, BaseViewController {
+class AddItemTypeViewController: NSViewController, BaseViewController, EditChildViewController {
 
+    var helperMessage = "Select what would you like to add:"
+    
     let TypeCollectionViewItemIdentifier = NSUserInterfaceItemIdentifier(rawValue: "TypeCollectionViewItem")
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet var arrayController: NSArrayController!
