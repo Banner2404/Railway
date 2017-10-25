@@ -15,10 +15,11 @@ protocol EditViewControllerDelegate: class {
 protocol EditChildViewController: class {
     var helperMessage: String { get }
     var delegate: EditChildViewControllerDelegate? { get set }
+    func continueButtonClick(completion: @escaping () -> Void)
 }
 
 protocol EditChildViewControllerDelegate: class {
-    func setNextButton(enabled: Bool)
+    func setNextButton(enabled: Bool, sender: EditChildViewController)
 }
 
 class EditViewController: NSViewController, BaseViewController, ContainerViewController {
@@ -41,6 +42,7 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         showTypesViewController()
+        setupContainerView()
     }
     
     @IBAction func cancenButtonClick(_ sender: Any) {
@@ -48,7 +50,13 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     }
     
     @IBAction func nextButtonClick(_ sender: Any) {
-        showStationViewController()
+        currentViewController?.continueButtonClick(completion: { [weak self] in
+            if self?.currentViewController is AddItemTypeViewController {
+                self?.showStationViewController()
+            } else {
+                self?.delegate?.editViewControllerDidCancel(self!)
+            }
+        })
     }
     
     @IBAction func previousButtonClick(_ sender: Any) {
@@ -100,6 +108,13 @@ extension EditViewController {
 //MARK: - Private
 private extension EditViewController {
     
+    func setupContainerView() {
+        containerView.wantsLayer = true
+        containerView.layer?.backgroundColor = NSColor.white.cgColor
+        containerView.layer?.borderWidth = 1.0
+        containerView.layer?.borderColor = NSColor.lightGray.cgColor
+    }
+    
     func controllerClass(for selectedType: SidebarItem.Section) -> BaseViewController.Type {
         switch selectedType {
         case .stations:
@@ -121,8 +136,8 @@ private extension EditViewController {
 
 //MARK: - EditChildViewControllerDelegate
 extension EditViewController: EditChildViewControllerDelegate {
-    
-    func setNextButton(enabled: Bool) {
+
+    func setNextButton(enabled: Bool, sender: EditChildViewController) {
         canContinue = enabled
     }
 }

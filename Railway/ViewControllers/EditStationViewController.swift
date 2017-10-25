@@ -29,7 +29,11 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
     }
     
     private func validateTextField() {
-        delegate?.setNextButton(enabled: nameTextField.stringValue != "")
+        delegate?.setNextButton(enabled: nameTextField.stringValue != "", sender: self)
+    }
+    
+    func continueButtonClick(completion: @escaping () -> Void) {
+        completion()
     }
 }
 

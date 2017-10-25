@@ -29,9 +29,12 @@ class AddItemTypeViewController: NSViewController, BaseViewController, EditChild
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        delegate?.setNextButton(enabled: true)
+        delegate?.setNextButton(enabled: true, sender: self)
     }
     
+    func continueButtonClick(completion: @escaping () -> Void) {
+        completion()
+    }
 }
 
 //MARK: - Private
