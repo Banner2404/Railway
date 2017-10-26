@@ -87,7 +87,7 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
         currentViewController?.continueButtonClick(completion: { [weak self] object in
             if self?.currentViewController is AddItemTypeViewController {
                 self?.state = .typeSelected(object as! SidebarItem.Section)
-                self?.showStationViewController()
+                self?.showChildViewController()
             } else {
                 self?.delegate?.editViewControllerDidCancel(self!)
             }
@@ -174,7 +174,7 @@ private extension EditViewController {
         goTo(viewController)
     }
     
-    func showStationViewController() {
+    func showChildViewController() {
         guard let selectedType = state.selectedType else { return }
         let viewControllerType = controllerClass(for: selectedType)
         let viewController = viewControllerType.loadFromAdminStoryboard() as (NSViewController & EditChildViewController)
