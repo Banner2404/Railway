@@ -12,6 +12,7 @@ class NetworkManager {
     
     func perform(request: URLRequest, completion: @escaping (_ success: Bool, _ data: Data?, _ error: Error?) -> Void) {
         let session = URLSession.shared
+        print(request)
         session.dataTask(with: request) { data, response, error in
             var success = false
             var resultData: Data? = data
@@ -28,7 +29,5 @@ class NetworkManager {
                 success = true
             }
         }.resume()
-        
     }
-    
 }

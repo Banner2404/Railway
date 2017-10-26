@@ -9,6 +9,7 @@
 import Cocoa
 
 protocol AdminChildViewController: class {
+    func reloadData()
 }
 
 class AdminMainViewController: NSViewController, ContainerViewController {
@@ -75,6 +76,7 @@ extension AdminMainViewController: EditViewControllerDelegate {
     
     func editViewControllerDidCancel(_ editViewController: EditViewController) {
         dismissViewController(editViewController)
+        currentChildViewController?.reloadData()
     }
     
 }

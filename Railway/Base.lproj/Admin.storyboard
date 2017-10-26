@@ -972,9 +972,9 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
-                                                <action selector="tableViewSelectionChanged:" target="h19-uw-wuT" id="148-lB-3JC"/>
                                                 <binding destination="YnO-bw-59H" name="content" keyPath="arrangedObjects" id="pMD-qz-GRN"/>
                                                 <binding destination="YnO-bw-59H" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="pMD-qz-GRN" id="KQ9-Td-EKW"/>
+                                                <outlet property="delegate" destination="h19-uw-wuT" id="9Q5-2I-Yyt"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
@@ -1002,10 +1002,11 @@
                     </view>
                     <connections>
                         <outlet property="stationsArrayController" destination="YnO-bw-59H" id="4SI-Hz-9ul"/>
+                        <outlet property="tableView" destination="7AG-C3-pMN" id="fdt-6K-FBN"/>
                     </connections>
                 </viewController>
                 <customObject id="HRD-0e-FUV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <arrayController avoidsEmptySelection="NO" id="YnO-bw-59H"/>
+                <arrayController selectsInsertedObjects="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" id="YnO-bw-59H"/>
             </objects>
             <point key="canvasLocation" x="70" y="1672.5"/>
         </scene>
@@ -1114,7 +1115,7 @@ DQ
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zr0-4j-H38">
                                 <rect key="frame" x="0.0" y="0.0" width="650" height="443"/>
                                 <clipView key="contentView" id="0Pt-S6-7FY">
-                                    <rect key="frame" x="1" y="23" width="648" height="419"/>
+                                    <rect key="frame" x="1" y="0.0" width="648" height="442"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="MBf-9K-OAz" viewBased="YES" id="u4r-H9-hFG">

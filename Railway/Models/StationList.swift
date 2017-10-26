@@ -9,5 +9,15 @@
 import Foundation
 
 class StationList: Codable {
+    
+    class Meta: Codable {
+        let totalCount: Int
+        
+        enum CodingKeys: String, CodingKey {
+            case totalCount = "quantity"
+        }
+    }
+    
+    let meta: Meta
     let stations: [Station]
 }

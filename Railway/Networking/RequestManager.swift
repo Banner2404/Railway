@@ -13,8 +13,8 @@ class RequestManager {
     let networkManager = NetworkManager()
     static let shared = RequestManager()
     
-    func loadStations(completion: @escaping (_ success: Bool, _ stations: StationList?, _ error: Error?) -> ()) {
-        let request = StationRequests.getStations()
+    func loadStations(page: Int, limit: Int, completion: @escaping (_ success: Bool, _ stations: StationList?, _ error: Error?) -> ()) {
+        let request = StationRequests.getStations(page: page, limit: limit)
         perform(request: request, withResponseType: StationList.self, completion: completion)
     }
     

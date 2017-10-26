@@ -10,10 +10,16 @@ import Foundation
 
 class StationRequests {
     
-    static func getStations() -> URLRequest {
+    static func getStations(page: Int, limit: Int) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         url.appendPathComponent(ApiPath.Stations)
-        return URLRequest.getRequest(withUrl: url)
+        var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+        urlComponents.queryItems = [
+            URLQueryItem(name: ApiPath.Page, value: "\(page)"),
+            URLQueryItem(name: ApiPath.Limit, value: "\(limit)"),
+        ]
+        
+        return URLRequest.getRequest(withUrl: urlComponents.url!)
     }
     
     static func create(_ station: Station) -> URLRequest {
