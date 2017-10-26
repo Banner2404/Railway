@@ -6,7 +6,7 @@
 //  Copyright © 2017 Insoft. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 struct ApiURL {
     static let Host = "http://207.154.238.176:8080/api/v1/"
@@ -14,4 +14,9 @@ struct ApiURL {
 
 struct ApiPath {
     static let Stations = "stations"
+}
+
+struct ToolbarIdentifier {
+    static let Add = NSToolbarItem.Identifier(rawValue: "add")
+    static let Edit = NSToolbarItem.Identifier(rawValue: "edit")
 }

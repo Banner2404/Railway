@@ -693,14 +693,20 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="2UI-5U-Ymu"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="8Ql-p2-NQG"/>
-                                <toolbarItem implicitItemIdentifier="2FA370EA-2704-435E-B41D-3557D418C998" label="Add" paletteLabel="Add" tag="-1" image="NSAdvanced" autovalidates="NO" id="nzy-zu-7T5">
+                                <toolbarItem implicitItemIdentifier="2FA370EA-2704-435E-B41D-3557D418C998" explicitItemIdentifier="add" label="Add" paletteLabel="Add" tag="-1" image="NSAdvanced" id="nzy-zu-7T5">
                                     <connections>
                                         <action selector="addButtonClick:" target="B8D-0N-5wS" id="DEC-Yg-24j"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="675E19B6-10E3-40A8-B592-63130ACEB8E2" explicitItemIdentifier="edit" label="Edit" paletteLabel="Edit" tag="-1" image="NSAdvanced" id="Hf3-Fp-T8g">
+                                    <connections>
+                                        <action selector="editButtonClick:" target="B8D-0N-5wS" id="e8H-R4-Uk3"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="nzy-zu-7T5"/>
+                                <toolbarItem reference="Hf3-Fp-T8g"/>
                                 <toolbarItem reference="8Ql-p2-NQG"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -709,6 +715,7 @@
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="editButtonClick" destination="Hf3-Fp-T8g" id="vmR-De-zbv"/>
                         <segue destination="ScD-pN-K5d" kind="relationship" relationship="window.shadowedContentViewController" id="tsq-Ve-MX7"/>
                     </connections>
                 </windowController>
@@ -965,7 +972,9 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
+                                                <action selector="tableViewSelectionChanged:" target="h19-uw-wuT" id="148-lB-3JC"/>
                                                 <binding destination="YnO-bw-59H" name="content" keyPath="arrangedObjects" id="pMD-qz-GRN"/>
+                                                <binding destination="YnO-bw-59H" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="pMD-qz-GRN" id="KQ9-Td-EKW"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
@@ -996,7 +1005,7 @@
                     </connections>
                 </viewController>
                 <customObject id="HRD-0e-FUV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <arrayController id="YnO-bw-59H"/>
+                <arrayController avoidsEmptySelection="NO" id="YnO-bw-59H"/>
             </objects>
             <point key="canvasLocation" x="70" y="1672.5"/>
         </scene>

@@ -8,16 +8,27 @@
 
 import Cocoa
 
+protocol AdminChildViewController: class {
+}
+
 class AdminMainViewController: NSViewController, ContainerViewController {
 
     @IBOutlet var sideBarArrayController: NSArrayController!
     @IBOutlet weak var sideBarTableView: NSTableView!
     @IBOutlet weak var containerView: NSView!
+    var currentChildViewController: (NSViewController & AdminChildViewController)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSidebar()
         sectionsTableViewSelectionChanged(sideBarTableView)
+    }
+    
+    override func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
+        if item.itemIdentifier == ToolbarIdentifier.Add {
+            return true
+        }
+        return currentChildViewController?.validateToolbarItem(item) ?? false
     }
     
     func addButtonClick() {
@@ -43,8 +54,9 @@ private extension AdminMainViewController {
     
     func showChildViewController(for selectedType: SidebarItem.Section) {
         let viewControllerClass = controllerClass(for: selectedType)
-        let viewController = viewControllerClass.loadFromAdminStoryboard() as NSViewController
+        let viewController = viewControllerClass.loadFromAdminStoryboard() as (NSViewController & AdminChildViewController)
         show(viewController, inContainerView: containerView)
+        currentChildViewController = viewController
     }
     
     func setupSidebar() {

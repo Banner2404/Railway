@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StationsViewController: NSViewController, BaseViewController {
+class StationsViewController: NSViewController, BaseViewController, AdminChildViewController {
 
     @IBOutlet var stationsArrayController: NSArrayController!
     
@@ -20,6 +20,14 @@ class StationsViewController: NSViewController, BaseViewController {
         super.viewDidLoad()
         setupStations()
         loadStations()
+    }
+    
+    override func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
+        return !stationsArrayController.selectionIndexes.isEmpty
+    }
+    
+    @IBAction func tableViewSelectionChanged(_ sender: NSTableView) {
+        //view.window?.toolbar?.validateVisibleItems()
     }
     
 }
