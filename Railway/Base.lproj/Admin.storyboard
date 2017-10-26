@@ -1097,6 +1097,7 @@ DQ
                     <connections>
                         <outlet property="containerView" destination="alP-Hg-MwB" id="ZCC-GM-fIy"/>
                         <outlet property="nextButton" destination="fQd-ho-Kgk" id="jDl-JR-kDS"/>
+                        <outlet property="previousButton" destination="7JH-xr-qB0" id="BaT-b3-U1s"/>
                     </connections>
                 </viewController>
                 <customObject id="2Qy-Ym-5yf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1301,6 +1302,11 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <binding destination="BdG-ME-zG9" name="value" keyPath="self.object.name" id="ZbG-qr-bte">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                     <outlet property="delegate" destination="BdG-ME-zG9" id="0Oq-nq-hLJ"/>
                                 </connections>
                             </textField>
@@ -1318,6 +1324,7 @@ DQ
                     </connections>
                 </viewController>
                 <customObject id="ega-2g-Pv0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="dIa-Ag-QYU"/>
             </objects>
             <point key="canvasLocation" x="734" y="2496"/>
         </scene>

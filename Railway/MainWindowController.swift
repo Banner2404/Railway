@@ -23,6 +23,7 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func editButtonClick(_ sender: Any) {
+        viewController.editButtonClick()
     }
     
     override func validateToolbarItem(_ item: NSToolbarItem) -> Bool {

@@ -9,7 +9,8 @@
 import Cocoa
 
 class AddItemTypeViewController: NSViewController, BaseViewController, EditChildViewController {
-
+    
+    var type = EditViewController.ChildState.create
     var helperMessage = "Select what would you like to add:"
     weak var delegate: EditChildViewControllerDelegate?
     

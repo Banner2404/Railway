@@ -10,8 +10,11 @@ import Cocoa
 
 class EditStationViewController: NSViewController, BaseViewController, EditChildViewController {
     
+    var type = EditViewController.ChildState.create
     var helperMessage = "Setup new station:"
     weak var delegate: EditChildViewControllerDelegate?
+    @objc
+    dynamic var object: Station!
     @IBOutlet weak var nameTextField: NSTextField!
     
     class func loadFromStoryboard() -> Self {
@@ -20,6 +23,7 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        object = type.object as? Station ?? Station(name: "", id: 0)
     }
     
     override func viewDidAppear() {
@@ -29,7 +33,12 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
     }
     
     func continueButtonClick(completion: @escaping (Any?) -> Void) {
-        createStation(completion: completion)
+        switch type {
+        case .create:
+            createStation(completion: completion)
+        case .edit:
+            update(object, completion: completion)
+        }
     }
 }
 
@@ -41,13 +50,17 @@ private extension EditStationViewController {
     }
     
     func createStation(completion: @escaping (Any?) -> Void) {
-        let name = nameTextField.stringValue
-        let station = Station(name: name, id: 0)
-        requestManager.create(station) { (success, station, error) in
+        print("Create")
+        requestManager.create(object) { (success, station, error) in
             defer {
                 completion(nil)
             }
         }
+    }
+    
+    func update(_ station: Station, completion: @escaping (Any?) -> Void) {
+        print("Update")
+        completion(nil)
     }
 }
 

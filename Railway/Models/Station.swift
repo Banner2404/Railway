@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Station: NSObject, Codable {
+class Station: NSObject, Codable, NSCopying {
     
     @objc
     var id: Int
@@ -20,4 +20,7 @@ class Station: NSObject, Codable {
         self.id = id
     }
     
+    func copy(with zone: NSZone? = nil) -> Any {
+        return Station(name: name, id: id)
+    }
 }

@@ -75,6 +75,10 @@ extension StationsViewController: NSTableViewDelegate {
 //MARK: - AdminChildViewController
 extension StationsViewController: AdminChildViewController {
     
+    func selectedObject() -> Any? {
+        return stationsArrayController.selectedObjects.first
+    }
+    
     func reloadData() {
         page = 0
         stationsArrayController.content = nil

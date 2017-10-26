@@ -9,6 +9,7 @@
 import Cocoa
 
 protocol AdminChildViewController: class {
+    func selectedObject() -> Any?
     func reloadData()
 }
 
@@ -33,7 +34,13 @@ class AdminMainViewController: NSViewController, ContainerViewController {
     }
     
     func addButtonClick() {
-        showEditViewController()
+        showAddViewController()
+    }
+    
+    func editButtonClick() {
+        let section = selectedSidebarItem().section
+        let object = (currentChildViewController?.selectedObject() as! NSCopying).copy()
+        showEditViewController(with: section, object: object)
     }
     
     @IBAction func sectionsTableViewSelectionChanged(_ sender: NSTableView) {
@@ -64,10 +71,22 @@ private extension AdminMainViewController {
         sideBarArrayController.content = SidebarItem.defaultItems
     }
     
-    func showEditViewController() {
+    func showAddViewController() {
         let viewController = EditViewController.loadFromStoryboard()
         viewController.delegate = self
+        viewController.state = .typeSelecting
         presentViewControllerAsSheet(viewController)
+    }
+    
+    func showEditViewController(with section: SidebarItem.Section, object: Any?) {
+        let viewController = EditViewController.loadFromStoryboard()
+        viewController.state = .edit(section, object)
+        viewController.delegate = self
+        presentViewControllerAsSheet(viewController)
+    }
+    
+    func selectedSidebarItem() -> SidebarItem {
+        return sideBarArrayController.selectedObjects.first as! SidebarItem
     }
 }
 

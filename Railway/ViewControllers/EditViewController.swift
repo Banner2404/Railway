@@ -13,6 +13,8 @@ protocol EditViewControllerDelegate: class {
 }
 
 protocol EditChildViewController: class {
+
+    var type: EditViewController.ChildState { get set }
     var helperMessage: String { get }
     var delegate: EditChildViewControllerDelegate? { get set }
     func continueButtonClick(completion: @escaping (Any?) -> Void)
@@ -24,35 +26,9 @@ protocol EditChildViewControllerDelegate: class {
 
 class EditViewController: NSViewController, BaseViewController, ContainerViewController {
 
-    enum State {
-        case typeSelecting
-        case typeSelected(SidebarItem.Section)
-        
-        var rawValue: Int {
-            switch self {
-            case .typeSelecting:
-                return 0
-            case .typeSelected(_):
-                return 1
-            }
-        }
-        
-        static func == (lhs: State, rhs: State) -> Bool {
-            return lhs.rawValue == rhs.rawValue
-        }
-        
-        var selectedType: SidebarItem.Section? {
-            switch self {
-            case .typeSelected(let type):
-                return type
-            default:
-                return nil
-            }
-        }
-    }
-    
     @IBOutlet weak var containerView: NSView!
     @IBOutlet weak var nextButton: NSButton!
+    @IBOutlet weak var previousButton: NSButton!
     var navigationStack: [(NSViewController & EditChildViewController)] = []
     @objc
     dynamic var canGoBack = false
@@ -74,7 +50,14 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showTypesViewController()
+        switch state {
+        case .typeSelecting:
+            showTypesViewController()
+        case .edit(_, _):
+            showChildViewController()
+        default:
+            fatalError("Incorrect state on view did load")
+        }
         setupContainerView()
         setup(state)
     }
@@ -108,9 +91,12 @@ extension EditViewController {
     func setup(_ state: State) {
         switch state {
         case .typeSelecting:
-            nextButton.title = "Next"
+            nextButton?.title = "Next"
         case .typeSelected(_):
-            nextButton.title = "Create"
+            nextButton?.title = "Create"
+        case .edit(_, _):
+            nextButton?.title = "Save"
+            previousButton?.isHidden = true
         }
     }
     
@@ -178,6 +164,11 @@ private extension EditViewController {
         guard let selectedType = state.selectedType else { return }
         let viewControllerType = controllerClass(for: selectedType)
         let viewController = viewControllerType.loadFromAdminStoryboard() as (NSViewController & EditChildViewController)
+        if case .edit = state {
+            viewController.type = .edit(state.object)
+        } else {
+            viewController.type = .create
+        }
         goTo(viewController)
     }
 }
@@ -187,5 +178,64 @@ extension EditViewController: EditChildViewControllerDelegate {
 
     func setNextButton(enabled: Bool, sender: EditChildViewController) {
         canContinue = enabled
+    }
+}
+
+//MARK: - Nested types
+extension EditViewController {
+    
+    enum State {
+        case typeSelecting
+        case typeSelected(SidebarItem.Section)
+        case edit(SidebarItem.Section, Any?)
+        
+        var rawValue: Int {
+            switch self {
+            case .typeSelecting:
+                return 0
+            case .typeSelected(_):
+                return 1
+            case .edit(_, _):
+                return 2
+            }
+        }
+        
+        static func == (lhs: State, rhs: State) -> Bool {
+            return lhs.rawValue == rhs.rawValue
+        }
+        
+        var selectedType: SidebarItem.Section? {
+            switch self {
+            case .typeSelected(let type):
+                return type
+            case .edit(let type, _):
+                return type
+            default:
+                return nil
+            }
+        }
+        
+        var object: Any? {
+            switch self {
+            case .edit(_, let object):
+                return object
+            default:
+                return nil
+            }
+        }
+    }
+    
+    enum ChildState {
+        case create
+        case edit(Any?)
+        
+        var object: Any? {
+            switch self {
+            case .edit(let object):
+                return object
+            default:
+                return nil
+            }
+        }
     }
 }
