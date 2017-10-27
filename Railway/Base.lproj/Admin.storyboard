@@ -1298,7 +1298,7 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="BdG-ME-zG9" name="value" keyPath="self.object.name" id="ZbG-qr-bte">
+                                    <binding destination="BdG-ME-zG9" name="value" keyPath="self.station.name" id="51h-7i-xxM">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                         </dictionary>

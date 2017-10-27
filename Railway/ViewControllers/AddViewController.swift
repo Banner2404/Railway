@@ -17,6 +17,8 @@ protocol AddChildViewController: class {
 
     var helperMessage: String { get }
     var delegate: AddChildViewControllerDelegate? { get set }
+    func setInitialObject(_ object: Model)
+    func getResultObject() -> Model
 }
 
 protocol AddChildViewControllerDelegate: class {
@@ -32,6 +34,7 @@ class AddViewController: NSViewController, BaseViewController, ContainerViewCont
     weak var delegate: AddViewControllerDelegate?
     var sectionsViewController: AddItemTypeViewController!
     var fillViewController: (NSViewController & AddChildViewController)?
+    var dataManager: DataManager?
     var state = State.typeSelecting {
         didSet {
             if oldValue == state { return }
@@ -59,8 +62,12 @@ class AddViewController: NSViewController, BaseViewController, ContainerViewCont
         case .typeSelecting:
             state = .typeSelected(sectionsViewController.selectedType)
             showChildViewController()
+            setupDataManager()
         case .typeSelected(_):
-            print("OK")
+            let object = fillViewController!.getResultObject()
+            dataManager!.create(object, completion: { [weak self] (success, createdObject, error) in
+                self?.delegate?.addViewControllerDidComplete(self!)
+            })
         }
     }
     
@@ -93,13 +100,6 @@ private extension AddViewController {
         containerView.layer?.borderColor = NSColor.lightGray.cgColor
     }
     
-    func controllerClass(for selectedType: SidebarItem.Section) -> BaseViewController.Type {
-        switch selectedType {
-        case .stations:
-            return EditStationViewController.self
-        }
-    }
-    
     func showTypesViewController() {
         let viewController = AddItemTypeViewController.loadFromStoryboard()
         sectionsViewController = viewController
@@ -108,11 +108,21 @@ private extension AddViewController {
     
     func showChildViewController() {
         guard let selectedType = state.selectedType else { return }
-        let viewControllerType = controllerClass(for: selectedType)
+        let viewControllerType = ClassMap.editViewController(for: selectedType)
         let viewController = viewControllerType.loadFromAdminStoryboard() as (NSViewController & AddChildViewController)
+        
+        let modelType = ClassMap.model(for: selectedType)
+        let model = modelType.init()
+        viewController.setInitialObject(model)
         helperMessageLabel.stringValue = viewController.helperMessage
         fillViewController = viewController
         move(from: sectionsViewController!, to: viewController, inContainerView: containerView)
+    }
+    
+    func setupDataManager() {
+        guard let selectedType = state.selectedType else { return }
+        let dataManagerType = ClassMap.dataManager(for: selectedType)
+        dataManager = dataManagerType.init()
     }
 }
 

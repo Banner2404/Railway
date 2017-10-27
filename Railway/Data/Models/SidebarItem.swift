@@ -51,5 +51,32 @@ class SidebarItem: NSObject {
     }
 }
 
+protocol Model {
+    init()
+}
+extension Station: Model {}
+
+class ClassMap {
+    
+    static func editViewController(for selectedType: SidebarItem.Section) -> BaseViewController.Type {
+        return classes(for: selectedType).controller
+    }
+    
+    static func model(for selectedType: SidebarItem.Section) -> Model.Type {
+        return classes(for: selectedType).model
+    }
+    
+    static func dataManager(for selectedType: SidebarItem.Section) -> DataManager.Type {
+        return classes(for: selectedType).dataManager
+    }
+    
+    static func classes(for selectedType: SidebarItem.Section) -> (controller: BaseViewController.Type, model: Model.Type, dataManager: DataManager.Type) {
+        switch selectedType {
+        case .stations:
+            return (EditStationViewController.self, Station.self, StationDataManager.self)
+        }
+    }
+}
+
 
 

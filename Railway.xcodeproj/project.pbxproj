@@ -17,6 +17,8 @@
 		D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */; };
 		D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B63051FA085BD00450052 /* TypeCollectionViewItem.swift */; };
 		D17B63081FA085BD00450052 /* TypeCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */; };
+		D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938A5E1FA32ED600A28344 /* DataManager.swift */; };
+		D1938A611FA330A200A28344 /* StationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938A601FA330A200A28344 /* StationDataManager.swift */; };
 		D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */; };
 		D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD751F9DED070061949C /* SidebarItem.swift */; };
 		D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */; };
@@ -45,6 +47,8 @@
 		D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTypeViewController.swift; sourceTree = "<group>"; };
 		D17B63051FA085BD00450052 /* TypeCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewItem.swift; sourceTree = "<group>"; };
 		D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCollectionViewItem.xib; sourceTree = "<group>"; };
+		D1938A5E1FA32ED600A28344 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D1938A601FA330A200A28344 /* StationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataManager.swift; sourceTree = "<group>"; };
 		D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainViewController.swift; sourceTree = "<group>"; };
 		D19CAD751F9DED070061949C /* SidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItem.swift; sourceTree = "<group>"; };
 		D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
@@ -91,10 +95,10 @@
 			children = (
 				D13029CB1F9A053D0081826A /* AppDelegate.swift */,
 				D1DFD3711F9E4BA10003867B /* MainWindowController.swift */,
+				D1938A5D1FA32EBA00A28344 /* Data */,
 				D19CAD901F9E33B20061949C /* Common */,
 				D19CAD8D1F9E33740061949C /* Extensions */,
 				D19CAD851F9E2FFE0061949C /* Networking */,
-				D19CAD771F9DF2170061949C /* Models */,
 				D19CAD781F9DF2220061949C /* ViewControllers */,
 				D17B62FE1FA07F9100450052 /* Cells */,
 				D13029CF1F9A053D0081826A /* Assets.xcassets */,
@@ -112,6 +116,16 @@
 				D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D1938A5D1FA32EBA00A28344 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D19CAD771F9DF2170061949C /* Models */,
+				D1938A5E1FA32ED600A28344 /* DataManager.swift */,
+				D1938A601FA330A200A28344 /* StationDataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		D19CAD771F9DF2170061949C /* Models */ = {
@@ -246,6 +260,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
+				D1938A611FA330A200A28344 /* StationDataManager.swift in Sources */,
+				D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */,
 				D19CAD921F9E33C20061949C /* Constants.swift in Sources */,
 				D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */,
 				D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */,

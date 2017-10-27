@@ -13,7 +13,8 @@ class EditStationViewController: NSViewController, BaseViewController, AddChildV
     var helperMessage = "Setup new station:"
     weak var delegate: AddChildViewControllerDelegate?
     @objc
-    dynamic var object: Station!
+    dynamic var station: Station!
+
     @IBOutlet weak var nameTextField: NSTextField!
     
     class func loadFromStoryboard() -> Self {
@@ -30,8 +31,12 @@ class EditStationViewController: NSViewController, BaseViewController, AddChildV
         validateTextField()
     }
     
-    func continueButtonClick(completion: @escaping (Any?) -> Void) {
-
+    func setInitialObject(_ object: Model) {
+        station = object as! Station
+    }
+    
+    func getResultObject() -> Model {
+        return station
     }
 }
 
@@ -39,21 +44,7 @@ class EditStationViewController: NSViewController, BaseViewController, AddChildV
 private extension EditStationViewController {
     
     func validateTextField() {
-        delegate?.changeValidation(isValid: !object.name.isEmpty)
-    }
-    
-    func createStation(completion: @escaping (Any?) -> Void) {
-        print("Create")
-        requestManager.create(object) { (success, station, error) in
-            defer {
-                completion(nil)
-            }
-        }
-    }
-    
-    func update(_ station: Station, completion: @escaping (Any?) -> Void) {
-        print("Update")
-        completion(nil)
+        delegate?.changeValidation(isValid: !station.name.isEmpty)
     }
 }
 

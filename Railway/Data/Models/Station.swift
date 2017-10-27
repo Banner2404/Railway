@@ -15,6 +15,10 @@ class Station: NSObject, Codable, NSCopying {
     @objc
     var name: String
     
+    required override convenience init() {
+        self.init(name: "", id: 0)
+    }
+    
     init(name: String, id: Int) {
         self.name = name
         self.id = id
