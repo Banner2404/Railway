@@ -13,15 +13,15 @@ protocol AddViewControllerDelegate: class {
     func addViewControllerDidComplete(_ addViewController: AddViewController)
 }
 
-protocol AddChildViewController: class {
+protocol FillViewController: class {
 
     var helperMessage: String { get }
-    var delegate: AddChildViewControllerDelegate? { get set }
+    var delegate: FillViewControllerDelegate? { get set }
     func setInitialObject(_ object: Model)
     func getResultObject() -> Model
 }
 
-protocol AddChildViewControllerDelegate: class {
+protocol FillViewControllerDelegate: class {
     func changeValidation(isValid: Bool)
 }
 
@@ -33,7 +33,7 @@ class AddViewController: NSViewController, BaseViewController, ContainerViewCont
     @IBOutlet weak var helperMessageLabel: NSTextField!
     weak var delegate: AddViewControllerDelegate?
     var sectionsViewController: AddItemTypeViewController!
-    var fillViewController: (NSViewController & AddChildViewController)?
+    var fillViewController: (NSViewController & FillViewController)?
     var dataManager: DataManager?
     var state = State.typeSelecting {
         didSet {
@@ -109,7 +109,7 @@ private extension AddViewController {
     func showChildViewController() {
         guard let selectedType = state.selectedType else { return }
         let viewControllerType = ClassMap.editViewController(for: selectedType)
-        let viewController = viewControllerType.loadFromAdminStoryboard() as (NSViewController & AddChildViewController)
+        let viewController = viewControllerType.loadFromAdminStoryboard() as (NSViewController & FillViewController)
         
         let modelType = ClassMap.model(for: selectedType)
         let model = modelType.init()
@@ -127,7 +127,7 @@ private extension AddViewController {
 }
 
 //MARK: - EditChildViewControllerDelegate
-extension AddViewController: AddChildViewControllerDelegate {
+extension AddViewController: FillViewControllerDelegate {
 
     func changeValidation(isValid: Bool) {
         nextButton.isEnabled = isValid

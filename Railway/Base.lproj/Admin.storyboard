@@ -1324,6 +1324,83 @@ DQ
             </objects>
             <point key="canvasLocation" x="734" y="2496"/>
         </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="3zl-Te-K00">
+            <objects>
+                <viewController storyboardIdentifier="EditViewController" id="Mb9-vt-k6g" customClass="EditViewController" customModule="Railway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="YJP-nh-8y2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T7x-Vr-T15">
+                                <rect key="frame" x="14" y="13" width="82" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="VX8-j3-WJN"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g0V-Gc-iUV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelButtonClick:" target="Mb9-vt-k6g" id="Uql-x1-GFQ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gyo-AS-YBE">
+                                <rect key="frame" x="504" y="13" width="82" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="UFw-LM-2y5"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sc8-Et-6aj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveButtonClick:" target="Mb9-vt-k6g" id="oYy-xV-XX1"/>
+                                </connections>
+                            </button>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Fim-8m-GHC">
+                                <rect key="frame" x="20" y="61" width="560" height="299"/>
+                            </containerView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-ow-KHO">
+                                <rect key="frame" x="18" y="368" width="564" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Select what would you like to add:" id="KVe-AK-aQh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gyo-AS-YBE" secondAttribute="trailing" constant="20" id="7rk-cI-1bu"/>
+                            <constraint firstItem="Fim-8m-GHC" firstAttribute="top" secondItem="EQF-ow-KHO" secondAttribute="bottom" constant="8" id="Cdb-hI-diA"/>
+                            <constraint firstAttribute="trailing" secondItem="Fim-8m-GHC" secondAttribute="trailing" constant="20" id="G1a-bC-NIm"/>
+                            <constraint firstItem="Fim-8m-GHC" firstAttribute="top" secondItem="YJP-nh-8y2" secondAttribute="top" constant="40" id="HSW-k1-V53"/>
+                            <constraint firstAttribute="bottom" secondItem="gyo-AS-YBE" secondAttribute="bottom" constant="20" id="KN4-yK-NPv"/>
+                            <constraint firstItem="EQF-ow-KHO" firstAttribute="leading" secondItem="Fim-8m-GHC" secondAttribute="leading" id="M8s-oK-M1Z"/>
+                            <constraint firstItem="T7x-Vr-T15" firstAttribute="top" secondItem="Fim-8m-GHC" secondAttribute="bottom" constant="20" id="MGK-h9-9RM"/>
+                            <constraint firstItem="EQF-ow-KHO" firstAttribute="trailing" secondItem="Fim-8m-GHC" secondAttribute="trailing" id="Rrx-JX-c1e"/>
+                            <constraint firstItem="T7x-Vr-T15" firstAttribute="leading" secondItem="YJP-nh-8y2" secondAttribute="leading" constant="20" id="hrk-Uc-hOw"/>
+                            <constraint firstAttribute="bottom" secondItem="T7x-Vr-T15" secondAttribute="bottom" constant="20" id="n2f-BH-swX"/>
+                            <constraint firstItem="Fim-8m-GHC" firstAttribute="leading" secondItem="YJP-nh-8y2" secondAttribute="leading" constant="20" id="q3Q-mP-hzW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="Fim-8m-GHC" id="SFe-oB-mBZ"/>
+                        <outlet property="helperMessageLabel" destination="EQF-ow-KHO" id="vDN-3M-jaU"/>
+                        <outlet property="nextButton" destination="gyo-AS-YBE" id="yWA-ar-0gx"/>
+                    </connections>
+                </viewController>
+                <customObject id="h1W-8P-OIl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="9aV-qR-0Hz"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="2668"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

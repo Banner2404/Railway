@@ -39,7 +39,7 @@ class AdminMainViewController: NSViewController, ContainerViewController {
     
     func editButtonClick() {
         let section = selectedSidebarItem().section
-        let object = (currentChildViewController?.selectedObject() as! NSCopying).copy()
+        let object = (currentChildViewController?.selectedObject() as! NSCopying).copy() as! Model
         showEditViewController(with: section, object: object)
     }
     
@@ -77,11 +77,12 @@ private extension AdminMainViewController {
         presentViewControllerAsSheet(viewController)
     }
     
-    func showEditViewController(with section: SidebarItem.Section, object: Any?) {
-//        let viewController = EditViewController.loadFromStoryboard()
-//        viewController.state = .edit(section, object)
-//        viewController.delegate = self
-//        presentViewControllerAsSheet(viewController)
+    func showEditViewController(with section: SidebarItem.Section, object: Model) {
+        let viewController = EditViewController.loadFromStoryboard()
+        viewController.selectedType = section
+        viewController.delegate = self
+        viewController.initialObject = object
+        presentViewControllerAsSheet(viewController)
     }
     
     func selectedSidebarItem() -> SidebarItem {
@@ -89,7 +90,7 @@ private extension AdminMainViewController {
     }
 }
 
-//MARK: - EditViewControllerDelegate
+//MARK: - AddViewControllerDelegate
 extension AdminMainViewController: AddViewControllerDelegate {
     
     func addViewControllerDidCancel(_ addViewController: AddViewController) {
@@ -98,6 +99,20 @@ extension AdminMainViewController: AddViewControllerDelegate {
     
     func addViewControllerDidComplete(_ addViewController: AddViewController) {
         dismissViewController(addViewController)
+        currentChildViewController?.reloadData()
+    }
+    
+}
+
+//MARK: - EditViewControllerDelegate
+extension AdminMainViewController: EditViewControllerDelegate {
+    
+    func editViewControllerDidCancel(_ editViewController: EditViewController) {
+        dismissViewController(editViewController)
+    }
+    
+    func editViewControllerDidComplete(_ editViewController: EditViewController) {
+        dismissViewController(editViewController)
         currentChildViewController?.reloadData()
     }
     

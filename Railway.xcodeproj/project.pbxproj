@@ -19,6 +19,7 @@
 		D17B63081FA085BD00450052 /* TypeCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */; };
 		D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938A5E1FA32ED600A28344 /* DataManager.swift */; };
 		D1938A611FA330A200A28344 /* StationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938A601FA330A200A28344 /* StationDataManager.swift */; };
+		D1938A631FA339B200A28344 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938A621FA339B200A28344 /* EditViewController.swift */; };
 		D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */; };
 		D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD751F9DED070061949C /* SidebarItem.swift */; };
 		D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */; };
@@ -49,6 +50,7 @@
 		D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCollectionViewItem.xib; sourceTree = "<group>"; };
 		D1938A5E1FA32ED600A28344 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D1938A601FA330A200A28344 /* StationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataManager.swift; sourceTree = "<group>"; };
+		D1938A621FA339B200A28344 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainViewController.swift; sourceTree = "<group>"; };
 		D19CAD751F9DED070061949C /* SidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItem.swift; sourceTree = "<group>"; };
 		D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
 				D14823741FA1DD0E002AE484 /* RoutesViewController.swift */,
 				D17B62F71FA075C500450052 /* AddViewController.swift */,
+				D1938A621FA339B200A28344 /* EditViewController.swift */,
 				D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */,
 				D14823721FA0A9AE002AE484 /* EditStationViewController.swift */,
 			);
@@ -279,6 +282,7 @@
 				D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */,
 				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
+				D1938A631FA339B200A28344 /* EditViewController.swift in Sources */,
 				D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

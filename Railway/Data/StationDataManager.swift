@@ -12,14 +12,25 @@ class StationDataManager: DataManager {
     
     required init() {}
     
-    func create(_ object: Any, completion: @escaping (Bool, Any?, Error?) -> Void) {
+    func create(_ object: Model, completion: @escaping (Bool, Model?, Error?) -> Void) {
         guard let object = object as? Station else {
                 fatalError("incorrect object type")
         }
         create(station: object, completion: completion)
     }
     
+    func update(_ object: Model, completion: @escaping (_ success: Bool, _ object: Model?, _ error: Error?) -> Void) {
+        guard let object = object as? Station else {
+            fatalError("incorrect object type")
+        }
+        update(station: object, completion: completion)
+    }
+
     func create(station: Station, completion: @escaping (Bool, Station?, Error?) -> Void) {
         RequestManager.shared.create(station, completion: completion)
+    }
+    
+    func update(station: Station, completion: @escaping (Bool, Station?, Error?) -> Void) {
+        completion(true, nil, nil)
     }
 }

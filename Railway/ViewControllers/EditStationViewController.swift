@@ -8,10 +8,10 @@
 
 import Cocoa
 
-class EditStationViewController: NSViewController, BaseViewController, AddChildViewController {
+class EditStationViewController: NSViewController, BaseViewController, FillViewController {
     
     var helperMessage = "Setup new station:"
-    weak var delegate: AddChildViewControllerDelegate?
+    weak var delegate: FillViewControllerDelegate?
     @objc
     dynamic var station: Station!
 
