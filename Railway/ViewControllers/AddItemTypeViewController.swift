@@ -8,15 +8,16 @@
 
 import Cocoa
 
-class AddItemTypeViewController: NSViewController, BaseViewController, EditChildViewController {
-    
-    var type = EditViewController.ChildState.create
-    var helperMessage = "Select what would you like to add:"
-    weak var delegate: EditChildViewControllerDelegate?
+class AddItemTypeViewController: NSViewController, BaseViewController {
     
     let TypeCollectionViewItemIdentifier = NSUserInterfaceItemIdentifier(rawValue: "TypeCollectionViewItem")
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet var arrayController: NSArrayController!
+    var selectedType: SidebarItem.Section {
+        let selectedIndex = collectionView.selectionIndexes.first!
+        let sections = arrayController.content as! [SidebarItem]
+        return sections[selectedIndex].section
+    }
     
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
@@ -30,12 +31,6 @@ class AddItemTypeViewController: NSViewController, BaseViewController, EditChild
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        delegate?.setNextButton(enabled: true, sender: self)
-    }
-    
-    func continueButtonClick(completion: @escaping (Any?) -> Void) {
-        let sections = arrayController.content as! [SidebarItem]
-        completion(sections[collectionView.selectionIndexes.first!].section)
     }
 }
 

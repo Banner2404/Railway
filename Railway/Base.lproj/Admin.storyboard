@@ -1010,10 +1010,10 @@
             </objects>
             <point key="canvasLocation" x="70" y="1672.5"/>
         </scene>
-        <!--Edit View Controller-->
+        <!--Add View Controller-->
         <scene sceneID="p3h-GD-JtY">
             <objects>
-                <viewController storyboardIdentifier="EditViewController" id="POL-Mt-ZxH" customClass="EditViewController" customModule="Railway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddViewController" id="POL-Mt-ZxH" customClass="AddViewController" customModule="Railway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yFw-73-Vhk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1048,7 +1048,6 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="nextButtonClick:" target="POL-Mt-ZxH" id="qCo-S4-EmP"/>
-                                    <binding destination="POL-Mt-ZxH" name="enabled" keyPath="self.canContinue" id="YNC-Gd-3cA"/>
                                 </connections>
                             </button>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="alP-Hg-MwB">
@@ -1062,7 +1061,6 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="previousButtonClick:" target="POL-Mt-ZxH" id="8AU-wI-GsH"/>
-                                    <binding destination="POL-Mt-ZxH" name="enabled" keyPath="self.canGoBack" id="kzs-Xb-kRj"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GUt-vY-wtX">
@@ -1072,9 +1070,6 @@ DQ
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <binding destination="POL-Mt-ZxH" name="value" keyPath="self.helperMessage" id="Al7-V7-9S7"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <constraints>
@@ -1096,6 +1091,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="containerView" destination="alP-Hg-MwB" id="ZCC-GM-fIy"/>
+                        <outlet property="helperMessageLabel" destination="GUt-vY-wtX" id="7KC-Fi-aD7"/>
                         <outlet property="nextButton" destination="fQd-ho-Kgk" id="jDl-JR-kDS"/>
                         <outlet property="previousButton" destination="7JH-xr-qB0" id="BaT-b3-U1s"/>
                     </connections>

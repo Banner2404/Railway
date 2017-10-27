@@ -72,17 +72,16 @@ private extension AdminMainViewController {
     }
     
     func showAddViewController() {
-        let viewController = EditViewController.loadFromStoryboard()
+        let viewController = AddViewController.loadFromStoryboard()
         viewController.delegate = self
-        viewController.state = .typeSelecting
         presentViewControllerAsSheet(viewController)
     }
     
     func showEditViewController(with section: SidebarItem.Section, object: Any?) {
-        let viewController = EditViewController.loadFromStoryboard()
-        viewController.state = .edit(section, object)
-        viewController.delegate = self
-        presentViewControllerAsSheet(viewController)
+//        let viewController = EditViewController.loadFromStoryboard()
+//        viewController.state = .edit(section, object)
+//        viewController.delegate = self
+//        presentViewControllerAsSheet(viewController)
     }
     
     func selectedSidebarItem() -> SidebarItem {
@@ -91,10 +90,14 @@ private extension AdminMainViewController {
 }
 
 //MARK: - EditViewControllerDelegate
-extension AdminMainViewController: EditViewControllerDelegate {
+extension AdminMainViewController: AddViewControllerDelegate {
     
-    func editViewControllerDidCancel(_ editViewController: EditViewController) {
-        dismissViewController(editViewController)
+    func addViewControllerDidCancel(_ addViewController: AddViewController) {
+        dismissViewController(addViewController)
+    }
+    
+    func addViewControllerDidComplete(_ addViewController: AddViewController) {
+        dismissViewController(addViewController)
         currentChildViewController?.reloadData()
     }
     

@@ -8,11 +8,10 @@
 
 import Cocoa
 
-class EditStationViewController: NSViewController, BaseViewController, EditChildViewController {
+class EditStationViewController: NSViewController, BaseViewController, AddChildViewController {
     
-    var type = EditViewController.ChildState.create
     var helperMessage = "Setup new station:"
-    weak var delegate: EditChildViewControllerDelegate?
+    weak var delegate: AddChildViewControllerDelegate?
     @objc
     dynamic var object: Station!
     @IBOutlet weak var nameTextField: NSTextField!
@@ -23,7 +22,6 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        object = type.object as? Station ?? Station(name: "", id: 0)
     }
     
     override func viewDidAppear() {
@@ -33,12 +31,7 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
     }
     
     func continueButtonClick(completion: @escaping (Any?) -> Void) {
-        switch type {
-        case .create:
-            createStation(completion: completion)
-        case .edit:
-            update(object, completion: completion)
-        }
+
     }
 }
 
@@ -46,7 +39,7 @@ class EditStationViewController: NSViewController, BaseViewController, EditChild
 private extension EditStationViewController {
     
     func validateTextField() {
-        delegate?.setNextButton(enabled: nameTextField.stringValue != "", sender: self)
+        delegate?.changeValidation(isValid: !object.name.isEmpty)
     }
     
     func createStation(completion: @escaping (Any?) -> Void) {

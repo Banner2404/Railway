@@ -15,6 +15,12 @@ class SidebarItem: NSObject {
     @objc
     let image: NSImage
     let section: Section
+    var modelType: AnyClass {
+        switch section {
+        case .stations:
+            return Station.self
+        }
+    }
  
     init(title: String, image: NSImage, section: Section) {
         self.title = title
@@ -36,11 +42,14 @@ class SidebarItem: NSObject {
     
     enum Section {
         case stations
-//        case tickets
-//        case trains
-//        case passengers
-//        case users
-//        case logs
-//        case routes
+        //        case tickets
+        //        case trains
+        //        case passengers
+        //        case users
+        //        case logs
+        //        case routes
     }
 }
+
+
+
