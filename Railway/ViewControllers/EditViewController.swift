@@ -24,6 +24,7 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     var fillViewController: (NSViewController & FillViewController)!
     weak var delegate: EditViewControllerDelegate?
     
+    @IBOutlet weak var saveButton: NSButton!
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
     }
@@ -53,6 +54,7 @@ private extension EditViewController {
         let viewControllerClass = ClassMap.editViewController(for: selectedType)
         fillViewController = viewControllerClass.loadFromAdminStoryboard() as (NSViewController & FillViewController)
         fillViewController.setInitialObject(initialObject)
+        fillViewController.delegate = self
         helperMessageLabel.stringValue = fillViewController.helperMessage
         show(fillViewController, inContainerView: containerView)
     }
@@ -60,5 +62,13 @@ private extension EditViewController {
     func setupDataManager() {
         let dataManagerClass = ClassMap.dataManager(for: selectedType)
         dataManager = dataManagerClass.init()
+    }
+}
+
+//MARK: - EditChildViewControllerDelegate
+extension EditViewController: FillViewControllerDelegate {
+    
+    func changeValidation(isValid: Bool) {
+        saveButton.isEnabled = isValid
     }
 }

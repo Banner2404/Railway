@@ -8,80 +8,15 @@
 
 import Cocoa
 
-class StationsViewController: NSViewController, BaseViewController {
+class StationsViewController: TableViewController {
 
-    @IBOutlet var stationsArrayController: NSArrayController!
-    @IBOutlet weak var tableView: NSTableView!
-    var totalCount = 0
-    let limit = 150
-    var page = 0
-    var isLoading = false
-    
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        reloadData()
-    }
-    
-    override func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
-        return !stationsArrayController.selectionIndexes.isEmpty
-    }
-    
-}
-
-//MARK: - Private
-private extension StationsViewController {
-    
-    func loadStations() {
-        page += 1
-        isLoading = true
-        requestManager.load(page: page, limit: limit) { [weak self] (success: Bool, stations: Results<Station>?, error: Error?) in
-            self?.isLoading = false
-            if success, let stations = stations {
-                self?.totalCount = stations.meta.totalCount
-                self?.add(stations.data)
-            } else {
-                print(error ?? "Unable to load stations")
-            }
+    override func makeRequest(page: Int, limit: Int, completion: @escaping (_ success: Bool, _ totalCount: Int?, _ data: [Model]?, _ error: Error?) -> Void) {
+        requestManager.load(page: page, limit: limit) { (success: Bool, result: Results<Station>?, error: Error?) in
+            completion(success, result?.meta.totalCount, result?.data, error)
         }
-    }
-    
-    func add(_ items: [Station]) {
-        if stationsArrayController.content == nil {
-            stationsArrayController.content = items
-            return
-        } else {
-            stationsArrayController.add(contentsOf: items)
-        }
-    }
-}
-
-//MARK: - NSTableViewDelegate
-extension StationsViewController: NSTableViewDelegate {
-    
-    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        if isLoading { return nil }
-        guard let currentStations = stationsArrayController.content as? [Station] else { return nil }
-        if totalCount == currentStations.count { return nil }
-        if currentStations.count - row > 5 { return nil}
-        loadStations()
-        return nil
-    }
-}
-
-//MARK: - AdminChildViewController
-extension StationsViewController: AdminChildViewController {
-    
-    func selectedObject() -> Any? {
-        return stationsArrayController.selectedObjects.first
-    }
-    
-    func reloadData() {
-        page = 0
-        stationsArrayController.content = nil
-        loadStations()
     }
 }

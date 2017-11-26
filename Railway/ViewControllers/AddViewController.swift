@@ -116,6 +116,7 @@ private extension AddViewController {
         viewController.setInitialObject(model)
         helperMessageLabel.stringValue = viewController.helperMessage
         fillViewController = viewController
+        viewController.delegate = self
         move(from: sectionsViewController!, to: viewController, inContainerView: containerView)
     }
     

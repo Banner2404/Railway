@@ -12,18 +12,46 @@ class EditAccountViewController: NSViewController, BaseViewController, FillViewC
     
     var helperMessage = "Setup new account:"
     var delegate: FillViewControllerDelegate?
+    let userTypes: [Account.AccountType] = [.user, .admin]
+    
+    @objc
+    dynamic var account: Account!
+    
+    @IBOutlet weak var usernameTextField: NSTextField!
+    @IBOutlet weak var passwordTextField: NSTextField!
+    @IBOutlet weak var typePopUp: NSPopUpButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        usernameTextField.window?.makeFirstResponder(usernameTextField)
+        typePopUp.selectItem(at: userTypes.index(of: account.accountType)!)
+        validateTextFields()
+    }
+    
+    @IBAction func popUpValueChanged(_ sender: Any) {
+        account.accountType = userTypes[typePopUp.indexOfSelectedItem]
     }
     
     func setInitialObject(_ object: Model) {
-        
+        account = object as! Account
     }
     
     func getResultObject() -> Model {
-        return Account()
+        return account
+    }
+    
+    func validateTextFields() {
+        let isInvalid = account.username.isEmpty || account.password.isEmpty
+        delegate?.changeValidation(isValid: !isInvalid)
+    }
+    
+}
+
+//MARK: - NSTextFieldDelegate
+extension EditAccountViewController: NSTextFieldDelegate {
+    
+    override func controlTextDidChange(_ obj: Notification) {
+        validateTextFields()
     }
     
 }

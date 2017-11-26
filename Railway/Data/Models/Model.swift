@@ -14,6 +14,15 @@ protocol Model: Codable {
     var id: Int { get }
     static var apiPath: String { get }
 }
+
+class ModelClass: Model {
+    
+    var id = 0
+    static var apiPath = ""
+    
+    required init() {}
+}
+
 extension Station: Model {
     static var apiPath = ApiPath.Stations
 }

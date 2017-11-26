@@ -20,6 +20,7 @@ class RequestManager {
     
     func create<T: Model>(_ model: T, completion: @escaping (_ success: Bool, _ stations: T?, _ error: Error?) -> ()) {
         let request = Requests<T>.create(model)
+        print(try! JSONSerialization.jsonObject(with: request.httpBody!, options: []))
         perform(request: request, withResponseType: T.self, completion: completion)
     }
     
@@ -40,6 +41,10 @@ private extension RequestManager {
     func perform(request: URLRequest, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
         #if LOG_REQUESTS
             print(request)
+            
+            if let body = request.httpBody {
+                print(try! JSONSerialization.jsonObject(with: body, options: []))
+            }
         #endif
         networkManager.perform(request: request) { success, data, error in
             DispatchQueue.main.async {
@@ -51,6 +56,10 @@ private extension RequestManager {
     func perform<T: Decodable>(request: URLRequest, withResponseType responseType: T.Type?, completion: @escaping (_ success: Bool, _ data: T?, _ error: Error?) -> Void) {
         #if LOG_REQUESTS
             print(request)
+            
+            if let body = request.httpBody {
+                print(try! JSONSerialization.jsonObject(with: body, options: []))
+            }
         #endif
         networkManager.perform(request: request) { success, data, error in
             if success, let data = data {

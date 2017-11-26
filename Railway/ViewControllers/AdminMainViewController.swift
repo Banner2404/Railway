@@ -52,7 +52,6 @@ class AdminMainViewController: NSViewController, ContainerViewController {
         dataManager.delete(object) { (success, error) in
             self.currentChildViewController?.reloadData()
         }
-        
     }
     
     @IBAction func sectionsTableViewSelectionChanged(_ sender: NSTableView) {

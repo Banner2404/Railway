@@ -13,6 +13,7 @@
 		D13813A11FCB23C2008F74F8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13813A01FCB23C2008F74F8 /* Model.swift */; };
 		D13813A41FCB2496008F74F8 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13813A21FCB2496008F74F8 /* AccountsViewController.swift */; };
 		D13813A71FCB24F3008F74F8 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */; };
+		D13813A91FCB3B63008F74F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13813A81FCB3B63008F74F8 /* TableViewController.swift */; };
 		D14823731FA0A9AE002AE484 /* EditStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14823721FA0A9AE002AE484 /* EditStationViewController.swift */; };
 		D17B62F81FA075C500450052 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62F71FA075C500450052 /* AddViewController.swift */; };
 		D17B62FA1FA07D3700450052 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62F91FA07D3700450052 /* ContainerViewController.swift */; };
@@ -46,6 +47,7 @@
 		D13813A01FCB23C2008F74F8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D13813A21FCB2496008F74F8 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		D13813A81FCB3B63008F74F8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D14823721FA0A9AE002AE484 /* EditStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStationViewController.swift; sourceTree = "<group>"; };
 		D17B62F71FA075C500450052 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		D17B62F91FA07D3700450052 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				D19CAD831F9DFFFA0061949C /* BaseViewController.swift */,
+				D13813A81FCB3B63008F74F8 /* TableViewController.swift */,
 				D17B62F91FA07D3700450052 /* ContainerViewController.swift */,
 				D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */,
 				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
@@ -291,6 +294,7 @@
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
 				D1E7B0571FCB1F10006C7D44 /* Requests.swift in Sources */,
 				D1938A631FA339B200A28344 /* EditViewController.swift in Sources */,
+				D13813A91FCB3B63008F74F8 /* TableViewController.swift in Sources */,
 				D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

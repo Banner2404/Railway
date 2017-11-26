@@ -8,27 +8,17 @@
 
 import Cocoa
 
-class AccountsViewController: NSViewController, BaseViewController {
+class AccountsViewController: TableViewController {
 
     class func loadFromStoryboard() -> Self {
         return loadFromAdminStoryboard()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
+
+    override func makeRequest(page: Int, limit: Int, completion: @escaping (_ success: Bool, _ totalCount: Int?, _ data: [Model]?, _ error: Error?) -> Void) {
+        requestManager.load(page: page, limit: limit) { (success: Bool, result: Results<Account>?, error: Error?) in
+            completion(success, result?.meta.totalCount, result?.data, error)
+        }
     }
-    
 }
 
-//MARK: - AdminChildViewController
-extension AccountsViewController: AdminChildViewController {
-    
-    func selectedObject() -> Any? {
-        return Account()
-    }
-    
-    func reloadData() {
-    }
-}
 
