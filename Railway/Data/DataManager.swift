@@ -11,5 +11,7 @@ import Foundation
 protocol DataManager {
     init()
     func create(_ object: Model, completion: @escaping (_ success: Bool, _ object: Model?, _ error: Error?) -> Void)
-    func update(_ object: Model, completion: @escaping (_ success: Bool, _ object: Model?, _ error: Error?) -> Void)
+    func update(_ object: Model, completion: @escaping (_ success: Bool, _ error: Error?) -> Void)
+    func delete(_ object: Model, completion: @escaping (_ success: Bool, _ error: Error?) -> Void)
+
 }

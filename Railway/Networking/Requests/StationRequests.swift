@@ -37,4 +37,12 @@ class StationRequests {
         let body = try? JSONEncoder().encode(station)
         return URLRequest.putRequest(withUrl: url, body: body)
     }
+    
+    static func delete(_ station: Station) -> URLRequest {
+        var url = URL(string: ApiURL.Host)!
+        url.appendPathComponent(ApiPath.Stations)
+        url.appendPathComponent("\(station.id)")
+        
+        return URLRequest.deleteRequest(withUrl: url)
+    }
 }

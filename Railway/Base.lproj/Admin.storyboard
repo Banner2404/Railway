@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -703,10 +703,16 @@
                                         <action selector="editButtonClick:" target="B8D-0N-5wS" id="e8H-R4-Uk3"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="704197B9-4BB9-4215-BF8B-2DED272C58E9" explicitItemIdentifier="delete" label="Delete" paletteLabel="Delete" tag="-1" image="NSAdvanced" id="FW6-J4-PaD">
+                                    <connections>
+                                        <action selector="deleteButtonClick:" target="B8D-0N-5wS" id="MiO-9P-rh0"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="nzy-zu-7T5"/>
                                 <toolbarItem reference="Hf3-Fp-T8g"/>
+                                <toolbarItem reference="FW6-J4-PaD"/>
                                 <toolbarItem reference="8Ql-p2-NQG"/>
                             </defaultToolbarItems>
                         </toolbar>

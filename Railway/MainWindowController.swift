@@ -26,6 +26,10 @@ class MainWindowController: NSWindowController {
         viewController.editButtonClick()
     }
     
+    @IBAction func deleteButtonClick(_ sender: Any) {
+        viewController.deleteButtonClick()
+    }
+    
     override func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
         return viewController.validateToolbarItem(item)
     }

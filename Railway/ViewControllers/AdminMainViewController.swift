@@ -43,6 +43,18 @@ class AdminMainViewController: NSViewController, ContainerViewController {
         showEditViewController(with: section, object: object)
     }
     
+    func deleteButtonClick() {
+        let section = selectedSidebarItem().section
+        let object = (currentChildViewController?.selectedObject() as! NSCopying).copy() as! Model
+
+        let dataManagerClass = ClassMap.dataManager(for: section)
+        let dataManager = dataManagerClass.init()
+        dataManager.delete(object) { (success, error) in
+            self.currentChildViewController?.reloadData()
+        }
+        
+    }
+    
     @IBAction func sectionsTableViewSelectionChanged(_ sender: NSTableView) {
         let selectedItemIndex = sender.selectedRow;
         let selectedType = (sideBarArrayController.content as! [SidebarItem])[selectedItemIndex]

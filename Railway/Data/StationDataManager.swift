@@ -19,18 +19,29 @@ class StationDataManager: DataManager {
         create(station: object, completion: completion)
     }
     
-    func update(_ object: Model, completion: @escaping (_ success: Bool, _ object: Model?, _ error: Error?) -> Void) {
+    func update(_ object: Model, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
         guard let object = object as? Station else {
             fatalError("incorrect object type")
         }
         update(station: object, completion: completion)
+    }
+    
+    func delete(_ object: Model, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+        guard let object = object as? Station else {
+            fatalError("incorrect object type")
+        }
+        delete(station: object, completion: completion)
     }
 
     func create(station: Station, completion: @escaping (Bool, Station?, Error?) -> Void) {
         RequestManager.shared.create(station, completion: completion)
     }
     
-    func update(station: Station, completion: @escaping (Bool, Station?, Error?) -> Void) {
+    func update(station: Station, completion: @escaping (Bool, Error?) -> Void) {
         RequestManager.shared.update(station, completion: completion)
+    }
+    
+    func delete(station: Station, completion: @escaping (Bool, Error?) -> Void) {
+        RequestManager.shared.delete(station, completion: completion)
     }
 }

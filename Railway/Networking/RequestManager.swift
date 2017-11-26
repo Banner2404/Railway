@@ -23,14 +23,30 @@ class RequestManager {
         perform(request: request, withResponseType: Station.self, completion: completion)
     }
     
-    func update(_ station: Station, completion: @escaping (_ success: Bool, _ station: Station?, _ error: Error?) -> ()) {
+    func update(_ station: Station, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
         let request = StationRequests.update(station)
-        perform(request: request, withResponseType: nil, completion: completion)
+        perform(request: request, completion: completion)
+    }
+    
+    func delete(_ station: Station, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
+        let request = StationRequests.delete(station)
+        perform(request: request, completion: completion)
     }
 }
 
 //MARK: - Private
 private extension RequestManager {
+    
+    func perform(request: URLRequest, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+        #if LOG_REQUESTS
+            print(request)
+        #endif
+        networkManager.perform(request: request) { success, data, error in
+            DispatchQueue.main.async {
+                completion(success, error)
+            }
+        }
+    }
     
     func perform<T: Decodable>(request: URLRequest, withResponseType responseType: T.Type?, completion: @escaping (_ success: Bool, _ data: T?, _ error: Error?) -> Void) {
         #if LOG_REQUESTS
