@@ -13,23 +13,23 @@ class RequestManager {
     let networkManager = NetworkManager()
     static let shared = RequestManager()
     
-    func loadStations(page: Int, limit: Int, completion: @escaping (_ success: Bool, _ stations: Results<Station>?, _ error: Error?) -> ()) {
-        let request = StationRequests.getStations(page: page, limit: limit)
-        perform(request: request, withResponseType: Results<Station>.self, completion: completion)
+    func load<T: Model>(page: Int, limit: Int, completion: @escaping (_ success: Bool, _ stations: Results<T>?, _ error: Error?) -> ()) {
+        let request = Requests<T>.get(page: page, limit: limit)
+        perform(request: request, withResponseType: Results<T>.self, completion: completion)
     }
     
-    func create(_ station: Station, completion: @escaping (_ success: Bool, _ stations: Station?, _ error: Error?) -> ()) {
-        let request = StationRequests.create(station)
-        perform(request: request, withResponseType: Station.self, completion: completion)
+    func create<T: Model>(_ model: T, completion: @escaping (_ success: Bool, _ stations: T?, _ error: Error?) -> ()) {
+        let request = Requests<T>.create(model)
+        perform(request: request, withResponseType: T.self, completion: completion)
     }
     
-    func update(_ station: Station, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
-        let request = StationRequests.update(station)
+    func update<T: Model>(_ model: T, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
+        let request = Requests<T>.update(model)
         perform(request: request, completion: completion)
     }
     
-    func delete(_ station: Station, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
-        let request = StationRequests.delete(station)
+    func delete<T: Model>(_ model: T, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
+        let request = Requests<T>.delete(model)
         perform(request: request, completion: completion)
     }
 }

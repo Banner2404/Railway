@@ -1,18 +1,18 @@
 //
-//  StationsRequests.swift
+//  Requests.swift
 //  Railway
 //
-//  Created by Соболь Евгений on 10/23/17.
+//  Created by Соболь Евгений on 11/26/17.
 //  Copyright © 2017 Insoft. All rights reserved.
 //
 
 import Foundation
 
-class StationRequests {
+class Requests<T: Model> {
     
-    static func getStations(page: Int, limit: Int) -> URLRequest {
+    static func get(page: Int, limit: Int) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
-        url.appendPathComponent(ApiPath.Stations)
+        url.appendPathComponent(T.apiPath)
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
         urlComponents.queryItems = [
             URLQueryItem(name: ApiPath.Page, value: "\(page)"),
@@ -22,26 +22,26 @@ class StationRequests {
         return URLRequest.getRequest(withUrl: urlComponents.url!)
     }
     
-    static func create(_ station: Station) -> URLRequest {
+    static func create(_ model: T) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
-        url.appendPathComponent(ApiPath.Stations)
-        let body = try? JSONEncoder().encode(station)
+        url.appendPathComponent(T.apiPath)
+        let body = try? JSONEncoder().encode(model)
         return URLRequest.postRequest(withUrl: url, body: body)
     }
     
-    static func update(_ station: Station) -> URLRequest {
+    static func update(_ model: T) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
-        url.appendPathComponent(ApiPath.Stations)
-        url.appendPathComponent("\(station.id)")
+        url.appendPathComponent(T.apiPath)
+        url.appendPathComponent("\(model.id)")
         
-        let body = try? JSONEncoder().encode(station)
+        let body = try? JSONEncoder().encode(model)
         return URLRequest.putRequest(withUrl: url, body: body)
     }
     
-    static func delete(_ station: Station) -> URLRequest {
+    static func delete(_ model: T) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
-        url.appendPathComponent(ApiPath.Stations)
-        url.appendPathComponent("\(station.id)")
+        url.appendPathComponent(T.apiPath)
+        url.appendPathComponent("\(model.id)")
         
         return URLRequest.deleteRequest(withUrl: url)
     }

@@ -38,7 +38,7 @@ private extension StationsViewController {
     func loadStations() {
         page += 1
         isLoading = true
-        requestManager.loadStations(page: page, limit: limit) { [weak self] (success, stations, error) in
+        requestManager.load(page: page, limit: limit) { [weak self] (success: Bool, stations: Results<Station>?, error: Error?) in
             self?.isLoading = false
             if success, let stations = stations {
                 self?.totalCount = stations.meta.totalCount

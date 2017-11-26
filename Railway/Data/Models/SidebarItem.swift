@@ -51,10 +51,16 @@ class SidebarItem: NSObject {
     }
 }
 
-protocol Model {
+protocol Model: Codable {
     init()
+    
+    var id: Int { get }
+    static var apiPath: String { get }
 }
-extension Station: Model {}
+extension Station: Model {
+    
+    static var apiPath = ApiPath.Stations
+}
 
 class ClassMap {
     
@@ -73,7 +79,7 @@ class ClassMap {
     static func classes(for selectedType: SidebarItem.Section) -> (controller: BaseViewController.Type, model: Model.Type, dataManager: DataManager.Type) {
         switch selectedType {
         case .stations:
-            return (EditStationViewController.self, Station.self, StationDataManager.self)
+            return (EditStationViewController.self, Station.self, DefaultDataManager<Station>.self)
         }
     }
 }
