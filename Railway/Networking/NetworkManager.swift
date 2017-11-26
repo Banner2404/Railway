@@ -20,13 +20,14 @@ class NetworkManager {
             defer {
                 completion(success, resultData, error)
             }
-            
+            print()
             if error != nil {
                 return
             }
             
             if data != nil {
                 success = true
+                print((try? JSONSerialization.jsonObject(with: data!, options: [])) ?? "no responce")
             }
         }.resume()
     }

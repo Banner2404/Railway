@@ -28,4 +28,13 @@ class StationRequests {
         let body = try? JSONEncoder().encode(station)
         return URLRequest.postRequest(withUrl: url, body: body)
     }
+    
+    static func update(_ station: Station) -> URLRequest {
+        var url = URL(string: ApiURL.Host)!
+        url.appendPathComponent(ApiPath.Stations)
+        url.appendPathComponent("\(station.id)")
+        
+        let body = try? JSONEncoder().encode(station)
+        return URLRequest.putRequest(withUrl: url, body: body)
+    }
 }

@@ -42,7 +42,7 @@ private extension StationsViewController {
             self?.isLoading = false
             if success, let stations = stations {
                 self?.totalCount = stations.meta.totalCount
-                self?.add(stations.stations)
+                self?.add(stations.data)
             } else {
                 print(error ?? "Unable to load stations")
             }

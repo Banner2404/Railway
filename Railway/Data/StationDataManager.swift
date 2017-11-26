@@ -31,6 +31,6 @@ class StationDataManager: DataManager {
     }
     
     func update(station: Station, completion: @escaping (Bool, Station?, Error?) -> Void) {
-        completion(true, nil, nil)
+        RequestManager.shared.update(station, completion: completion)
     }
 }
