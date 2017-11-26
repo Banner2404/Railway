@@ -16,15 +16,15 @@ class Station: NSObject, Codable, NSCopying {
     var name: String
     
     required override convenience init() {
-        self.init(name: "", id: 0)
+        self.init(id: 0, name: "")
     }
     
-    init(name: String, id: Int) {
-        self.name = name
+    init(id: Int, name: String) {
         self.id = id
+        self.name = name
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
-        return Station(name: name, id: id)
+        return Station(id: id, name: name)
     }
 }

@@ -65,10 +65,12 @@ class AdminMainViewController: NSViewController, ContainerViewController {
 //MARK: - Private
 private extension AdminMainViewController {
     
-    func controllerClass(for selectedType: SidebarItem.Section) -> BaseViewController.Type {
+    func controllerClass(for selectedType: SidebarItem.Section) -> (BaseViewController & AdminChildViewController).Type {
         switch selectedType {
         case .stations:
             return StationsViewController.self
+        case .accounts:
+            return AccountsViewController.self
         }
     }
     

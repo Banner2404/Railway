@@ -15,12 +15,6 @@ class SidebarItem: NSObject {
     @objc
     let image: NSImage
     let section: Section
-    var modelType: AnyClass {
-        switch section {
-        case .stations:
-            return Station.self
-        }
-    }
  
     init(title: String, image: NSImage, section: Section) {
         self.title = title
@@ -32,6 +26,7 @@ class SidebarItem: NSObject {
         return [
             //SidebarItem(title: "Tickets", image: #imageLiteral(resourceName: "testIcon"), section: .tickets),
             SidebarItem(title: "Stations", image: #imageLiteral(resourceName: "testIcon"), section: .stations),
+            SidebarItem(title: "Accounts", image: #imageLiteral(resourceName: "testIcon"), section: .accounts),
 //            SidebarItem(title: "Trains", image: #imageLiteral(resourceName: "testIcon"), section: .trains),
 //            SidebarItem(title: "Passengers", image: #imageLiteral(resourceName: "testIcon"), section: .passengers),
 //            SidebarItem(title: "Users", image: #imageLiteral(resourceName: "testIcon"), section: .users),
@@ -42,24 +37,13 @@ class SidebarItem: NSObject {
     
     enum Section {
         case stations
+        case accounts
         //        case tickets
         //        case trains
         //        case passengers
-        //        case users
         //        case logs
         //        case routes
     }
-}
-
-protocol Model: Codable {
-    init()
-    
-    var id: Int { get }
-    static var apiPath: String { get }
-}
-extension Station: Model {
-    
-    static var apiPath = ApiPath.Stations
 }
 
 class ClassMap {
@@ -80,6 +64,8 @@ class ClassMap {
         switch selectedType {
         case .stations:
             return (EditStationViewController.self, Station.self, DefaultDataManager<Station>.self)
+        case .accounts:
+            return (EditAccountViewController.self, Account.self, DefaultDataManager<Account>.self)
         }
     }
 }

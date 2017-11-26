@@ -10,8 +10,10 @@
 		D13029CC1F9A053D0081826A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13029CB1F9A053D0081826A /* AppDelegate.swift */; };
 		D13029D01F9A053D0081826A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13029CF1F9A053D0081826A /* Assets.xcassets */; };
 		D13029D31F9A053D0081826A /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13029D11F9A053D0081826A /* Admin.storyboard */; };
+		D13813A11FCB23C2008F74F8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13813A01FCB23C2008F74F8 /* Model.swift */; };
+		D13813A41FCB2496008F74F8 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13813A21FCB2496008F74F8 /* AccountsViewController.swift */; };
+		D13813A71FCB24F3008F74F8 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */; };
 		D14823731FA0A9AE002AE484 /* EditStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14823721FA0A9AE002AE484 /* EditStationViewController.swift */; };
-		D14823751FA1DD0E002AE484 /* RoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14823741FA1DD0E002AE484 /* RoutesViewController.swift */; };
 		D17B62F81FA075C500450052 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62F71FA075C500450052 /* AddViewController.swift */; };
 		D17B62FA1FA07D3700450052 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62F91FA07D3700450052 /* ContainerViewController.swift */; };
 		D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */; };
@@ -31,6 +33,7 @@
 		D1DFD3701F9E3BAC0003867B /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD36F1F9E3BAC0003867B /* Results.swift */; };
 		D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD3711F9E4BA10003867B /* MainWindowController.swift */; };
 		D1E7B0571FCB1F10006C7D44 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7B0561FCB1F10006C7D44 /* Requests.swift */; };
+		D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7B0581FCB2309006C7D44 /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +43,10 @@
 		D13029D21F9A053D0081826A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Admin.storyboard; sourceTree = "<group>"; };
 		D13029D41F9A053D0081826A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13029D51F9A053D0081826A /* Railway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Railway.entitlements; sourceTree = "<group>"; };
+		D13813A01FCB23C2008F74F8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D13813A21FCB2496008F74F8 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		D14823721FA0A9AE002AE484 /* EditStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStationViewController.swift; sourceTree = "<group>"; };
-		D14823741FA1DD0E002AE484 /* RoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesViewController.swift; sourceTree = "<group>"; };
 		D17B62F71FA075C500450052 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		D17B62F91FA07D3700450052 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTypeViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		D1DFD36F1F9E3BAC0003867B /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D1DFD3711F9E4BA10003867B /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		D1E7B0561FCB1F10006C7D44 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		D1E7B0581FCB2309006C7D44 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,8 @@
 			children = (
 				D19CAD751F9DED070061949C /* SidebarItem.swift */,
 				D19CAD811F9DFE730061949C /* Station.swift */,
+				D1E7B0581FCB2309006C7D44 /* Account.swift */,
+				D13813A01FCB23C2008F74F8 /* Model.swift */,
 				D1DFD36F1F9E3BAC0003867B /* Results.swift */,
 			);
 			path = Models;
@@ -144,11 +152,12 @@
 				D17B62F91FA07D3700450052 /* ContainerViewController.swift */,
 				D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */,
 				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
-				D14823741FA1DD0E002AE484 /* RoutesViewController.swift */,
+				D13813A21FCB2496008F74F8 /* AccountsViewController.swift */,
 				D17B62F71FA075C500450052 /* AddViewController.swift */,
 				D1938A621FA339B200A28344 /* EditViewController.swift */,
 				D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */,
 				D14823721FA0A9AE002AE484 /* EditStationViewController.swift */,
+				D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -260,18 +269,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
+				D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */,
 				D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */,
 				D19CAD921F9E33C20061949C /* Constants.swift in Sources */,
 				D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */,
 				D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */,
 				D19CAD821F9DFE730061949C /* Station.swift in Sources */,
 				D13029CC1F9A053D0081826A /* AppDelegate.swift in Sources */,
-				D14823751FA1DD0E002AE484 /* RoutesViewController.swift in Sources */,
 				D17B62F81FA075C500450052 /* AddViewController.swift in Sources */,
 				D19CAD891F9E307C0061949C /* RequestManager.swift in Sources */,
 				D17B62FA1FA07D3700450052 /* ContainerViewController.swift in Sources */,
 				D19CAD871F9E301B0061949C /* NetworkManager.swift in Sources */,
+				D13813A71FCB24F3008F74F8 /* EditAccountViewController.swift in Sources */,
 				D1DFD3701F9E3BAC0003867B /* Results.swift in Sources */,
+				D13813A41FCB2496008F74F8 /* AccountsViewController.swift in Sources */,
+				D13813A11FCB23C2008F74F8 /* Model.swift in Sources */,
 				D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */,
 				D14823731FA0A9AE002AE484 /* EditStationViewController.swift in Sources */,
 				D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */,
