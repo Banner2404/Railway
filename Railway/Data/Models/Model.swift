@@ -29,3 +29,6 @@ extension Station: Model {
 extension Account: Model {
     static var apiPath = ApiPath.Accounts
 }
+extension Passenger: Model {
+    static var apiPath = ApiPath.Passenger
+}

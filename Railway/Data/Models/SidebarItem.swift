@@ -27,6 +27,7 @@ class SidebarItem: NSObject {
             //SidebarItem(title: "Tickets", image: #imageLiteral(resourceName: "testIcon"), section: .tickets),
             SidebarItem(title: "Stations", image: #imageLiteral(resourceName: "testIcon"), section: .stations),
             SidebarItem(title: "Accounts", image: #imageLiteral(resourceName: "testIcon"), section: .accounts),
+            SidebarItem(title: "Passengers", image: #imageLiteral(resourceName: "testIcon"), section: .passengers),
 //            SidebarItem(title: "Trains", image: #imageLiteral(resourceName: "testIcon"), section: .trains),
 //            SidebarItem(title: "Passengers", image: #imageLiteral(resourceName: "testIcon"), section: .passengers),
 //            SidebarItem(title: "Users", image: #imageLiteral(resourceName: "testIcon"), section: .users),
@@ -38,9 +39,9 @@ class SidebarItem: NSObject {
     enum Section {
         case stations
         case accounts
+        case passengers
         //        case tickets
         //        case trains
-        //        case passengers
         //        case logs
         //        case routes
     }
@@ -66,6 +67,8 @@ class ClassMap {
             return (EditStationViewController.self, Station.self, DefaultDataManager<Station>.self)
         case .accounts:
             return (EditAccountViewController.self, Account.self, DefaultDataManager<Account>.self)
+        case .passengers:
+            return (EditPassengerViewController.self, Passenger.self, DefaultDataManager<Passenger>.self)
         }
     }
 }

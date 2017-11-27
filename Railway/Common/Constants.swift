@@ -15,6 +15,7 @@ struct ApiURL {
 struct ApiPath {
     static let Stations = "stations"
     static let Accounts = "accounts"
+    static let Passenger = "passengers"
     static let Page = "page"
     static let Limit = "limit"
 }
