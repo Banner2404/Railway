@@ -39,6 +39,10 @@
 		D1CC03B61FD409BC00317ACA /* LoginRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03B51FD409BC00317ACA /* LoginRequests.swift */; };
 		D1CC03BA1FD40F9B00317ACA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03B91FD40F9B00317ACA /* User.swift */; };
 		D1CC03BC1FD4103F00317ACA /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03BB1FD4103F00317ACA /* UserAccountManager.swift */; };
+		D1CC03BE1FD420F900317ACA /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03BD1FD420F900317ACA /* Route.swift */; };
+		D1CC03C01FD487BE00317ACA /* RoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03BF1FD487BE00317ACA /* RoutesViewController.swift */; };
+		D1CC03C21FD4883700317ACA /* EditRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03C11FD4883700317ACA /* EditRouteViewController.swift */; };
+		D1CC03C41FD48A4000317ACA /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03C31FD48A4000317ACA /* DateFormatter.swift */; };
 		D1DFD3701F9E3BAC0003867B /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD36F1F9E3BAC0003867B /* Results.swift */; };
 		D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD3711F9E4BA10003867B /* MainWindowController.swift */; };
 		D1E7B0571FCB1F10006C7D44 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7B0561FCB1F10006C7D44 /* Requests.swift */; };
@@ -81,6 +85,10 @@
 		D1CC03B51FD409BC00317ACA /* LoginRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequests.swift; sourceTree = "<group>"; };
 		D1CC03B91FD40F9B00317ACA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1CC03BB1FD4103F00317ACA /* UserAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
+		D1CC03BD1FD420F900317ACA /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		D1CC03BF1FD487BE00317ACA /* RoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesViewController.swift; sourceTree = "<group>"; };
+		D1CC03C11FD4883700317ACA /* EditRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRouteViewController.swift; sourceTree = "<group>"; };
+		D1CC03C31FD48A4000317ACA /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		D1DFD36F1F9E3BAC0003867B /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D1DFD3711F9E4BA10003867B /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		D1E7B0561FCB1F10006C7D44 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
@@ -159,6 +167,7 @@
 				D19CAD811F9DFE730061949C /* Station.swift */,
 				D1E7B0581FCB2309006C7D44 /* Account.swift */,
 				D12D09531FCC387200AE8ADF /* Passenger.swift */,
+				D1CC03BD1FD420F900317ACA /* Route.swift */,
 				D13813A01FCB23C2008F74F8 /* Model.swift */,
 				D1DFD36F1F9E3BAC0003867B /* Results.swift */,
 				D1CC03B91FD40F9B00317ACA /* User.swift */,
@@ -199,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				D19CAD8E1F9E33920061949C /* URLRequest.swift */,
+				D1CC03C31FD48A4000317ACA /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,12 +239,14 @@
 				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
 				D13813A21FCB2496008F74F8 /* AccountsViewController.swift */,
 				D12D09551FCC3A2200AE8ADF /* PassengersViewController.swift */,
+				D1CC03BF1FD487BE00317ACA /* RoutesViewController.swift */,
 				D17B62F71FA075C500450052 /* AddViewController.swift */,
 				D1938A621FA339B200A28344 /* EditViewController.swift */,
 				D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */,
 				D14823721FA0A9AE002AE484 /* EditStationViewController.swift */,
 				D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */,
 				D12D09571FCC3AC700AE8ADF /* EditPassengerViewController.swift */,
+				D1CC03C11FD4883700317ACA /* EditRouteViewController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -320,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1CC03C41FD48A4000317ACA /* DateFormatter.swift in Sources */,
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
 				D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */,
 				D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */,
@@ -344,13 +357,16 @@
 				D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */,
 				D14823731FA0A9AE002AE484 /* EditStationViewController.swift in Sources */,
 				D12D09561FCC3A2200AE8ADF /* PassengersViewController.swift in Sources */,
+				D1CC03BE1FD420F900317ACA /* Route.swift in Sources */,
 				D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */,
 				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
+				D1CC03C21FD4883700317ACA /* EditRouteViewController.swift in Sources */,
 				D1CC03BC1FD4103F00317ACA /* UserAccountManager.swift in Sources */,
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
 				D1E7B0571FCB1F10006C7D44 /* Requests.swift in Sources */,
 				D1938A631FA339B200A28344 /* EditViewController.swift in Sources */,
 				D13813A91FCB3B63008F74F8 /* TableViewController.swift in Sources */,
+				D1CC03C01FD487BE00317ACA /* RoutesViewController.swift in Sources */,
 				D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

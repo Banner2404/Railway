@@ -28,11 +28,11 @@ class SidebarItem: NSObject {
             SidebarItem(title: "Stations", image: #imageLiteral(resourceName: "testIcon"), section: .stations),
             SidebarItem(title: "Accounts", image: #imageLiteral(resourceName: "testIcon"), section: .accounts),
             SidebarItem(title: "Passengers", image: #imageLiteral(resourceName: "testIcon"), section: .passengers),
+            SidebarItem(title: "Routes", image: #imageLiteral(resourceName: "testIcon"), section: .routes),
 //            SidebarItem(title: "Trains", image: #imageLiteral(resourceName: "testIcon"), section: .trains),
 //            SidebarItem(title: "Passengers", image: #imageLiteral(resourceName: "testIcon"), section: .passengers),
 //            SidebarItem(title: "Users", image: #imageLiteral(resourceName: "testIcon"), section: .users),
 //            SidebarItem(title: "Logs", image: #imageLiteral(resourceName: "testIcon"), section: .logs),
-//            SidebarItem(title: "Routes", image: #imageLiteral(resourceName: "testIcon"), section: .routes),
         ]
     }
     
@@ -40,10 +40,11 @@ class SidebarItem: NSObject {
         case stations
         case accounts
         case passengers
+        case routes
+
         //        case tickets
         //        case trains
         //        case logs
-        //        case routes
     }
 }
 
@@ -69,6 +70,8 @@ class ClassMap {
             return (EditAccountViewController.self, Account.self, DefaultDataManager<Account>.self)
         case .passengers:
             return (EditPassengerViewController.self, Passenger.self, DefaultDataManager<Passenger>.self)
+        case .routes:
+            return (EditRouteViewController.self, Route.self, DefaultDataManager<Route>.self)
         }
     }
 }

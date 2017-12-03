@@ -24,6 +24,8 @@ class LoginViewController: NSViewController, BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTextField.stringValue = "admin"
+        passwordTextField.stringValue = "123456"
         window = NSApplication.shared.windows.first
         validateTextFields()
     }
@@ -64,9 +66,6 @@ class LoginViewController: NSViewController, BaseViewController {
     }
     
     func showAdminWindow() {
-//        let window = MainWindowController.loadFromStoryboard()
-//        window.showWindow(self)
-//        window.becomeFirstResponder()
         performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "showAdminWindow"), sender: self)
         self.window?.close()
     }

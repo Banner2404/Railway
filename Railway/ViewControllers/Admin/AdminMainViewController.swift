@@ -73,6 +73,8 @@ private extension AdminMainViewController {
             return AccountsViewController.self
         case .passengers:
             return PassengersViewController.self
+        case .routes:
+            return RoutesViewController.self
         }
     }
     

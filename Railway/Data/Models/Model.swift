@@ -13,6 +13,14 @@ protocol Model: Codable {
     
     var id: Int { get }
     static var apiPath: String { get }
+    static var dateFormatter: DateFormatter? { get }
+}
+
+extension Model {
+    
+    static var dateFormatter: DateFormatter? {
+        return nil
+    }
 }
 
 class ModelClass: Model {
@@ -31,4 +39,10 @@ extension Account: Model {
 }
 extension Passenger: Model {
     static var apiPath = ApiPath.Passenger
+}
+extension Route: Model {
+    static var apiPath = ApiPath.Routes
+    static var dateFormatter: DateFormatter? {
+        return DateFormatter.HHmmSS
+    }
 }
