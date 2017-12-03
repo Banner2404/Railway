@@ -18,6 +18,7 @@ struct ApiPath {
     static let Passenger = "passengers"
     static let Page = "page"
     static let Limit = "limit"
+    static let Auth = "auth"
 }
 
 struct ToolbarIdentifier {

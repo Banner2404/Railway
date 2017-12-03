@@ -34,6 +34,11 @@
 		D19CAD891F9E307C0061949C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD881F9E307C0061949C /* RequestManager.swift */; };
 		D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD8E1F9E33920061949C /* URLRequest.swift */; };
 		D19CAD921F9E33C20061949C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD911F9E33C20061949C /* Constants.swift */; };
+		D1CC03B01FD4036800317ACA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CC03AE1FD4036800317ACA /* Login.storyboard */; };
+		D1CC03B41FD4057000317ACA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03B31FD4057000317ACA /* LoginViewController.swift */; };
+		D1CC03B61FD409BC00317ACA /* LoginRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03B51FD409BC00317ACA /* LoginRequests.swift */; };
+		D1CC03BA1FD40F9B00317ACA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03B91FD40F9B00317ACA /* User.swift */; };
+		D1CC03BC1FD4103F00317ACA /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03BB1FD4103F00317ACA /* UserAccountManager.swift */; };
 		D1DFD3701F9E3BAC0003867B /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD36F1F9E3BAC0003867B /* Results.swift */; };
 		D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFD3711F9E4BA10003867B /* MainWindowController.swift */; };
 		D1E7B0571FCB1F10006C7D44 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7B0561FCB1F10006C7D44 /* Requests.swift */; };
@@ -71,6 +76,11 @@
 		D19CAD881F9E307C0061949C /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		D19CAD8E1F9E33920061949C /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		D19CAD911F9E33C20061949C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1CC03AF1FD4036800317ACA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		D1CC03B31FD4057000317ACA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D1CC03B51FD409BC00317ACA /* LoginRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequests.swift; sourceTree = "<group>"; };
+		D1CC03B91FD40F9B00317ACA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D1CC03BB1FD4103F00317ACA /* UserAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
 		D1DFD36F1F9E3BAC0003867B /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D1DFD3711F9E4BA10003867B /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		D1E7B0561FCB1F10006C7D44 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
@@ -107,16 +117,16 @@
 		D13029CA1F9A053D0081826A /* Railway */ = {
 			isa = PBXGroup;
 			children = (
-				D13029CB1F9A053D0081826A /* AppDelegate.swift */,
-				D1DFD3711F9E4BA10003867B /* MainWindowController.swift */,
 				D1938A5D1FA32EBA00A28344 /* Data */,
 				D19CAD901F9E33B20061949C /* Common */,
-				D19CAD8D1F9E33740061949C /* Extensions */,
 				D19CAD851F9E2FFE0061949C /* Networking */,
+				D19CAD8D1F9E33740061949C /* Extensions */,
 				D19CAD781F9DF2220061949C /* ViewControllers */,
-				D17B62FE1FA07F9100450052 /* Cells */,
+				D1CC03B21FD4052E00317ACA /* Admin */,
+				D13029CB1F9A053D0081826A /* AppDelegate.swift */,
 				D13029CF1F9A053D0081826A /* Assets.xcassets */,
 				D13029D11F9A053D0081826A /* Admin.storyboard */,
+				D1CC03AE1FD4036800317ACA /* Login.storyboard */,
 				D13029D41F9A053D0081826A /* Info.plist */,
 				D13029D51F9A053D0081826A /* Railway.entitlements */,
 			);
@@ -137,6 +147,7 @@
 			children = (
 				D19CAD771F9DF2170061949C /* Models */,
 				D1938A5E1FA32ED600A28344 /* DataManager.swift */,
+				D1CC03BB1FD4103F00317ACA /* UserAccountManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -150,6 +161,7 @@
 				D12D09531FCC387200AE8ADF /* Passenger.swift */,
 				D13813A01FCB23C2008F74F8 /* Model.swift */,
 				D1DFD36F1F9E3BAC0003867B /* Results.swift */,
+				D1CC03B91FD40F9B00317ACA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,18 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				D19CAD831F9DFFFA0061949C /* BaseViewController.swift */,
-				D13813A81FCB3B63008F74F8 /* TableViewController.swift */,
-				D17B62F91FA07D3700450052 /* ContainerViewController.swift */,
-				D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */,
-				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
-				D13813A21FCB2496008F74F8 /* AccountsViewController.swift */,
-				D12D09551FCC3A2200AE8ADF /* PassengersViewController.swift */,
-				D17B62F71FA075C500450052 /* AddViewController.swift */,
-				D1938A621FA339B200A28344 /* EditViewController.swift */,
-				D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */,
-				D14823721FA0A9AE002AE484 /* EditStationViewController.swift */,
-				D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */,
-				D12D09571FCC3AC700AE8ADF /* EditPassengerViewController.swift */,
+				D1CC03B81FD40E8700317ACA /* Login */,
+				D1CC03B71FD40E8000317ACA /* Admin */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				D1E7B0561FCB1F10006C7D44 /* Requests.swift */,
+				D1CC03B51FD409BC00317ACA /* LoginRequests.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -206,6 +209,42 @@
 				D19CAD911F9E33C20061949C /* Constants.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D1CC03B21FD4052E00317ACA /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				D1DFD3711F9E4BA10003867B /* MainWindowController.swift */,
+				D17B62FE1FA07F9100450052 /* Cells */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		D1CC03B71FD40E8000317ACA /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				D13813A81FCB3B63008F74F8 /* TableViewController.swift */,
+				D17B62F91FA07D3700450052 /* ContainerViewController.swift */,
+				D19CAD711F9DEBAE0061949C /* AdminMainViewController.swift */,
+				D19CAD7D1F9DFE4D0061949C /* StationsViewController.swift */,
+				D13813A21FCB2496008F74F8 /* AccountsViewController.swift */,
+				D12D09551FCC3A2200AE8ADF /* PassengersViewController.swift */,
+				D17B62F71FA075C500450052 /* AddViewController.swift */,
+				D1938A621FA339B200A28344 /* EditViewController.swift */,
+				D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */,
+				D14823721FA0A9AE002AE484 /* EditStationViewController.swift */,
+				D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */,
+				D12D09571FCC3AC700AE8ADF /* EditPassengerViewController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		D1CC03B81FD40E8700317ACA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D1CC03B31FD4057000317ACA /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1CC03B01FD4036800317ACA /* Login.storyboard in Resources */,
 				D17B63081FA085BD00450052 /* TypeCollectionViewItem.xib in Resources */,
 				D13029D01F9A053D0081826A /* Assets.xcassets in Resources */,
 				D13029D31F9A053D0081826A /* Admin.storyboard in Resources */,
@@ -284,7 +324,9 @@
 				D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */,
 				D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */,
 				D19CAD921F9E33C20061949C /* Constants.swift in Sources */,
+				D1CC03BA1FD40F9B00317ACA /* User.swift in Sources */,
 				D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */,
+				D1CC03B41FD4057000317ACA /* LoginViewController.swift in Sources */,
 				D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */,
 				D19CAD821F9DFE730061949C /* Station.swift in Sources */,
 				D12D09581FCC3AC700AE8ADF /* EditPassengerViewController.swift in Sources */,
@@ -296,6 +338,7 @@
 				D12D09541FCC387200AE8ADF /* Passenger.swift in Sources */,
 				D13813A71FCB24F3008F74F8 /* EditAccountViewController.swift in Sources */,
 				D1DFD3701F9E3BAC0003867B /* Results.swift in Sources */,
+				D1CC03B61FD409BC00317ACA /* LoginRequests.swift in Sources */,
 				D13813A41FCB2496008F74F8 /* AccountsViewController.swift in Sources */,
 				D13813A11FCB23C2008F74F8 /* Model.swift in Sources */,
 				D19CAD731F9DEBAE0061949C /* AdminMainViewController.swift in Sources */,
@@ -303,6 +346,7 @@
 				D12D09561FCC3A2200AE8ADF /* PassengersViewController.swift in Sources */,
 				D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */,
 				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
+				D1CC03BC1FD4103F00317ACA /* UserAccountManager.swift in Sources */,
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
 				D1E7B0571FCB1F10006C7D44 /* Requests.swift in Sources */,
 				D1938A631FA339B200A28344 /* EditViewController.swift in Sources */,
@@ -320,6 +364,14 @@
 				D13029D21F9A053D0081826A /* Base */,
 			);
 			name = Admin.storyboard;
+			sourceTree = "<group>";
+		};
+		D1CC03AE1FD4036800317ACA /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1CC03AF1FD4036800317ACA /* Base */,
+			);
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

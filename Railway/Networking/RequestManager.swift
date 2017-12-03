@@ -33,12 +33,17 @@ class RequestManager {
         let request = Requests<T>.delete(model)
         perform(request: request, completion: completion)
     }
+    
+    func login(username: String, password: String, completion: @escaping (_ success: Bool, _ token: User?, _ error: Error?) -> ()) {
+        let request = LoginRequests.login(username: username, password: password)
+        perform(request: request, withResponseType: User.self, completion: completion)
+    }
 }
 
 //MARK: - Private
 private extension RequestManager {
     
-    func perform(request: URLRequest, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+    func perform(request: URLRequest, completion: @escaping (_ success: Bool, _ data: Any?, _ error: Error?) -> Void) {
         #if LOG_REQUESTS
             print(request)
             
@@ -47,9 +52,19 @@ private extension RequestManager {
             }
         #endif
         networkManager.perform(request: request) { success, data, error in
-            DispatchQueue.main.async {
-                completion(success, error)
+            var object: Any? = nil
+            if let data = data {
+                object = try? JSONSerialization.jsonObject(with: data, options: [])
             }
+            DispatchQueue.main.async {
+                completion(success, object, error)
+            }
+        }
+    }
+    
+    func perform(request: URLRequest, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+        perform(request: request) { (success, _, error) in
+            completion(success, error)
         }
     }
     

@@ -10,6 +10,12 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
 
+    class func loadFromStoryboard() -> MainWindowController {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Admin"), bundle: nil)
+        let window = storyboard.instantiateInitialController() as! MainWindowController
+        return window
+    }
+    
     var viewController: AdminMainViewController {
         return contentViewController as! AdminMainViewController
     }

@@ -11,7 +11,8 @@ import Cocoa
 protocol BaseViewController {
     
     var requestManager: RequestManager { get }
-    
+    var userAccountManager: UserAccountManager { get }
+
     static func loadFromAdminStoryboard<T>() -> T
 }
 
@@ -19,6 +20,10 @@ extension BaseViewController {
     
     var requestManager: RequestManager {
         return RequestManager.shared
+    }
+    
+    var userAccountManager: UserAccountManager {
+        return UserAccountManager.shared
     }
 
     static func loadFromAdminStoryboard<T>() -> T {
