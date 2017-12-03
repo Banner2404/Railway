@@ -695,17 +695,17 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="8Ql-p2-NQG"/>
                                 <toolbarItem implicitItemIdentifier="2FA370EA-2704-435E-B41D-3557D418C998" explicitItemIdentifier="add" label="Add" paletteLabel="Add" tag="-1" image="NSAdvanced" id="nzy-zu-7T5">
                                     <connections>
-                                        <action selector="addButtonClick:" target="B8D-0N-5wS" id="DEC-Yg-24j"/>
+                                        <action selector="addButtonClick:" target="B8D-0N-5wS" id="TOM-Dn-0rz"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="675E19B6-10E3-40A8-B592-63130ACEB8E2" explicitItemIdentifier="edit" label="Edit" paletteLabel="Edit" tag="-1" image="NSAdvanced" id="Hf3-Fp-T8g">
                                     <connections>
-                                        <action selector="editButtonClick:" target="B8D-0N-5wS" id="e8H-R4-Uk3"/>
+                                        <action selector="editButtonClick:" target="B8D-0N-5wS" id="nLg-cr-243"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="704197B9-4BB9-4215-BF8B-2DED272C58E9" explicitItemIdentifier="delete" label="Delete" paletteLabel="Delete" tag="-1" image="NSAdvanced" id="FW6-J4-PaD">
                                     <connections>
-                                        <action selector="deleteButtonClick:" target="B8D-0N-5wS" id="MiO-9P-rh0"/>
+                                        <action selector="deleteButtonClick:" target="B8D-0N-5wS" id="GuB-ZR-boR"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
@@ -721,13 +721,13 @@
                         </connections>
                     </window>
                     <connections>
-                        <outlet property="editButtonClick" destination="Hf3-Fp-T8g" id="vmR-De-zbv"/>
+                        <outlet property="toolbar" destination="oaw-M0-rtB" id="oQq-GE-k93"/>
                         <segue destination="ScD-pN-K5d" kind="relationship" relationship="window.shadowedContentViewController" id="tsq-Ve-MX7"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="131" y="272"/>
         </scene>
         <!--Admin Main View Controller-->
         <scene sceneID="2jB-Zm-Ipf">
@@ -1289,7 +1289,7 @@ DQ
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6b-1e-rO8">
                                 <rect key="frame" x="0.0" y="0.0" width="650" height="443"/>
                                 <clipView key="contentView" id="ITl-Nw-c3h">
-                                    <rect key="frame" x="1" y="23" width="648" height="419"/>
+                                    <rect key="frame" x="1" y="0.0" width="648" height="442"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="Bld-Oz-nO8" viewBased="YES" id="yIj-YD-1We">

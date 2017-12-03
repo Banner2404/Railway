@@ -13,24 +13,24 @@ class RequestManager {
     let networkManager = NetworkManager()
     static let shared = RequestManager()
     
-    func load<T: Model>(page: Int, limit: Int, completion: @escaping (_ success: Bool, _ stations: Results<T>?, _ error: Error?) -> ()) {
-        let request = Requests<T>.get(page: page, limit: limit)
+    func load<T: Model>(page: Int, limit: Int, token: String, completion: @escaping (_ success: Bool, _ stations: Results<T>?, _ error: Error?) -> ()) {
+        let request = Requests<T>.get(page: page, limit: limit, token: token)
         perform(request: request, withResponseType: Results<T>.self, completion: completion)
     }
     
-    func create<T: Model>(_ model: T, completion: @escaping (_ success: Bool, _ stations: T?, _ error: Error?) -> ()) {
-        let request = Requests<T>.create(model)
+    func create<T: Model>(_ model: T, token: String, completion: @escaping (_ success: Bool, _ stations: T?, _ error: Error?) -> ()) {
+        let request = Requests<T>.create(model, token: token)
         print(try! JSONSerialization.jsonObject(with: request.httpBody!, options: []))
         perform(request: request, withResponseType: T.self, completion: completion)
     }
     
-    func update<T: Model>(_ model: T, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
-        let request = Requests<T>.update(model)
+    func update<T: Model>(_ model: T, token: String, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
+        let request = Requests<T>.update(model, token: token)
         perform(request: request, completion: completion)
     }
     
-    func delete<T: Model>(_ model: T, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
-        let request = Requests<T>.delete(model)
+    func delete<T: Model>(_ model: T, token: String, completion: @escaping (_ success: Bool, _ error: Error?) -> ()) {
+        let request = Requests<T>.delete(model, token: token)
         perform(request: request, completion: completion)
     }
     

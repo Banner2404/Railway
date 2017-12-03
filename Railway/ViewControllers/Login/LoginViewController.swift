@@ -64,8 +64,10 @@ class LoginViewController: NSViewController, BaseViewController {
     }
     
     func showAdminWindow() {
-        let window = MainWindowController.loadFromStoryboard()
-        window.showWindow(self)
+//        let window = MainWindowController.loadFromStoryboard()
+//        window.showWindow(self)
+//        window.becomeFirstResponder()
+        performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "showAdminWindow"), sender: self)
         self.window?.close()
     }
     

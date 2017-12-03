@@ -13,7 +13,7 @@ protocol AdminChildViewController: class {
     func reloadData()
 }
 
-class AdminMainViewController: NSViewController, ContainerViewController {
+class AdminMainViewController: NSViewController, BaseViewController, ContainerViewController {
 
     @IBOutlet var sideBarArrayController: NSArrayController!
     @IBOutlet weak var sideBarTableView: NSTableView!
@@ -49,7 +49,8 @@ class AdminMainViewController: NSViewController, ContainerViewController {
 
         let dataManagerClass = ClassMap.dataManager(for: section)
         let dataManager = dataManagerClass.init()
-        dataManager.delete(object) { (success, error) in
+        let token = userAccountManager.token ?? ""
+        dataManager.delete(object, token: token) { (success, error) in
             self.currentChildViewController?.reloadData()
         }
     }

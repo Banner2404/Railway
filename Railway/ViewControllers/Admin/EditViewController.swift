@@ -37,7 +37,8 @@ class EditViewController: NSViewController, BaseViewController, ContainerViewCon
     
     @IBAction func saveButtonClick(_ sender: Any) {
         let object = fillViewController.getResultObject()
-        dataManager.update(object) { [weak self] (_, _) in
+        let token = userAccountManager.token ?? ""
+        dataManager.update(object, token: token) { [weak self] (_, _) in
             self?.delegate?.editViewControllerDidComplete(self!)
         }
     }

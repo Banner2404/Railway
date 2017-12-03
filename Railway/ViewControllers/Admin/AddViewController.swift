@@ -65,7 +65,8 @@ class AddViewController: NSViewController, BaseViewController, ContainerViewCont
             setupDataManager()
         case .typeSelected(_):
             let object = fillViewController!.getResultObject()
-            dataManager!.create(object, completion: { [weak self] (success, createdObject, error) in
+            let token = userAccountManager.token ?? ""
+            dataManager!.create(object, token: token, completion: { [weak self] (success, createdObject, error) in
                 self?.delegate?.addViewControllerDidComplete(self!)
             })
         }

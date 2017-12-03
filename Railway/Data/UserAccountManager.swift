@@ -13,4 +13,9 @@ class UserAccountManager {
     static let shared = UserAccountManager()
 
     var user: User?
+    
+    var token: String? {
+        guard let user = user else { return nil }
+        return "\(ApiKey.Bearer) \(user.token)"
+    }
 }

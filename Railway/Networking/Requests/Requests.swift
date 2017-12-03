@@ -10,7 +10,7 @@ import Foundation
 
 class Requests<T: Model> {
     
-    static func get(page: Int, limit: Int) -> URLRequest {
+    static func get(page: Int, limit: Int, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         url.appendPathComponent(T.apiPath)
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
@@ -19,30 +19,38 @@ class Requests<T: Model> {
             URLQueryItem(name: ApiPath.Limit, value: "\(limit)"),
         ]
         
-        return URLRequest.getRequest(withUrl: urlComponents.url!)
+        var request = URLRequest.getRequest(withUrl: urlComponents.url!)
+        request.addValue(token, forHTTPHeaderField: ApiKey.Authorization)
+        return request
     }
     
-    static func create(_ model: T) -> URLRequest {
+    static func create(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         url.appendPathComponent(T.apiPath)
         let body = try? JSONEncoder().encode(model)
-        return URLRequest.postRequest(withUrl: url, body: body)
+        var request = URLRequest.postRequest(withUrl: url, body: body)
+        request.addValue(token, forHTTPHeaderField: ApiKey.Authorization)
+        return request
     }
     
-    static func update(_ model: T) -> URLRequest {
+    static func update(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         url.appendPathComponent(T.apiPath)
         url.appendPathComponent("\(model.id)")
         
         let body = try? JSONEncoder().encode(model)
-        return URLRequest.putRequest(withUrl: url, body: body)
+        var request = URLRequest.putRequest(withUrl: url, body: body)
+        request.addValue(token, forHTTPHeaderField: ApiKey.Authorization)
+        return request
     }
     
-    static func delete(_ model: T) -> URLRequest {
+    static func delete(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         url.appendPathComponent(T.apiPath)
         url.appendPathComponent("\(model.id)")
         
-        return URLRequest.deleteRequest(withUrl: url)
+        var request = URLRequest.deleteRequest(withUrl: url)
+        request.addValue(token, forHTTPHeaderField: ApiKey.Authorization)
+        return request
     }
 }

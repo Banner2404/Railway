@@ -21,6 +21,11 @@ struct ApiPath {
     static let Auth = "auth"
 }
 
+struct ApiKey {
+    static let Authorization = "Authorization"
+    static let Bearer = "Bearer"
+}
+
 struct ToolbarIdentifier {
     static let Add = NSToolbarItem.Identifier(rawValue: "add")
     static let Edit = NSToolbarItem.Identifier(rawValue: "edit")
