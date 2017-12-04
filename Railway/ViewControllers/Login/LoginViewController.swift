@@ -25,7 +25,7 @@ class LoginViewController: NSViewController, BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.stringValue = "admin"
-        passwordTextField.stringValue = "123456"
+        passwordTextField.stringValue = "bepaid"
         window = NSApplication.shared.windows.first
         validateTextFields()
     }

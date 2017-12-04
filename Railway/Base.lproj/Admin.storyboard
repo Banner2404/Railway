@@ -1457,7 +1457,7 @@ DQ
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-Ms-J4V">
                                 <rect key="frame" x="0.0" y="0.0" width="650" height="443"/>
                                 <clipView key="contentView" id="g5L-Q7-6EP">
-                                    <rect key="frame" x="1" y="23" width="648" height="419"/>
+                                    <rect key="frame" x="1" y="0.0" width="648" height="442"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="WWM-ND-aLr" viewBased="YES" id="UaQ-qk-Yvx">
@@ -1632,12 +1632,13 @@ DQ
                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="zdM-XP-XtQ">
+                                                                        <dateFormatter key="formatter" timeStyle="medium" id="D6k-SF-cfL"/>
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="4nx-9c-eqp" name="value" keyPath="objectValue.departureTime" id="HYw-mK-wj2"/>
+                                                                        <binding destination="4nx-9c-eqp" name="value" keyPath="objectValue.departureTime" id="Olj-FG-bcJ"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -1654,6 +1655,7 @@ DQ
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
                                                     <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="7cq-2w-yRW">
+                                                        <dateFormatter key="formatter" timeStyle="medium" id="lXH-Uq-jGU"/>
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1668,6 +1670,7 @@ DQ
                                                                     <rect key="frame" x="0.0" y="0.0" width="98" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="asT-dm-VL3">
+                                                                        <dateFormatter key="formatter" timeStyle="medium" id="2JG-ZA-Foe"/>
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1712,6 +1715,9 @@ DQ
                             <constraint firstItem="Yoy-Ms-J4V" firstAttribute="leading" secondItem="gzJ-SA-rdG" secondAttribute="leading" id="q5o-Y0-gf5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arrayController" destination="Hag-1m-YrC" id="Epw-6i-2y2"/>
+                    </connections>
                 </viewController>
                 <customObject id="9ZF-x3-zxu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <arrayController selectsInsertedObjects="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" id="Hag-1m-YrC"/>

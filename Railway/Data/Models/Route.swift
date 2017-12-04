@@ -78,6 +78,6 @@ class Route: NSObject, Codable, NSCopying {
         case departureStation = "departure_station"
         case arrivalStation = "destination_station"
         case departureTime = "departure_time"
-        case arrivalTime = "arrivial_time"
+        case arrivalTime = "arrival_time"
     }
 }
