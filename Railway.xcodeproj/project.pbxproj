@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D118052C1FD5F6260088A3D4 /* StationTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D118052B1FD5F6260088A3D4 /* StationTableCellView.swift */; };
+		D118052E1FD5F8470088A3D4 /* RouteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D118052D1FD5F8470088A3D4 /* RouteItem.swift */; };
 		D12D09541FCC387200AE8ADF /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12D09531FCC387200AE8ADF /* Passenger.swift */; };
 		D12D09561FCC3A2200AE8ADF /* PassengersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12D09551FCC3A2200AE8ADF /* PassengersViewController.swift */; };
 		D12D09581FCC3AC700AE8ADF /* EditPassengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12D09571FCC3AC700AE8ADF /* EditPassengerViewController.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D118052B1FD5F6260088A3D4 /* StationTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableCellView.swift; sourceTree = "<group>"; };
+		D118052D1FD5F8470088A3D4 /* RouteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteItem.swift; sourceTree = "<group>"; };
 		D12D09531FCC387200AE8ADF /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		D12D09551FCC3A2200AE8ADF /* PassengersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengersViewController.swift; sourceTree = "<group>"; };
 		D12D09571FCC3AC700AE8ADF /* EditPassengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPassengerViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				D19CAD851F9E2FFE0061949C /* Networking */,
 				D19CAD8D1F9E33740061949C /* Extensions */,
 				D19CAD781F9DF2220061949C /* ViewControllers */,
+				D17B62FE1FA07F9100450052 /* Cells */,
 				D1CC03B21FD4052E00317ACA /* Admin */,
 				D13029CB1F9A053D0081826A /* AppDelegate.swift */,
 				D13029CF1F9A053D0081826A /* Assets.xcassets */,
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				D17B63051FA085BD00450052 /* TypeCollectionViewItem.swift */,
+				D118052B1FD5F6260088A3D4 /* StationTableCellView.swift */,
 				D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */,
 			);
 			path = Cells;
@@ -168,6 +174,7 @@
 				D1E7B0581FCB2309006C7D44 /* Account.swift */,
 				D12D09531FCC387200AE8ADF /* Passenger.swift */,
 				D1CC03BD1FD420F900317ACA /* Route.swift */,
+				D118052D1FD5F8470088A3D4 /* RouteItem.swift */,
 				D13813A01FCB23C2008F74F8 /* Model.swift */,
 				D1DFD36F1F9E3BAC0003867B /* Results.swift */,
 				D1CC03B91FD40F9B00317ACA /* User.swift */,
@@ -225,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				D1DFD3711F9E4BA10003867B /* MainWindowController.swift */,
-				D17B62FE1FA07F9100450052 /* Cells */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				D1CC03B41FD4057000317ACA /* LoginViewController.swift in Sources */,
 				D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */,
 				D19CAD821F9DFE730061949C /* Station.swift in Sources */,
+				D118052C1FD5F6260088A3D4 /* StationTableCellView.swift in Sources */,
 				D12D09581FCC3AC700AE8ADF /* EditPassengerViewController.swift in Sources */,
 				D13029CC1F9A053D0081826A /* AppDelegate.swift in Sources */,
 				D17B62F81FA075C500450052 /* AddViewController.swift in Sources */,
@@ -363,6 +370,7 @@
 				D1CC03C21FD4883700317ACA /* EditRouteViewController.swift in Sources */,
 				D1CC03BC1FD4103F00317ACA /* UserAccountManager.swift in Sources */,
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
+				D118052E1FD5F8470088A3D4 /* RouteItem.swift in Sources */,
 				D1E7B0571FCB1F10006C7D44 /* Requests.swift in Sources */,
 				D1938A631FA339B200A28344 /* EditViewController.swift in Sources */,
 				D13813A91FCB3B63008F74F8 /* TableViewController.swift in Sources */,
