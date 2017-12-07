@@ -34,12 +34,13 @@ class EditRouteViewController: NSViewController, BaseViewController, FillViewCon
     func getResultObject() -> Model {
 
         route.number = numberTextField.integerValue
+        route.routeItems = routeItems
         return route
     }
     
     func loadStations(for string: String, completion: @escaping ([Station]) -> ()) {
         let token = userAccountManager.token!
-        requestManager.load(page: 1, limit: 30, token: token) { (success: Bool, result: Results<Station>?, error: Error?) in
+        requestManager.load(page: 1, limit: 30, token: token, filters: ["name": string]) { (success: Bool, result: Results<Station>?, error: Error?) in
             if success, let stations = result?.data {
                 completion(stations)
             } else {
@@ -49,13 +50,19 @@ class EditRouteViewController: NSViewController, BaseViewController, FillViewCon
     }
     
     func validateTextFields() {
-        
+        let hasNumber = !numberTextField.stringValue.isEmpty
+        let numberOfItems = routeItems.count >= 2
+        let validItems = routeItems.filter { $0.station == nil }.count == 0
+        delegate?.changeValidation(isValid: hasNumber && numberOfItems && validItems)
     }
+    
     @IBAction func addButtonClick(_ sender: Any) {
         routeItems.append(RouteItem())
         tableView.reloadData()
     }
     @IBAction func removeButtonClick(_ sender: Any) {
+        routeItems.removeLast()
+        tableView.reloadData()
     }
 }
 
@@ -73,11 +80,16 @@ extension EditRouteViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cellView = tableView.makeView(withIdentifier: StationCellIdentifier, owner: self) as! StationTableCellView
         let item = routeItems[row]
-        cellView.stationCombobox.stringValue = item.station?.name ?? ""
+        cellView.stationCombobox.stringValue = item.stationName
         cellView.arrivalTime.dateValue = item.arrivalTime
         cellView.departureTime.dateValue = item.departureTime
         cellView.delegate = self
+        cellView.stationCombobox.isEditable = true
         return cellView
+    }
+    
+    func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
+        return IndexSet()
     }
 }
 
@@ -95,9 +107,20 @@ extension EditRouteViewController: StationTableCellViewDelegate {
         item.departureTime = time
     }
     func stationTableCellView(_ cellView: StationTableCellView, didChangeStationText text: String) {
+        let index = tableView.row(for: cellView)
+        let item = routeItems[index]
+        item.stationName = text
+        cellView.spinner.startAnimation(self)
         loadStations(for: text) { stations in
+            cellView.spinner.stopAnimation(self)
             cellView.stationCombobox.removeAllItems()
             cellView.stationCombobox.addItems(withObjectValues: stations.map { $0.name })
+            if let first = stations.first, first.name.lowercased() == text.lowercased() {
+                item.station = first
+            } else {
+                item.station = nil
+            }
+            self.validateTextFields()
         }
     }
 }

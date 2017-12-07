@@ -15,7 +15,7 @@ protocol StationTableCellViewDelegate: class {
     func stationTableCellView(_ cellView: StationTableCellView, didChangeStationText: String)
 }
 
-class StationTableCellView: NSTableCellView {
+class StationTableCellView: NSTableCellView, NSComboBoxDelegate {
 
     weak var delegate: StationTableCellViewDelegate?
     
@@ -23,6 +23,11 @@ class StationTableCellView: NSTableCellView {
     @IBOutlet weak var arrivalTime: NSDatePicker!
     @IBOutlet weak var departureTime: NSDatePicker!
     @IBOutlet weak var spinner: NSProgressIndicator!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        stationCombobox.delegate = self
+    }
     
     @IBAction func arrivalTimeDidChange(_ sender: Any) {
         delegate?.stationTableCellView(self, didChangeArrivalTime: arrivalTime.dateValue)
@@ -33,5 +38,10 @@ class StationTableCellView: NSTableCellView {
     
     override func controlTextDidChange(_ obj: Notification) {
         delegate?.stationTableCellView(self, didChangeStationText: stationCombobox.stringValue)
+    }
+    
+    func comboBoxSelectionDidChange(_ notification: Notification) {
+        let text = stationCombobox.stringValue
+        delegate?.stationTableCellView(self, didChangeStationText: text)
     }
 }

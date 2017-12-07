@@ -16,6 +16,7 @@ class Route: NSObject, Codable, NSCopying {
     var number: Int
     @objc
     var departureStation: Station?
+    var routeItems: [RouteItem] = []
     @objc
     var arrivalStation: Station?
     @objc
@@ -47,6 +48,7 @@ class Route: NSObject, Codable, NSCopying {
         self.number = try container.decode(Int.self, forKey: .number)
         self.departureStation = try container.decode(Station.self, forKey: .departureStation)
         self.arrivalStation = try container.decode(Station.self, forKey: .arrivalStation)
+        self.routeItems = (try? container.decode([RouteItem].self, forKey: .routeItems)) ?? []
         let departureTime = try container.decode(String.self, forKey: .departureTime)
         guard let depaptureDate = DateFormatter.HHmmSS.date(from: departureTime) else {
             throw DecodingError.dataCorruptedError(forKey: .departureTime, in: container, debugDescription: "Incorrect departure time")
@@ -69,6 +71,7 @@ class Route: NSObject, Codable, NSCopying {
         let arrivalString = DateFormatter.HHmmSS.string(from: arrivalTime)
         try container.encode(departureString, forKey: .departureTime)
         try container.encode(arrivalString, forKey: .arrivalTime)
+        try container.encode(routeItems, forKey: .routeItems)
     }
     
     
@@ -79,5 +82,6 @@ class Route: NSObject, Codable, NSCopying {
         case arrivalStation = "destination_station"
         case departureTime = "departure_time"
         case arrivalTime = "arrival_time"
+        case routeItems = "stations"
     }
 }

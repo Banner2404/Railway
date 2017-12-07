@@ -10,15 +10,20 @@ import Foundation
 
 class Requests<T: Model> {
     
-    static func get(page: Int, limit: Int, token: String) -> URLRequest {
+    static func get(page: Int, limit: Int, token: String, filters: [String: String]?) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         url.appendPathComponent(T.apiPath)
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
-        urlComponents.queryItems = [
+        var queryItems = [
             URLQueryItem(name: ApiPath.Page, value: "\(page)"),
             URLQueryItem(name: ApiPath.Limit, value: "\(limit)"),
         ]
+        for (key, value) in filters ?? [:] {
+            queryItems.append(URLQueryItem(name: key, value: value))
+        }
         
+        urlComponents.queryItems = queryItems
+
         var request = URLRequest.getRequest(withUrl: urlComponents.url!)
         request.addValue(token, forHTTPHeaderField: ApiKey.Authorization)
         return request
