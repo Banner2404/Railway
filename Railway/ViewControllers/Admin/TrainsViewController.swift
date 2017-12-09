@@ -14,10 +14,6 @@ class TrainsViewController: TableViewController {
         return loadFromAdminStoryboard()
     }
     
-    override func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
-        return false
-    }
-    
     override func makeRequest(page: Int, limit: Int, completion: @escaping (_ success: Bool, _ totalCount: Int?, _ data: [Model]?, _ error: Error?) -> Void) {
         let token = userAccountManager.token ?? ""
         requestManager.load(page: page, limit: limit, token: token) { (success: Bool, result: Results<Train>?, error: Error?) in
