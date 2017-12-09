@@ -58,6 +58,9 @@
 		D1F0E9671FDC87CC00221D8E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9661FDC87CC00221D8E /* Ticket.swift */; };
 		D1F0E9691FDC883800221D8E /* EditTicketViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9681FDC883800221D8E /* EditTicketViewConroller.swift */; };
 		D1F0E96B1FDC885E00221D8E /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E96A1FDC885E00221D8E /* TicketsViewController.swift */; };
+		D1F0E96D1FDC95B600221D8E /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E96C1FDC95B600221D8E /* EditTableViewController.swift */; };
+		D1F0E96F1FDC961600221D8E /* CarriageTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E96E1FDC961600221D8E /* CarriageTableCellView.swift */; };
+		D1F0E9711FDC989400221D8E /* Carriage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9701FDC989400221D8E /* Carriage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +118,9 @@
 		D1F0E9661FDC87CC00221D8E /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		D1F0E9681FDC883800221D8E /* EditTicketViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTicketViewConroller.swift; sourceTree = "<group>"; };
 		D1F0E96A1FDC885E00221D8E /* TicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewController.swift; sourceTree = "<group>"; };
+		D1F0E96C1FDC95B600221D8E /* EditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
+		D1F0E96E1FDC961600221D8E /* CarriageTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarriageTableCellView.swift; sourceTree = "<group>"; };
+		D1F0E9701FDC989400221D8E /* Carriage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carriage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 			children = (
 				D17B63051FA085BD00450052 /* TypeCollectionViewItem.swift */,
 				D118052B1FD5F6260088A3D4 /* StationTableCellView.swift */,
+				D1F0E96E1FDC961600221D8E /* CarriageTableCellView.swift */,
 				D17B63061FA085BD00450052 /* TypeCollectionViewItem.xib */,
 			);
 			path = Cells;
@@ -195,6 +202,7 @@
 				D118052D1FD5F8470088A3D4 /* RouteItem.swift */,
 				D1F0E95A1FDC779D00221D8E /* LogRecord.swift */,
 				D1F0E9621FDC85DD00221D8E /* Train.swift */,
+				D1F0E9701FDC989400221D8E /* Carriage.swift */,
 				D1F0E9661FDC87CC00221D8E /* Ticket.swift */,
 				D13813A01FCB23C2008F74F8 /* Model.swift */,
 				D1DFD36F1F9E3BAC0003867B /* Results.swift */,
@@ -276,6 +284,7 @@
 				D14823721FA0A9AE002AE484 /* EditStationViewController.swift */,
 				D13813A61FCB24F3008F74F8 /* EditAccountViewController.swift */,
 				D12D09571FCC3AC700AE8ADF /* EditPassengerViewController.swift */,
+				D1F0E96C1FDC95B600221D8E /* EditTableViewController.swift */,
 				D1CC03C11FD4883700317ACA /* EditRouteViewController.swift */,
 				D1F0E95C1FDC79D100221D8E /* EditLogViewController.swift */,
 				D1F0E9641FDC86B100221D8E /* EditTrainViewController.swift */,
@@ -369,6 +378,8 @@
 				D1F0E96B1FDC885E00221D8E /* TicketsViewController.swift in Sources */,
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
 				D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */,
+				D1F0E96F1FDC961600221D8E /* CarriageTableCellView.swift in Sources */,
+				D1F0E9711FDC989400221D8E /* Carriage.swift in Sources */,
 				D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */,
 				D1F0E9631FDC85DD00221D8E /* Train.swift in Sources */,
 				D1F0E95F1FDC7A2300221D8E /* LogsViewController.swift in Sources */,
@@ -402,6 +413,7 @@
 				D1F0E95B1FDC779D00221D8E /* LogRecord.swift in Sources */,
 				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
 				D1CC03C21FD4883700317ACA /* EditRouteViewController.swift in Sources */,
+				D1F0E96D1FDC95B600221D8E /* EditTableViewController.swift in Sources */,
 				D1CC03BC1FD4103F00317ACA /* UserAccountManager.swift in Sources */,
 				D19CAD841F9DFFFA0061949C /* BaseViewController.swift in Sources */,
 				D1F0E9611FDC859700221D8E /* TrainsViewController.swift in Sources */,

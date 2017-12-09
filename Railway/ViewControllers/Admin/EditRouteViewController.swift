@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class EditRouteViewController: NSViewController, BaseViewController, FillViewController {
+class EditRouteViewController: EditTableViewController, FillViewController {
 
     let StationCellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "StationTableCellView")
     var helperMessage = "Setup new route:"
@@ -39,14 +39,7 @@ class EditRouteViewController: NSViewController, BaseViewController, FillViewCon
     }
     
     func loadStations(for string: String, completion: @escaping ([Station]) -> ()) {
-        let token = userAccountManager.token!
-        requestManager.load(page: 1, limit: 30, token: token, filters: ["name": string]) { (success: Bool, result: Results<Station>?, error: Error?) in
-            if success, let stations = result?.data {
-                completion(stations)
-            } else {
-                completion([])
-            }
-        }
+        load(filters: ["name": string], completion: completion)
     }
     
     func validateTextFields() {
