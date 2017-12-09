@@ -79,6 +79,8 @@ private extension AdminMainViewController {
             return LogsViewController.self
         case .trains:
             return TrainsViewController.self
+        case .tickets:
+            return TicketsViewController.self
         }
     }
     

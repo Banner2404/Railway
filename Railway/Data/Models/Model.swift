@@ -44,8 +44,12 @@ extension LogRecord: Model {
     static var apiPath = ApiPath.LogRecord
 }
 extension Train: Model {
-    static var apiPath = ApiPath.LogRecord
+    static var apiPath = ApiPath.Train
 }
+extension Ticket: Model {
+    static var apiPath = ApiPath.Tickets
+}
+
 extension Route: Model {
     static var apiPath = ApiPath.Routes
     static var dateFormatter: DateFormatter? {

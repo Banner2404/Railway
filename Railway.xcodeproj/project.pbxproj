@@ -55,6 +55,9 @@
 		D1F0E9611FDC859700221D8E /* TrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9601FDC859700221D8E /* TrainsViewController.swift */; };
 		D1F0E9631FDC85DD00221D8E /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9621FDC85DD00221D8E /* Train.swift */; };
 		D1F0E9651FDC86B100221D8E /* EditTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9641FDC86B100221D8E /* EditTrainViewController.swift */; };
+		D1F0E9671FDC87CC00221D8E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9661FDC87CC00221D8E /* Ticket.swift */; };
+		D1F0E9691FDC883800221D8E /* EditTicketViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9681FDC883800221D8E /* EditTicketViewConroller.swift */; };
+		D1F0E96B1FDC885E00221D8E /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E96A1FDC885E00221D8E /* TicketsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +112,9 @@
 		D1F0E9601FDC859700221D8E /* TrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsViewController.swift; sourceTree = "<group>"; };
 		D1F0E9621FDC85DD00221D8E /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
 		D1F0E9641FDC86B100221D8E /* EditTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrainViewController.swift; sourceTree = "<group>"; };
+		D1F0E9661FDC87CC00221D8E /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		D1F0E9681FDC883800221D8E /* EditTicketViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTicketViewConroller.swift; sourceTree = "<group>"; };
+		D1F0E96A1FDC885E00221D8E /* TicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,7 @@
 				D118052D1FD5F8470088A3D4 /* RouteItem.swift */,
 				D1F0E95A1FDC779D00221D8E /* LogRecord.swift */,
 				D1F0E9621FDC85DD00221D8E /* Train.swift */,
+				D1F0E9661FDC87CC00221D8E /* Ticket.swift */,
 				D13813A01FCB23C2008F74F8 /* Model.swift */,
 				D1DFD36F1F9E3BAC0003867B /* Results.swift */,
 				D1CC03B91FD40F9B00317ACA /* User.swift */,
@@ -262,6 +269,7 @@
 				D1CC03BF1FD487BE00317ACA /* RoutesViewController.swift */,
 				D1F0E95E1FDC7A2300221D8E /* LogsViewController.swift */,
 				D1F0E9601FDC859700221D8E /* TrainsViewController.swift */,
+				D1F0E96A1FDC885E00221D8E /* TicketsViewController.swift */,
 				D17B62F71FA075C500450052 /* AddViewController.swift */,
 				D1938A621FA339B200A28344 /* EditViewController.swift */,
 				D17B62FB1FA07EBA00450052 /* AddItemTypeViewController.swift */,
@@ -271,6 +279,7 @@
 				D1CC03C11FD4883700317ACA /* EditRouteViewController.swift */,
 				D1F0E95C1FDC79D100221D8E /* EditLogViewController.swift */,
 				D1F0E9641FDC86B100221D8E /* EditTrainViewController.swift */,
+				D1F0E9681FDC883800221D8E /* EditTicketViewConroller.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -357,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1CC03C41FD48A4000317ACA /* DateFormatter.swift in Sources */,
+				D1F0E96B1FDC885E00221D8E /* TicketsViewController.swift in Sources */,
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
 				D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */,
 				D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */,
@@ -378,6 +388,7 @@
 				D12D09541FCC387200AE8ADF /* Passenger.swift in Sources */,
 				D13813A71FCB24F3008F74F8 /* EditAccountViewController.swift in Sources */,
 				D1DFD3701F9E3BAC0003867B /* Results.swift in Sources */,
+				D1F0E9671FDC87CC00221D8E /* Ticket.swift in Sources */,
 				D1CC03B61FD409BC00317ACA /* LoginRequests.swift in Sources */,
 				D1F0E95D1FDC79D100221D8E /* EditLogViewController.swift in Sources */,
 				D13813A41FCB2496008F74F8 /* AccountsViewController.swift in Sources */,
@@ -400,6 +411,7 @@
 				D13813A91FCB3B63008F74F8 /* TableViewController.swift in Sources */,
 				D1CC03C01FD487BE00317ACA /* RoutesViewController.swift in Sources */,
 				D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */,
+				D1F0E9691FDC883800221D8E /* EditTicketViewConroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
