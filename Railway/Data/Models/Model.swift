@@ -40,6 +40,9 @@ extension Account: Model {
 extension Passenger: Model {
     static var apiPath = ApiPath.Passenger
 }
+extension LogRecord: Model {
+    static var apiPath = ApiPath.LogRecord
+}
 extension Route: Model {
     static var apiPath = ApiPath.Routes
     static var dateFormatter: DateFormatter? {
