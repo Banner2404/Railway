@@ -43,6 +43,9 @@ extension Passenger: Model {
 extension LogRecord: Model {
     static var apiPath = ApiPath.LogRecord
 }
+extension Train: Model {
+    static var apiPath = ApiPath.LogRecord
+}
 extension Route: Model {
     static var apiPath = ApiPath.Routes
     static var dateFormatter: DateFormatter? {

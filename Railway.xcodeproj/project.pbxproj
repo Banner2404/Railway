@@ -53,6 +53,8 @@
 		D1F0E95D1FDC79D100221D8E /* EditLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E95C1FDC79D100221D8E /* EditLogViewController.swift */; };
 		D1F0E95F1FDC7A2300221D8E /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E95E1FDC7A2300221D8E /* LogsViewController.swift */; };
 		D1F0E9611FDC859700221D8E /* TrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9601FDC859700221D8E /* TrainsViewController.swift */; };
+		D1F0E9631FDC85DD00221D8E /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9621FDC85DD00221D8E /* Train.swift */; };
+		D1F0E9651FDC86B100221D8E /* EditTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9641FDC86B100221D8E /* EditTrainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,8 @@
 		D1F0E95C1FDC79D100221D8E /* EditLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLogViewController.swift; sourceTree = "<group>"; };
 		D1F0E95E1FDC7A2300221D8E /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
 		D1F0E9601FDC859700221D8E /* TrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsViewController.swift; sourceTree = "<group>"; };
+		D1F0E9621FDC85DD00221D8E /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		D1F0E9641FDC86B100221D8E /* EditTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 				D1CC03BD1FD420F900317ACA /* Route.swift */,
 				D118052D1FD5F8470088A3D4 /* RouteItem.swift */,
 				D1F0E95A1FDC779D00221D8E /* LogRecord.swift */,
+				D1F0E9621FDC85DD00221D8E /* Train.swift */,
 				D13813A01FCB23C2008F74F8 /* Model.swift */,
 				D1DFD36F1F9E3BAC0003867B /* Results.swift */,
 				D1CC03B91FD40F9B00317ACA /* User.swift */,
@@ -265,6 +270,7 @@
 				D12D09571FCC3AC700AE8ADF /* EditPassengerViewController.swift */,
 				D1CC03C11FD4883700317ACA /* EditRouteViewController.swift */,
 				D1F0E95C1FDC79D100221D8E /* EditLogViewController.swift */,
+				D1F0E9641FDC86B100221D8E /* EditTrainViewController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
 				D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */,
 				D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */,
+				D1F0E9631FDC85DD00221D8E /* Train.swift in Sources */,
 				D1F0E95F1FDC7A2300221D8E /* LogsViewController.swift in Sources */,
 				D19CAD921F9E33C20061949C /* Constants.swift in Sources */,
 				D1CC03BA1FD40F9B00317ACA /* User.swift in Sources */,
@@ -380,6 +387,7 @@
 				D12D09561FCC3A2200AE8ADF /* PassengersViewController.swift in Sources */,
 				D1CC03BE1FD420F900317ACA /* Route.swift in Sources */,
 				D17B63071FA085BD00450052 /* TypeCollectionViewItem.swift in Sources */,
+				D1F0E9651FDC86B100221D8E /* EditTrainViewController.swift in Sources */,
 				D1F0E95B1FDC779D00221D8E /* LogRecord.swift in Sources */,
 				D19CAD7F1F9DFE4D0061949C /* StationsViewController.swift in Sources */,
 				D1CC03C21FD4883700317ACA /* EditRouteViewController.swift in Sources */,

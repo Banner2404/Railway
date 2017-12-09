@@ -17,6 +17,7 @@ struct ApiPath {
     static let Accounts = "accounts"
     static let Passenger = "passengers"
     static let LogRecord = "logs"
+    static let Train = "trains"
     static let Routes = "routes"
     static let Page = "page"
     static let Limit = "limit"
