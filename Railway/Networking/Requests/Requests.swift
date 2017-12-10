@@ -10,6 +10,16 @@ import Foundation
 
 class Requests<T: Model> {
     
+    static func get(id: Int, token: String) -> URLRequest {
+        var url = URL(string: ApiURL.Host)!
+        url.appendPathComponent(T.apiPath)
+        url.appendPathComponent("\(id)")
+        
+        var request = URLRequest.getRequest(withUrl: url)
+        request.addValue(token, forHTTPHeaderField: ApiKey.Authorization)
+        return request
+    }
+    
     static func get(page: Int, limit: Int, token: String, filters: [String: String]?) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         url.appendPathComponent(T.apiPath)

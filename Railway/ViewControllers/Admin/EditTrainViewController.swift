@@ -17,7 +17,6 @@ class EditTrainViewController: EditTableViewController, FillViewController {
     var delegate: FillViewControllerDelegate?
     
     @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var textField: NSTextField!
     @IBOutlet weak var routeTextField: NSTextField!
     
     @objc
@@ -25,9 +24,22 @@ class EditTrainViewController: EditTableViewController, FillViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.window?.makeFirstResponder(textField)
         validate()
         tableView.selectionHighlightStyle = .none
+        
+        requestManager.load(id: train.id, token: userAccountManager.token!) { (success: Bool, train: Train?, error: Error?) in
+            if let train = train {
+                self.train = train
+                self.setup()
+            }
+        }
+    }
+    
+    func setup() {
+        if train.routeID != 0 {
+            routeTextField.stringValue = "\(train.routeID)"
+        }
+        tableView.reloadData()
     }
     
     func setInitialObject(_ object: Model) {
@@ -39,9 +51,9 @@ class EditTrainViewController: EditTableViewController, FillViewController {
     }
     
     func validate() {
-        let isNumberValid = textField.integerValue != 0
         let hasRoute = train.routeID != 0
-        delegate?.changeValidation(isValid: isNumberValid && hasRoute)
+        let validNumber = train.carriages.filter { $0.number == 0 }.count == 0
+        delegate?.changeValidation(isValid: hasRoute && validNumber)
     }
     
     @IBAction func addButtonClick(_ sender: Any) {
@@ -49,6 +61,7 @@ class EditTrainViewController: EditTableViewController, FillViewController {
         carriage.type = popupItems.first!.uppercased()
         train.carriages.append(carriage)
         tableView.reloadData()
+        validate()
     }
     @IBAction func removeButtonClick(_ sender: Any) {
         train.carriages.removeLast()
@@ -68,11 +81,6 @@ extension EditTrainViewController: NSTableViewDataSource {
 extension EditTrainViewController: NSTextFieldDelegate {
     
     override func controlTextDidChange(_ obj: Notification) {
-        if let numbertf = obj.object as? NSTextField, numbertf == textField {
-            let number = numbertf.integerValue
-            train.number = number
-            validate()
-        }
         if let routetf = obj.object as? NSTextField, routetf == routeTextField  {
             let id = routetf.integerValue
             train.routeID = id
@@ -100,6 +108,7 @@ extension EditTrainViewController: CarriageTableCellViewDelegate {
         let index = tableView.row(for: cellView)
         let item = train.carriages[index]
         item.number = number
+        validate()
     }
 }
 
@@ -111,11 +120,8 @@ extension EditTrainViewController: NSTableViewDelegate {
         let item = train.carriages[row]
         cellView.popup.selectItem(at: popupItems.index(of: item.type) ?? 0)
         cellView.seatsTextField.stringValue = "\(item.seats.count)"
+        cellView.numberTextField.stringValue = "\(item.number)"
         cellView.delegate = self
         return cellView
     }
-    
-//    func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
-//        return IndexSet()
-//    }
 }

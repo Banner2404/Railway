@@ -13,6 +13,11 @@ class RequestManager {
     let networkManager = NetworkManager()
     static let shared = RequestManager()
     
+    func load<T: Model>(id: Int, token: String, completion: @escaping (_ success: Bool, _ stations: T?, _ error: Error?) -> ()) {
+        let request = Requests<T>.get(id: id, token: token)
+        perform(request: request, withResponseType: T.self, completion: completion)
+    }
+    
     func load<T: Model>(page: Int, limit: Int, token: String, filters: [String: String]? = nil, completion: @escaping (_ success: Bool, _ stations: Results<T>?, _ error: Error?) -> ()) {
         let request = Requests<T>.get(page: page, limit: limit, token: token, filters: filters)
         perform(request: request, withResponseType: Results<T>.self, completion: completion)
