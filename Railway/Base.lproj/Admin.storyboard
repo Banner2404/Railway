@@ -708,12 +708,30 @@
                                         <action selector="deleteButtonClick:" target="B8D-0N-5wS" id="GuB-ZR-boR"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="E52DD7B4-BF61-4BD1-BDE9-99C6D4B80F18" explicitItemIdentifier="search" label="" paletteLabel="Search Bar" id="yr7-BG-TTJ">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="96" height="22"/>
+                                    <size key="maxSize" width="96" height="22"/>
+                                    <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="31H-Xy-ywL">
+                                        <rect key="frame" x="0.0" y="14" width="96" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="dtk-2Z-5bM">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </searchFieldCell>
+                                        <connections>
+                                            <action selector="search:" target="B8D-0N-5wS" id="kja-QL-Eqm"/>
+                                        </connections>
+                                    </searchField>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="nzy-zu-7T5"/>
                                 <toolbarItem reference="Hf3-Fp-T8g"/>
                                 <toolbarItem reference="FW6-J4-PaD"/>
                                 <toolbarItem reference="8Ql-p2-NQG"/>
+                                <toolbarItem reference="yr7-BG-TTJ"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>

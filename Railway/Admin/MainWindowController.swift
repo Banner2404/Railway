@@ -35,6 +35,10 @@ class MainWindowController: NSWindowController {
     @IBAction func deleteButtonClick(_ sender: Any) {
         viewController.deleteButtonClick()
     }
+    @IBAction func search(_ sender: NSSearchField) {
+        let text = sender.stringValue
+        viewController.search(text)
+    }
     
     override func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
         return viewController.validateToolbarItem(item)

@@ -14,7 +14,7 @@ class TicketsViewController: TableViewController {
         return loadFromAdminStoryboard()
     }
     
-    override func makeRequest(page: Int, limit: Int, completion: @escaping (_ success: Bool, _ totalCount: Int?, _ data: [Model]?, _ error: Error?) -> Void) {
+    override func makeRequest(page: Int, limit: Int, search: String, completion: @escaping (_ success: Bool, _ totalCount: Int?, _ data: [Model]?, _ error: Error?) -> Void) {
         let token = userAccountManager.token ?? ""
         requestManager.load(page: page, limit: limit, token: token) { (success: Bool, result: Results<Ticket>?, error: Error?) in
             completion(success, result?.meta.totalCount, result?.data, error)

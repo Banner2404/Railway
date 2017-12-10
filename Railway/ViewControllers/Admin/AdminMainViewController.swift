@@ -11,6 +11,7 @@ import Cocoa
 protocol AdminChildViewController: class {
     func selectedObject() -> Any?
     func reloadData()
+    func search(_ text: String)
 }
 
 class AdminMainViewController: NSViewController, BaseViewController, ContainerViewController {
@@ -53,6 +54,10 @@ class AdminMainViewController: NSViewController, BaseViewController, ContainerVi
         dataManager.delete(object, token: token) { (success, error) in
             self.currentChildViewController?.reloadData()
         }
+    }
+    
+    func search(_ text: String) {
+        currentChildViewController?.search(text)
     }
     
     @IBAction func sectionsTableViewSelectionChanged(_ sender: NSTableView) {

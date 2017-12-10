@@ -33,4 +33,5 @@ struct ApiKey {
 struct ToolbarIdentifier {
     static let Add = NSToolbarItem.Identifier(rawValue: "add")
     static let Edit = NSToolbarItem.Identifier(rawValue: "edit")
+    static let Search = NSToolbarItem.Identifier(rawValue: "search")
 }
