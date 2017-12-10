@@ -61,6 +61,10 @@
 		D1F0E96D1FDC95B600221D8E /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E96C1FDC95B600221D8E /* EditTableViewController.swift */; };
 		D1F0E96F1FDC961600221D8E /* CarriageTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E96E1FDC961600221D8E /* CarriageTableCellView.swift */; };
 		D1F0E9711FDC989400221D8E /* Carriage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9701FDC989400221D8E /* Carriage.swift */; };
+		D1F0E9771FDD671600221D8E /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F0E9751FDD671600221D8E /* User.storyboard */; };
+		D1F0E9791FDD67D800221D8E /* UserTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9781FDD67D800221D8E /* UserTicketsViewController.swift */; };
+		D1F0E97B1FDD684000221D8E /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E97A1FDD684000221D8E /* UserMainViewController.swift */; };
+		D1F0E97F1FDD68B000221D8E /* UserWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E97E1FDD68B000221D8E /* UserWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +125,10 @@
 		D1F0E96C1FDC95B600221D8E /* EditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 		D1F0E96E1FDC961600221D8E /* CarriageTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarriageTableCellView.swift; sourceTree = "<group>"; };
 		D1F0E9701FDC989400221D8E /* Carriage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carriage.swift; sourceTree = "<group>"; };
+		D1F0E9761FDD671600221D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/User.storyboard; sourceTree = "<group>"; };
+		D1F0E9781FDD67D800221D8E /* UserTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTicketsViewController.swift; sourceTree = "<group>"; };
+		D1F0E97A1FDD684000221D8E /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
+		D1F0E97E1FDD68B000221D8E /* UserWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,10 +167,11 @@
 				D19CAD8D1F9E33740061949C /* Extensions */,
 				D19CAD781F9DF2220061949C /* ViewControllers */,
 				D17B62FE1FA07F9100450052 /* Cells */,
-				D1CC03B21FD4052E00317ACA /* Admin */,
+				D1CC03B21FD4052E00317ACA /* Windows */,
 				D13029CB1F9A053D0081826A /* AppDelegate.swift */,
 				D13029CF1F9A053D0081826A /* Assets.xcassets */,
 				D13029D11F9A053D0081826A /* Admin.storyboard */,
+				D1F0E9751FDD671600221D8E /* User.storyboard */,
 				D1CC03AE1FD4036800317ACA /* Login.storyboard */,
 				D13029D41F9A053D0081826A /* Info.plist */,
 				D13029D51F9A053D0081826A /* Railway.entitlements */,
@@ -217,6 +226,7 @@
 				D19CAD831F9DFFFA0061949C /* BaseViewController.swift */,
 				D1CC03B81FD40E8700317ACA /* Login */,
 				D1CC03B71FD40E8000317ACA /* Admin */,
+				D1F0E9801FDD6C3B00221D8E /* User */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,12 +267,13 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		D1CC03B21FD4052E00317ACA /* Admin */ = {
+		D1CC03B21FD4052E00317ACA /* Windows */ = {
 			isa = PBXGroup;
 			children = (
 				D1DFD3711F9E4BA10003867B /* MainWindowController.swift */,
+				D1F0E97E1FDD68B000221D8E /* UserWindowController.swift */,
 			);
-			path = Admin;
+			path = Windows;
 			sourceTree = "<group>";
 		};
 		D1CC03B71FD40E8000317ACA /* Admin */ = {
@@ -299,6 +310,15 @@
 				D1CC03B31FD4057000317ACA /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		D1F0E9801FDD6C3B00221D8E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D1F0E97A1FDD684000221D8E /* UserMainViewController.swift */,
+				D1F0E9781FDD67D800221D8E /* UserTicketsViewController.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1CC03B01FD4036800317ACA /* Login.storyboard in Resources */,
+				D1F0E9771FDD671600221D8E /* User.storyboard in Resources */,
 				D17B63081FA085BD00450052 /* TypeCollectionViewItem.xib in Resources */,
 				D13029D01F9A053D0081826A /* Assets.xcassets in Resources */,
 				D13029D31F9A053D0081826A /* Admin.storyboard in Resources */,
@@ -384,9 +405,12 @@
 				D1F0E9631FDC85DD00221D8E /* Train.swift in Sources */,
 				D1F0E95F1FDC7A2300221D8E /* LogsViewController.swift in Sources */,
 				D19CAD921F9E33C20061949C /* Constants.swift in Sources */,
+				D1F0E97B1FDD684000221D8E /* UserMainViewController.swift in Sources */,
 				D1CC03BA1FD40F9B00317ACA /* User.swift in Sources */,
 				D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */,
 				D1CC03B41FD4057000317ACA /* LoginViewController.swift in Sources */,
+				D1F0E9791FDD67D800221D8E /* UserTicketsViewController.swift in Sources */,
+				D1F0E97F1FDD68B000221D8E /* UserWindowController.swift in Sources */,
 				D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */,
 				D19CAD821F9DFE730061949C /* Station.swift in Sources */,
 				D118052C1FD5F6260088A3D4 /* StationTableCellView.swift in Sources */,
@@ -444,6 +468,14 @@
 				D1CC03AF1FD4036800317ACA /* Base */,
 			);
 			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
+		D1F0E9751FDD671600221D8E /* User.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1F0E9761FDD671600221D8E /* Base */,
+			);
+			name = User.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

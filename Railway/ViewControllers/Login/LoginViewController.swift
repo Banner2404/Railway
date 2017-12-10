@@ -37,7 +37,7 @@ class LoginViewController: NSViewController, BaseViewController {
         requestManager.login(username: username, password: password) { (success, user, error) in
             if success, let user = user  {
                 self.userAccountManager.user = user
-                self.showAdminWindow()
+                self.showUserWindow()
                 self.state = .normal
             } else {
                 self.state = .error("Incorrect username or password")
@@ -67,6 +67,10 @@ class LoginViewController: NSViewController, BaseViewController {
     
     func showAdminWindow() {
         performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "showAdminWindow"), sender: self)
+        self.window?.close()
+    }
+    func showUserWindow() {
+        performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "showUserWindow"), sender: self)
         self.window?.close()
     }
     

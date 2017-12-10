@@ -29,6 +29,9 @@ extension BaseViewController {
     static func loadFromAdminStoryboard<T>() -> T {
         return loadFromStoryboard(name: "Admin")
     }
+    static func loadFromUserStoryboard<T>() -> T {
+        return loadFromStoryboard(name: "User")
+    }
     
     static func loadFromStoryboard<T>(name: String) -> T {
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: name), bundle: nil)
