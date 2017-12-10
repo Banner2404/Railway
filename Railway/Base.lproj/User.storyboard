@@ -749,10 +749,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="1047"/>
         </scene>
-        <!--Add View Controller-->
+        <!--User Add View Controller-->
         <scene sceneID="p3h-GD-JtY">
             <objects>
-                <viewController storyboardIdentifier="AddViewController" id="POL-Mt-ZxH" customClass="AddViewController" customModule="Railway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserAddViewController" id="POL-Mt-ZxH" customClass="UserAddViewController" customModule="Railway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yFw-73-Vhk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -839,6 +839,101 @@ DQ
                 <userDefaultsController representsSharedInstance="YES" id="s7c-XY-UFo"/>
             </objects>
             <point key="canvasLocation" x="70" y="2168"/>
+        </scene>
+        <!--Trip View Controller-->
+        <scene sceneID="flB-5o-qvt">
+            <objects>
+                <viewController storyboardIdentifier="TripViewController" id="aIb-ti-n5m" customClass="TripViewController" customModule="Railway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="KeP-ex-Rhr">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-Vz-AH9">
+                                <rect key="frame" x="18" y="263" width="39" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="From:" id="scZ-UG-upv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WLi-Te-9IX">
+                                <rect key="frame" x="65" y="256" width="368" height="26"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Yof-zD-kd6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </comboBoxCell>
+                                <connections>
+                                    <outlet property="delegate" destination="aIb-ti-n5m" id="QuI-Io-RUz"/>
+                                </connections>
+                            </comboBox>
+                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1ZM-5d-wZw">
+                                <rect key="frame" x="65" y="219" width="368" height="26"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="1X3-Ox-5Tg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </comboBoxCell>
+                                <connections>
+                                    <outlet property="delegate" destination="aIb-ti-n5m" id="D0t-gC-dFV"/>
+                                </connections>
+                            </comboBox>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BPs-BI-IJo">
+                                <rect key="frame" x="18" y="226" width="39" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="To:" id="CFv-Qj-aV8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-Ka-NtQ">
+                                <rect key="frame" x="65" y="183" width="96" height="27"/>
+                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="yXU-yt-5Zg">
+                                    <font key="font" metaFont="system"/>
+                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                                        <!--1982-02-12 16:00:00 +0000-->
+                                    </date>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                </datePickerCell>
+                            </datePicker>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VUI-de-CW6">
+                                <rect key="frame" x="18" y="189" width="39" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Date:" id="q56-AS-654">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="WLi-Te-9IX" firstAttribute="top" secondItem="5Ra-Vz-AH9" secondAttribute="top" id="1QM-h0-cbH"/>
+                            <constraint firstItem="VUI-de-CW6" firstAttribute="leading" secondItem="BPs-BI-IJo" secondAttribute="leading" id="9eX-a4-VRZ"/>
+                            <constraint firstAttribute="trailing" secondItem="WLi-Te-9IX" secondAttribute="trailing" constant="20" id="B1w-iI-V8D"/>
+                            <constraint firstItem="5Ra-Vz-AH9" firstAttribute="leading" secondItem="KeP-ex-Rhr" secondAttribute="leading" constant="20" id="CTq-tb-LNS"/>
+                            <constraint firstItem="1ZM-5d-wZw" firstAttribute="leading" secondItem="BPs-BI-IJo" secondAttribute="trailing" constant="10" id="KwL-ql-neE"/>
+                            <constraint firstItem="BPs-BI-IJo" firstAttribute="leading" secondItem="5Ra-Vz-AH9" secondAttribute="leading" id="MUn-58-sRS"/>
+                            <constraint firstItem="VUI-de-CW6" firstAttribute="top" secondItem="BPs-BI-IJo" secondAttribute="bottom" constant="20" id="Ojg-yb-vLW"/>
+                            <constraint firstItem="VUI-de-CW6" firstAttribute="trailing" secondItem="BPs-BI-IJo" secondAttribute="trailing" id="QBe-lQ-63f"/>
+                            <constraint firstItem="1ZM-5d-wZw" firstAttribute="top" secondItem="BPs-BI-IJo" secondAttribute="top" id="SaJ-jJ-S26"/>
+                            <constraint firstItem="BPs-BI-IJo" firstAttribute="trailing" secondItem="5Ra-Vz-AH9" secondAttribute="trailing" id="U0F-3U-VWc"/>
+                            <constraint firstItem="WLi-Te-9IX" firstAttribute="leading" secondItem="5Ra-Vz-AH9" secondAttribute="trailing" constant="10" id="U5E-OZ-zAy"/>
+                            <constraint firstItem="5Ra-Vz-AH9" firstAttribute="top" secondItem="KeP-ex-Rhr" secondAttribute="top" constant="20" id="aV3-3l-erh"/>
+                            <constraint firstItem="BPs-BI-IJo" firstAttribute="top" secondItem="5Ra-Vz-AH9" secondAttribute="bottom" constant="20" id="jso-xg-sbK"/>
+                            <constraint firstItem="Xwf-Ka-NtQ" firstAttribute="top" secondItem="VUI-de-CW6" secondAttribute="top" id="sor-8j-jEt"/>
+                            <constraint firstItem="Xwf-Ka-NtQ" firstAttribute="leading" secondItem="VUI-de-CW6" secondAttribute="trailing" constant="10" id="vDU-Dm-zlp"/>
+                            <constraint firstAttribute="trailing" secondItem="1ZM-5d-wZw" secondAttribute="trailing" constant="20" id="ycB-1q-qay"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Xwf-Ka-NtQ" id="Sgt-cd-3Oj"/>
+                        <outlet property="fromCombobox" destination="WLi-Te-9IX" id="1Zn-1C-mc4"/>
+                        <outlet property="toCombobox" destination="1ZM-5d-wZw" id="OHj-ws-zuj"/>
+                    </connections>
+                </viewController>
+                <customObject id="w4b-xl-1H2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="2610"/>
         </scene>
         <!--User Tickets View Controller-->
         <scene sceneID="3ej-DE-rZd">

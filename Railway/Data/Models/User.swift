@@ -11,8 +11,10 @@ import Foundation
 class User: Codable {
     
     let token: String
+    let type = "ADMIN"
     
-    init(withToken token: String) {
+    init(withToken token: String, type: String) {
         self.token = token
+        //self.type = type
     }
 }

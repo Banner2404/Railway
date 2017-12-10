@@ -65,6 +65,8 @@
 		D1F0E9791FDD67D800221D8E /* UserTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9781FDD67D800221D8E /* UserTicketsViewController.swift */; };
 		D1F0E97B1FDD684000221D8E /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E97A1FDD684000221D8E /* UserMainViewController.swift */; };
 		D1F0E97F1FDD68B000221D8E /* UserWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E97E1FDD68B000221D8E /* UserWindowController.swift */; };
+		D1F0E9821FDD71BE00221D8E /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9811FDD71BE00221D8E /* TripViewController.swift */; };
+		D1F0E9841FDD726E00221D8E /* UserAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9831FDD726E00221D8E /* UserAddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +131,8 @@
 		D1F0E9781FDD67D800221D8E /* UserTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTicketsViewController.swift; sourceTree = "<group>"; };
 		D1F0E97A1FDD684000221D8E /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		D1F0E97E1FDD68B000221D8E /* UserWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWindowController.swift; sourceTree = "<group>"; };
+		D1F0E9811FDD71BE00221D8E /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		D1F0E9831FDD726E00221D8E /* UserAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +321,8 @@
 			children = (
 				D1F0E97A1FDD684000221D8E /* UserMainViewController.swift */,
 				D1F0E9781FDD67D800221D8E /* UserTicketsViewController.swift */,
+				D1F0E9831FDD726E00221D8E /* UserAddViewController.swift */,
+				D1F0E9811FDD71BE00221D8E /* TripViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				D1CC03C41FD48A4000317ACA /* DateFormatter.swift in Sources */,
 				D1F0E96B1FDC885E00221D8E /* TicketsViewController.swift in Sources */,
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
+				D1F0E9821FDD71BE00221D8E /* TripViewController.swift in Sources */,
 				D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */,
 				D1F0E96F1FDC961600221D8E /* CarriageTableCellView.swift in Sources */,
 				D1F0E9711FDC989400221D8E /* Carriage.swift in Sources */,
@@ -424,6 +431,7 @@
 				D13813A71FCB24F3008F74F8 /* EditAccountViewController.swift in Sources */,
 				D1DFD3701F9E3BAC0003867B /* Results.swift in Sources */,
 				D1F0E9671FDC87CC00221D8E /* Ticket.swift in Sources */,
+				D1F0E9841FDD726E00221D8E /* UserAddViewController.swift in Sources */,
 				D1CC03B61FD409BC00317ACA /* LoginRequests.swift in Sources */,
 				D1F0E95D1FDC79D100221D8E /* EditLogViewController.swift in Sources */,
 				D13813A41FCB2496008F74F8 /* AccountsViewController.swift in Sources */,

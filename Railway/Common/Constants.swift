@@ -23,6 +23,7 @@ struct ApiPath {
     static let Page = "page"
     static let Limit = "limit"
     static let Auth = "auth"
+    static let Client = "client"
 }
 
 struct ApiKey {

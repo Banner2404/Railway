@@ -19,6 +19,7 @@ class UserMainViewController: NSViewController, BaseViewController, ContainerVie
     }
     
     func addButtonClick() {
+        showAddViewController()
     }
     
     func deleteButtonClick() {
@@ -35,5 +36,23 @@ class UserMainViewController: NSViewController, BaseViewController, ContainerVie
     func setup() {
         ticketsViewController = UserTicketsViewController.loadFromUserStoryboard()
         show(ticketsViewController, inContainerView: containerView)
+    }
+    
+    func showAddViewController() {
+        let viewController = UserAddViewController.loadFromStoryboard()
+        viewController.delegate = self
+        presentViewControllerAsSheet(viewController)
+    }
+}
+
+//MARK: - UserAddViewControllerDelegate
+extension UserMainViewController: UserAddViewControllerDelegate {
+    
+    func addViewControllerDidCancel(_ addViewController: UserAddViewController) {
+        dismissViewController(addViewController)
+    }
+    func addViewControllerDidComplete(_ addViewController: UserAddViewController) {
+        dismissViewController(addViewController)
+        ticketsViewController.reloadData()
     }
 }

@@ -10,8 +10,15 @@ import Foundation
 
 class Requests<T: Model> {
     
+    static var isUser: Bool {
+        return UserAccountManager.shared.user?.type == "USER"
+    }
+    
     static func get(id: Int, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
+        if isUser {
+            url.appendPathComponent(ApiPath.Client)
+        }
         url.appendPathComponent(T.apiPath)
         url.appendPathComponent("\(id)")
         
@@ -22,6 +29,9 @@ class Requests<T: Model> {
     
     static func get(page: Int, limit: Int, token: String, filters: [String: String]?) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
+        if isUser {
+            url.appendPathComponent(ApiPath.Client)
+        }
         url.appendPathComponent(T.apiPath)
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
         var queryItems = [
@@ -41,6 +51,9 @@ class Requests<T: Model> {
     
     static func create(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
+        if isUser {
+            url.appendPathComponent(ApiPath.Client)
+        }
         url.appendPathComponent(T.apiPath)
         let body = try? JSONEncoder().encode(model)
         var request = URLRequest.postRequest(withUrl: url, body: body)
@@ -50,6 +63,9 @@ class Requests<T: Model> {
     
     static func update(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
+        if isUser {
+            url.appendPathComponent(ApiPath.Client)
+        }
         url.appendPathComponent(T.apiPath)
         url.appendPathComponent("\(model.id)")
         
@@ -61,6 +77,9 @@ class Requests<T: Model> {
     
     static func delete(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
+        if isUser {
+            url.appendPathComponent(ApiPath.Client)
+        }
         url.appendPathComponent(T.apiPath)
         url.appendPathComponent("\(model.id)")
         
