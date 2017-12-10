@@ -27,6 +27,13 @@ class Passenger: NSObject, Codable, NSCopying {
         self.passport = passport
     }
     
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.passport = (try? container.decode(String.self, forKey: .passport)) ?? ""
+    }
+    
     func copy(with zone: NSZone? = nil) -> Any {
         return Passenger(id: id, name: name, passport: passport)
     }

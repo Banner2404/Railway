@@ -38,6 +38,6 @@ class AddItemTypeViewController: NSViewController, BaseViewController {
 private extension AddItemTypeViewController {
     
     func setupArrayController() {
-        arrayController.content = SidebarItem.defaultItems 
+        arrayController.content = SidebarItem.defaultEditableItems
     }
 }

@@ -35,6 +35,18 @@ class SidebarItem: NSObject {
         ]
     }
     
+    static var defaultEditableItems: [SidebarItem] {
+        return [
+            //SidebarItem(title: "Tickets", image: #imageLiteral(resourceName: "testIcon"), section: .tickets),
+            SidebarItem(title: "Stations", image: #imageLiteral(resourceName: "testIcon"), section: .stations),
+            SidebarItem(title: "Accounts", image: #imageLiteral(resourceName: "testIcon"), section: .accounts),
+            SidebarItem(title: "Passengers", image: #imageLiteral(resourceName: "testIcon"), section: .passengers),
+            SidebarItem(title: "Routes", image: #imageLiteral(resourceName: "testIcon"), section: .routes),
+            SidebarItem(title: "Trains", image: #imageLiteral(resourceName: "testIcon"), section: .trains),
+            SidebarItem(title: "Tickets", image: #imageLiteral(resourceName: "testIcon"), section: .tickets),
+        ]
+    }
+    
     enum Section {
         case stations
         case accounts
