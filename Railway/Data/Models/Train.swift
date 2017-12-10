@@ -90,7 +90,7 @@ class Train: NSObject, Codable, NSCopying {
         try container.encode(arrivalStation, forKey: .arrivalStation)
         let departureString = DateFormatter.HHmmSS.string(from: departureTime)
         let arrivalString = DateFormatter.HHmmSS.string(from: arrivalTime)
-        let scheduleDate = DateFormatter.YYYYMMDD.string(from: date)
+        let scheduleDate = DateFormatter.ddMMYYYY.string(from: date)
         try container.encode(departureString, forKey: .departureTime)
         try container.encode(arrivalString, forKey: .arrivalTime)
         try container.encode(scheduleDate, forKey: .date)

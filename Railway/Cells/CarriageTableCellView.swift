@@ -12,12 +12,14 @@ protocol CarriageTableCellViewDelegate: class {
     
     func carriageTableCellView(_ cellView: CarriageTableCellView, didChangeCarriageType type: String)
     func carriageTableCellView(_ cellView: CarriageTableCellView, didChangeNumberOfSeats seats: Int)
+    func carriageTableCellView(_ cellView: CarriageTableCellView, didChangeNumber number: Int)
 }
 
 class CarriageTableCellView: NSTableCellView {
     
     @IBOutlet weak var popup: NSPopUpButton!
     @IBOutlet weak var seatsTextField: NSTextField!
+    @IBOutlet weak var numberTextField: NSTextField!
     weak var delegate: CarriageTableCellViewDelegate?
     
     @IBAction
@@ -27,8 +29,14 @@ class CarriageTableCellView: NSTableCellView {
     }
     
     override func controlTextDidChange(_ obj: Notification) {
-        let number = seatsTextField.integerValue
-        delegate?.carriageTableCellView(self, didChangeNumberOfSeats: number)
+        if let object = obj.object as? NSTextField, object == seatsTextField {
+            let number = seatsTextField.integerValue
+            delegate?.carriageTableCellView(self, didChangeNumberOfSeats: number)
+        } else {
+            let number = numberTextField.integerValue
+            delegate?.carriageTableCellView(self, didChangeNumber: number)
+        }
+        
     }
     
 }

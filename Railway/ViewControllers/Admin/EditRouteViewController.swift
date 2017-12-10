@@ -25,6 +25,7 @@ class EditRouteViewController: EditTableViewController, FillViewController {
         super.viewDidLoad()
         numberTextField.window?.makeFirstResponder(numberTextField)
         validateTextFields()
+        tableView.selectionHighlightStyle = .none
     }
     
     func setInitialObject(_ object: Model) {
@@ -79,10 +80,6 @@ extension EditRouteViewController: NSTableViewDelegate {
         cellView.delegate = self
         cellView.stationCombobox.isEditable = true
         return cellView
-    }
-    
-    func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
-        return IndexSet()
     }
 }
 

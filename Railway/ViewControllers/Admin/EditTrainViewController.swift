@@ -27,6 +27,7 @@ class EditTrainViewController: EditTableViewController, FillViewController {
         super.viewDidLoad()
         textField.window?.makeFirstResponder(textField)
         validate()
+        tableView.selectionHighlightStyle = .none
     }
     
     func setInitialObject(_ object: Model) {
@@ -44,7 +45,9 @@ class EditTrainViewController: EditTableViewController, FillViewController {
     }
     
     @IBAction func addButtonClick(_ sender: Any) {
-        train.carriages.append(Carriage())
+        let carriage = Carriage()
+        carriage.type = popupItems.first!.uppercased()
+        train.carriages.append(carriage)
         tableView.reloadData()
     }
     @IBAction func removeButtonClick(_ sender: Any) {
@@ -92,6 +95,12 @@ extension EditTrainViewController: CarriageTableCellViewDelegate {
         let item = train.carriages[index]
         item.seats = Array<Int>(repeating: 0, count: seats)
     }
+    
+    func carriageTableCellView(_ cellView: CarriageTableCellView, didChangeNumber number: Int) {
+        let index = tableView.row(for: cellView)
+        let item = train.carriages[index]
+        item.number = number
+    }
 }
 
 //MARK: - NSTableViewDelegate
@@ -106,7 +115,7 @@ extension EditTrainViewController: NSTableViewDelegate {
         return cellView
     }
     
-    func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
-        return IndexSet()
-    }
+//    func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
+//        return IndexSet()
+//    }
 }

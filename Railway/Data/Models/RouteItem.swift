@@ -42,8 +42,8 @@ class RouteItem: Codable {
             try container.encode(station.id, forKey: .id)
             try container.encode(station.name, forKey: .name)
         }
-        let departureString = DateFormatter.HHmmSS.string(from: departureTime)
-        let arrivalString = DateFormatter.HHmmSS.string(from: arrivalTime)
+        let departureString = DateFormatter.HHmm.string(from: departureTime)
+        let arrivalString = DateFormatter.HHmm.string(from: arrivalTime)
         try container.encode(departureString, forKey: .departureTime)
         try container.encode(arrivalString, forKey: .arrivalTime)
     }
