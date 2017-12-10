@@ -25,6 +25,8 @@ class UserAddViewController: NSViewController, BaseViewController, ContainerView
     @IBOutlet weak var helperMessageLabel: NSTextField!
     weak var delegate: UserAddViewControllerDelegate?
     var tripViewController: TripViewController?
+    var trainViewController: SelectTrainViewController?
+
     var dataManager: DataManager?
     var state = State.tripInfo {
         didSet {
@@ -51,9 +53,10 @@ class UserAddViewController: NSViewController, BaseViewController, ContainerView
     @IBAction func nextButtonClick(_ sender: Any) {
         switch state {
         case .tripInfo:
-            print(tripViewController?.getInfo().from.name)
-            print(tripViewController?.getInfo().to.name)
-            print(tripViewController?.getInfo().date)
+            state = .trainSelection
+            let (from, to, date) = tripViewController!.getInfo()
+            showTrainViewController()
+            trainViewController?.loadData(from: from, to: to, date: date)
             break
         case .trainSelection:
             break
@@ -65,7 +68,7 @@ class UserAddViewController: NSViewController, BaseViewController, ContainerView
         case .tripInfo:
             break
         case .trainSelection:
-            //move(from: fillViewController!, to: sectionsViewController, inContainerView: containerView)
+            move(from: trainViewController!, to: tripViewController!, inContainerView: containerView)
             state = .tripInfo
         }
     }
@@ -99,6 +102,14 @@ private extension UserAddViewController {
         viewController.delegate = self
         helperMessageLabel.stringValue = viewController.helperMessage
         tripViewController = viewController
+        show(viewController, inContainerView: containerView)
+    }
+    
+    func showTrainViewController() {
+        let viewController = SelectTrainViewController.loadFromStoryboard()
+        viewController.delegate = self
+        helperMessageLabel.stringValue = viewController.helperMessage
+        trainViewController = viewController
         show(viewController, inContainerView: containerView)
     }
     

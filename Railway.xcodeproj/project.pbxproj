@@ -67,6 +67,8 @@
 		D1F0E97F1FDD68B000221D8E /* UserWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E97E1FDD68B000221D8E /* UserWindowController.swift */; };
 		D1F0E9821FDD71BE00221D8E /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9811FDD71BE00221D8E /* TripViewController.swift */; };
 		D1F0E9841FDD726E00221D8E /* UserAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9831FDD726E00221D8E /* UserAddViewController.swift */; };
+		D1F0E9871FDD79B700221D8E /* SelectTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9851FDD79B600221D8E /* SelectTrainViewController.swift */; };
+		D1F0E98A1FDD7A9F00221D8E /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0E9891FDD7A9F00221D8E /* UserRequests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +135,8 @@
 		D1F0E97E1FDD68B000221D8E /* UserWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWindowController.swift; sourceTree = "<group>"; };
 		D1F0E9811FDD71BE00221D8E /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		D1F0E9831FDD726E00221D8E /* UserAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddViewController.swift; sourceTree = "<group>"; };
+		D1F0E9851FDD79B600221D8E /* SelectTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrainViewController.swift; sourceTree = "<group>"; };
+		D1F0E9891FDD7A9F00221D8E /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 			children = (
 				D1E7B0561FCB1F10006C7D44 /* Requests.swift */,
 				D1CC03B51FD409BC00317ACA /* LoginRequests.swift */,
+				D1F0E9891FDD7A9F00221D8E /* UserRequests.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				D1F0E9781FDD67D800221D8E /* UserTicketsViewController.swift */,
 				D1F0E9831FDD726E00221D8E /* UserAddViewController.swift */,
 				D1F0E9811FDD71BE00221D8E /* TripViewController.swift */,
+				D1F0E9851FDD79B600221D8E /* SelectTrainViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				D1CC03BA1FD40F9B00317ACA /* User.swift in Sources */,
 				D1DFD3721F9E4BA10003867B /* MainWindowController.swift in Sources */,
 				D1CC03B41FD4057000317ACA /* LoginViewController.swift in Sources */,
+				D1F0E9871FDD79B700221D8E /* SelectTrainViewController.swift in Sources */,
 				D1F0E9791FDD67D800221D8E /* UserTicketsViewController.swift in Sources */,
 				D1F0E97F1FDD68B000221D8E /* UserWindowController.swift in Sources */,
 				D17B62FC1FA07EBA00450052 /* AddItemTypeViewController.swift in Sources */,
@@ -428,6 +435,7 @@
 				D17B62FA1FA07D3700450052 /* ContainerViewController.swift in Sources */,
 				D19CAD871F9E301B0061949C /* NetworkManager.swift in Sources */,
 				D12D09541FCC387200AE8ADF /* Passenger.swift in Sources */,
+				D1F0E98A1FDD7A9F00221D8E /* UserRequests.swift in Sources */,
 				D13813A71FCB24F3008F74F8 /* EditAccountViewController.swift in Sources */,
 				D1DFD3701F9E3BAC0003867B /* Results.swift in Sources */,
 				D1F0E9671FDC87CC00221D8E /* Ticket.swift in Sources */,

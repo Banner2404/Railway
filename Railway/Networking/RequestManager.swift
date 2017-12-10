@@ -43,6 +43,12 @@ class RequestManager {
         let request = LoginRequests.login(username: username, password: password)
         perform(request: request, withResponseType: User.self, completion: completion)
     }
+    
+    func trains(from: Station, to: Station, date: Date, token: String, completion: @escaping (_ success: Bool, _ trains: Results<Train>?, _ error: Error?) -> ()) {
+        let string = DateFormatter.ddMMYYYY.string(from: date)
+        let request = UserRequests.trains(from: from.id, to: to.id, date: string, token: token)
+        perform(request: request, withResponseType: Results<Train>.self, completion: completion)
+    }
 }
 
 //MARK: - Private
