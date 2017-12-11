@@ -36,6 +36,8 @@
 		D19CAD891F9E307C0061949C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD881F9E307C0061949C /* RequestManager.swift */; };
 		D19CAD8F1F9E33920061949C /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD8E1F9E33920061949C /* URLRequest.swift */; };
 		D19CAD921F9E33C20061949C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CAD911F9E33C20061949C /* Constants.swift */; };
+		D1C625341FDF0B0B002D15FA /* SelectSeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C625331FDF0B0B002D15FA /* SelectSeatViewController.swift */; };
+		D1C625361FDF13E5002D15FA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C625351FDF13E5002D15FA /* Result.swift */; };
 		D1CC03B01FD4036800317ACA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CC03AE1FD4036800317ACA /* Login.storyboard */; };
 		D1CC03B41FD4057000317ACA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03B31FD4057000317ACA /* LoginViewController.swift */; };
 		D1CC03B61FD409BC00317ACA /* LoginRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC03B51FD409BC00317ACA /* LoginRequests.swift */; };
@@ -104,6 +106,8 @@
 		D19CAD881F9E307C0061949C /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		D19CAD8E1F9E33920061949C /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		D19CAD911F9E33C20061949C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1C625331FDF0B0B002D15FA /* SelectSeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSeatViewController.swift; sourceTree = "<group>"; };
+		D1C625351FDF13E5002D15FA /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D1CC03AF1FD4036800317ACA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		D1CC03B31FD4057000317ACA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D1CC03B51FD409BC00317ACA /* LoginRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequests.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				D1F0E9661FDC87CC00221D8E /* Ticket.swift */,
 				D13813A01FCB23C2008F74F8 /* Model.swift */,
 				D1DFD36F1F9E3BAC0003867B /* Results.swift */,
+				D1C625351FDF13E5002D15FA /* Result.swift */,
 				D1CC03B91FD40F9B00317ACA /* User.swift */,
 			);
 			path = Models;
@@ -329,6 +334,7 @@
 				D1F0E9831FDD726E00221D8E /* UserAddViewController.swift */,
 				D1F0E9811FDD71BE00221D8E /* TripViewController.swift */,
 				D1F0E9851FDD79B600221D8E /* SelectTrainViewController.swift */,
+				D1C625331FDF0B0B002D15FA /* SelectSeatViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -407,11 +413,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C625361FDF13E5002D15FA /* Result.swift in Sources */,
 				D1CC03C41FD48A4000317ACA /* DateFormatter.swift in Sources */,
 				D1F0E96B1FDC885E00221D8E /* TicketsViewController.swift in Sources */,
 				D19CAD761F9DED070061949C /* SidebarItem.swift in Sources */,
 				D1F0E9821FDD71BE00221D8E /* TripViewController.swift in Sources */,
 				D1E7B0591FCB2309006C7D44 /* Account.swift in Sources */,
+				D1C625341FDF0B0B002D15FA /* SelectSeatViewController.swift in Sources */,
 				D1F0E96F1FDC961600221D8E /* CarriageTableCellView.swift in Sources */,
 				D1F0E9711FDC989400221D8E /* Carriage.swift in Sources */,
 				D1938A5F1FA32ED600A28344 /* DataManager.swift in Sources */,

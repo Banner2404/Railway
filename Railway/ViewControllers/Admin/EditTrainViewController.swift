@@ -27,8 +27,8 @@ class EditTrainViewController: EditTableViewController, FillViewController {
         validate()
         tableView.selectionHighlightStyle = .none
         
-        requestManager.load(id: train.id, token: userAccountManager.token!) { (success: Bool, train: Train?, error: Error?) in
-            if let train = train {
+        requestManager.load(id: train.id, token: userAccountManager.token!) { (success: Bool, train: Result<Train>?, error: Error?) in
+            if let train = train?.data {
                 self.train = train
                 self.setup()
             }

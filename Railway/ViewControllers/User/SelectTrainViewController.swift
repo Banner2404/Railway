@@ -27,6 +27,10 @@ class SelectTrainViewController: NSViewController, BaseViewController {
         }
     }
     
+    func getTrain() -> Train? {
+        return self.arrayController.selectedObjects.first as? Train
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         validate()

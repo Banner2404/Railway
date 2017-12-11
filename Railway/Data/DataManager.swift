@@ -49,7 +49,9 @@ class DefaultDataManager<T: Model>: DataManager {
     }
     
     func details(object: T, token: String, completion: @escaping (Bool, T?, Error?) -> Void) {
-        RequestManager.shared.load(id: object.id, token: token, completion: completion)
+            RequestManager.shared.load(id: object.id, token: token, completion: { (success: Bool, result: Result<T>?, error: Error?) in
+                completion(success, result?.data, error)
+            })
     }
     
     func create(object: T, token: String, completion: @escaping (Bool, T?, Error?) -> Void) {

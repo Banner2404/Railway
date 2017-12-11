@@ -11,12 +11,14 @@ import Foundation
 class Requests<T: Model> {
     
     static var isUser: Bool {
-        return UserAccountManager.shared.user?.type == "USER"
+        return UserAccountManager.shared.user?.type == "ADMIN"
     }
     
     static func get(id: Int, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         if isUser {
+            url.appendPathComponent(ApiPath.Admin)
+        } else {
             url.appendPathComponent(ApiPath.Client)
         }
         url.appendPathComponent(T.apiPath)
@@ -30,6 +32,8 @@ class Requests<T: Model> {
     static func get(page: Int, limit: Int, token: String, filters: [String: String]?) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         if isUser {
+            url.appendPathComponent(ApiPath.Admin)
+        } else {
             url.appendPathComponent(ApiPath.Client)
         }
         url.appendPathComponent(T.apiPath)
@@ -52,6 +56,8 @@ class Requests<T: Model> {
     static func create(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         if isUser {
+            url.appendPathComponent(ApiPath.Admin)
+        } else {
             url.appendPathComponent(ApiPath.Client)
         }
         url.appendPathComponent(T.apiPath)
@@ -64,6 +70,8 @@ class Requests<T: Model> {
     static func update(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         if isUser {
+            url.appendPathComponent(ApiPath.Admin)
+        } else {
             url.appendPathComponent(ApiPath.Client)
         }
         url.appendPathComponent(T.apiPath)
@@ -78,6 +86,8 @@ class Requests<T: Model> {
     static func delete(_ model: T, token: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         if isUser {
+            url.appendPathComponent(ApiPath.Admin)
+        } else {
             url.appendPathComponent(ApiPath.Client)
         }
         url.appendPathComponent(T.apiPath)

@@ -26,6 +26,7 @@ class UserAddViewController: NSViewController, BaseViewController, ContainerView
     weak var delegate: UserAddViewControllerDelegate?
     var tripViewController: TripViewController?
     var trainViewController: SelectTrainViewController?
+    var seatViewController: SelectSeatViewController?
 
     var dataManager: DataManager?
     var state = State.tripInfo {
@@ -59,6 +60,13 @@ class UserAddViewController: NSViewController, BaseViewController, ContainerView
             trainViewController?.loadData(from: from, to: to, date: date)
             break
         case .trainSelection:
+            if let train = trainViewController?.getTrain() {
+                state = .seatSelection
+                showSeatViewController(with: train)
+                
+            }
+        case .seatSelection:
+            print(seatViewController?.getInfo())
             break
         }
     }
@@ -70,6 +78,9 @@ class UserAddViewController: NSViewController, BaseViewController, ContainerView
         case .trainSelection:
             move(from: trainViewController!, to: tripViewController!, inContainerView: containerView)
             state = .tripInfo
+        case .seatSelection:
+            move(from: seatViewController!, to: trainViewController!, inContainerView: containerView)
+            state = .trainSelection
         }
     }
 }
@@ -83,10 +94,14 @@ private extension UserAddViewController {
             nextButton?.title = "Next"
             previousButton?.isEnabled = false
             nextButton?.isEnabled = true
-            helperMessageLabel.stringValue = "Select stations and date:"
         case .trainSelection:
+            nextButton?.title = "Next"
+            previousButton?.isEnabled = true
+            nextButton?.isEnabled = true
+        case .seatSelection:
             nextButton?.title = "Create"
             previousButton?.isEnabled = true
+            nextButton?.isEnabled = true
         }
     }
     
@@ -110,7 +125,16 @@ private extension UserAddViewController {
         viewController.delegate = self
         helperMessageLabel.stringValue = viewController.helperMessage
         trainViewController = viewController
-        show(viewController, inContainerView: containerView)
+        move(from: tripViewController!, to: trainViewController!, inContainerView: containerView)
+    }
+    
+    func showSeatViewController(with train: Train) {
+        let viewController = SelectSeatViewController.loadFromStoryboard()
+        viewController.delegate = self
+        viewController.train = train
+        helperMessageLabel.stringValue = viewController.helperMessage
+        seatViewController = viewController
+        move(from: trainViewController!, to: seatViewController!, inContainerView: containerView)
     }
     
     func setupDataManager() {
@@ -132,6 +156,7 @@ extension UserAddViewController {
     enum State {
         case tripInfo
         case trainSelection
+        case seatSelection
     }
 }
 

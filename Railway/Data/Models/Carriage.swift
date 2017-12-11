@@ -16,6 +16,8 @@ class Carriage: NSObject, Codable, NSCopying {
     var type: String
     @objc
     var seats: [Int]
+    @objc
+    var seatsCount: Int
     
     required override convenience init() {
         self.init(number: 0, type: "", seats: [])
@@ -25,6 +27,7 @@ class Carriage: NSObject, Codable, NSCopying {
         self.number = number
         self.type = type
         self.seats = seats
+        self.seatsCount = seats.count
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
@@ -36,6 +39,7 @@ class Carriage: NSObject, Codable, NSCopying {
         self.number = try container.decode(Int.self, forKey: .number)
         self.type = try container.decode(String.self, forKey: .type)
         self.seats = try container.decode([Int].self, forKey: .seats)
+        self.seatsCount = self.seats.count
     }
     
     func encode(to encoder: Encoder) throws {

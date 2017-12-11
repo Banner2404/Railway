@@ -13,7 +13,8 @@ class LoginRequests {
     static func login(username: String, password: String) -> URLRequest {
         var url = URL(string: ApiURL.Host)!
         url.appendPathComponent(ApiPath.Auth)
-        
+        url.appendPathComponent(ApiPath.SignIn)
+
         let body = ["username": username, "password": password]
         let data = try? JSONSerialization.data(withJSONObject: body, options: [])
         return URLRequest.postRequest(withUrl: url, body: data)
