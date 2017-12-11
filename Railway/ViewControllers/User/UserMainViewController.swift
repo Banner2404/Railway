@@ -23,7 +23,13 @@ class UserMainViewController: NSViewController, BaseViewController, ContainerVie
     }
     
     func deleteButtonClick() {
-    
+        let object = (ticketsViewController?.selectedObject() as! NSCopying).copy() as! Model
+        
+        let dataManager = DefaultDataManager<Ticket>()
+        let token = userAccountManager.token ?? ""
+        dataManager.delete(object, token: token) { (success, error) in
+            self.ticketsViewController?.reloadData()
+        }
     }
     
     override func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
